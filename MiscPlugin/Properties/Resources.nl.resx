@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
+    <value>Plugin Webpagina</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
+    <value>Activeren bij Importeren</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
+    <value>Bewerk menu</value>
+  </data>
+  
+  <data name="Edit_ExtendGPS_Text" xml:space="preserve">
+    <value>GPS track uitbreiden naar activiteit</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelExtendGPS_Text" xml:space="preserve">
+    <value>GPS track uitbreiden naar activiteit</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
+    <value>GPS track uitbreiden naar activiteit Start/Stop indien GPS track kleiner is dan horloge of hartslag track</value>
+  </data>
+
+  <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
+    <value>Tijd/tempo op GPS track zetten</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelSetTimeGPS_Text" xml:space="preserve">
+    <value>Zet tijd/tempo op GPS punten</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelSetTimeGPSInformative_Text" xml:space="preserve">
+    <value>Tijd zetten op GPS punten via de Afstandstrack indien deze bestaat, anders tijd van activiteit gebruiken</value>
+  </data>
+
+  <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
+    <value>Rustrondes detecteren</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelDetectRestLaps_Text" xml:space="preserve">
+    <value>Rustrondes detecteren</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelDetectRestLapsInformative_Text" xml:space="preserve">
+    <value>Rustrondes detecteren. Momenteel enkel opwarmen en cooling down.</value>
+  </data>
+
+  <data name="Edit_InsertPauses_Text" xml:space="preserve">
+    <value>Pauzes invoegen bij GPS leegtes</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelInsertPauses_Text" xml:space="preserve">
+    <value>Pauzes invoegen bij GPS leegtes</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelInsertPausesInformative_Text" xml:space="preserve">
+    <value>Pauzes invoegen indien er tijd leegtes zijn bij GPS punten</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text" xml:space="preserve">
+    <value>Min GPS leegte</value>
+  </data>
+
+  <data name="Edit_ElevationToGPS_Text" xml:space="preserve">
+    <value>Hoogtetrack naar GPS punten</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelElevationToGPS_Text" xml:space="preserve">
+    <value>Hoogtetrack naar GPS punten</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelElevationToGPSInformative_Text" xml:space="preserve">
+    <value>De aparte hoogtetrack toepassen op de GPS track</value>
+  </data>
+
+  <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
+    <value>Tijdens verplaatsen identieke GPS punten verwijderen</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelRemoveIdenticalGPS_Text" xml:space="preserve">
+    <value>Identieke GPS punten verwijderen</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
+    <value>Identieke GPS punten verwijderen als afstandstrack beweging aangeeft (Fix voor Edge 705 one second recording.)</value>
+  </data>
+
+  <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
+    <value>Plaats Rondes en Stops in Cadans Track</value>
+  </data>
+</root>

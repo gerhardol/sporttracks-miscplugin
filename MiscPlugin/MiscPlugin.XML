@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MiscPlugin</name>
+    </assembly>
+    <members>
+        <member name="T:MiscPlugin.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_DetectRestLaps_Text">
+            <summary>
+              Looks up a localized string similar to Detect Rest Laps .
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_ElevationToGPS_Text">
+            <summary>
+              Looks up a localized string similar to Elevation Track to GPS points.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_ExportActivityToCompareTracks_Text">
+            <summary>
+              Looks up a localized string similar to Export To CompareTracks.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_ExtendGPS_Text">
+            <summary>
+              Looks up a localized string similar to Extend GPS Track to Activity.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_InsertPauses_Text">
+            <summary>
+              Looks up a localized string similar to Insert Pauses at GPS Gaps.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_Lap2Cadence_Text">
+            <summary>
+              Looks up a localized string similar to Put Laps and Stops in CadenceTrack.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_LiveUpdate_Text">
+            <summary>
+              Looks up a localized string similar to LiveUpdate.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_RemoveIdenticalGPS_Text">
+            <summary>
+              Looks up a localized string similar to Remove Identical GPS Points While Moving.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_SetTimeGPS_Text">
+            <summary>
+              Looks up a localized string similar to Set Time/Pace on GPS Points.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_MiscPluginPage_Title">
+            <summary>
+              Looks up a localized string similar to MiscPlugin.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelActivateAtImport_Text">
+            <summary>
+              Looks up a localized string similar to Activate at Import.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelDetectRestLaps_Text">
+            <summary>
+              Looks up a localized string similar to Detect Rest Laps.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelDetectRestLapsInformative_Text">
+            <summary>
+              Looks up a localized string similar to Detect rest laps. Currently only warmup and cooldown..
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelEditMenuItem_Text">
+            <summary>
+              Looks up a localized string similar to Edit Menu.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelElevationToGPS_Text">
+            <summary>
+              Looks up a localized string similar to Elevation Track to GPS Points.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelElevationToGPSInformative_Text">
+            <summary>
+              Looks up a localized string similar to Apply the separate elevation track to the GPS track.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelExtendGPS_Text">
+            <summary>
+              Looks up a localized string similar to Extend GPS Track to Activity.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelExtendGPSInformative_Text">
+            <summary>
+              Looks up a localized string similar to Extend GPS Track to Activity Start/End if GPS track is shorter than the clock or heart rate track.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelInsertPauses_Text">
+            <summary>
+              Looks up a localized string similar to Insert Pauses at GPS Gaps.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelInsertPausesInformative_Text">
+            <summary>
+              Looks up a localized string similar to Insert pauses if there are time gaps for the GPS points.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text">
+            <summary>
+              Looks up a localized string similar to Min GPS gap.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelRemoveIdenticalGPS_Text">
+            <summary>
+              Looks up a localized string similar to Remove Identical GPS Points.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text">
+            <summary>
+              Looks up a localized string similar to Remove identical GPS points where the distance track indicates moving. (Fix for Edge 705 one second recording.).
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelSetTimeGPS_Text">
+            <summary>
+              Looks up a localized string similar to Set Time/Pace on GPS Points.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelSetTimeGPSInformative_Text">
+            <summary>
+              Looks up a localized string similar to Set the time on GPS points using the Distance track if it exists, otherwise using the activity time.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_linkInformativeUrl_Text">
+            <summary>
+              Looks up a localized string similar to Plugin Webpage.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_linkInformativeUrl_Url">
+            <summary>
+              Looks up a localized string similar to http://hem.bredband.net/gerhardnospam/index.htm.
+            </summary>
+        </member>
+        <member name="T:MiscPlugin.UI.Settings.MiscPluginPageControl">
+            <summary>
+            Settings page for ExtendGPS
+            </summary>
+        </member>
+        <member name="M:MiscPlugin.UI.Settings.MiscPluginPageControl.#ctor">
+            creator
+        </member>
+        <member name="M:MiscPlugin.UI.Settings.MiscPluginPageControl.RefreshPage">
+            <summary>
+            Refresh the Settings page
+            </summary>
+        </member>
+        <member name="M:MiscPlugin.UI.Settings.MiscPluginPageControl.ThemeChanged(ZoneFiveSoftware.Common.Visuals.ITheme)">
+            
+             Theme changed 
+        </member>
+        <member name="M:MiscPlugin.UI.Settings.MiscPluginPageControl.UICultureChanged(System.Globalization.CultureInfo)">
+            <summary>
+            UI culture changed
+            </summary>
+            <param name="culture"></param>
+        </member>
+        <member name="F:MiscPlugin.UI.Settings.MiscPluginPageControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MiscPlugin.UI.Settings.MiscPluginPageControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MiscPlugin.UI.Settings.MiscPluginPageControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
