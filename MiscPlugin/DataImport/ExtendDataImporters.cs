@@ -94,6 +94,14 @@ namespace MiscPlugin.DataImport
                             tmp.Run();
                         }
                     }
+                    if (MiscPlugin.Plugin.AdjustPausesToDeviceAtImport)
+                    {
+                        if (AdjustPausesToDevice.isEnabled(activity))
+                        {
+                            AdjustPausesToDevice tmp = new AdjustPausesToDevice(activity);
+                            tmp.Run();
+                        }
+                    }
                     if (MiscPlugin.Plugin.ExtendGPSAtImport)
                     {
                         if (ExtendGPS.isEnabled(activity))
@@ -115,6 +123,14 @@ namespace MiscPlugin.DataImport
                     IActivity activity = (IActivity)item;
 
                     PostImport(activity);
+                    if (MiscPlugin.Plugin.FixHRAtImport)
+                    {
+                        if (FixHR.isEnabled(activity))
+                        {
+                            FixHR tmp = new FixHR(activity);
+                            tmp.Run();
+                        }
+                    }
                 }
             }
             foreach (object item in updated)

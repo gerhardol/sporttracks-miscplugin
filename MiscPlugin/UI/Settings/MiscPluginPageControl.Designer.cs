@@ -64,19 +64,23 @@ namespace MiscPlugin.UI.Settings
             this.labelSetTimeGPS = new System.Windows.Forms.Label();
             this.txtSetTimeGPSEditMenu = new System.Windows.Forms.CheckBox();
             this.labelSetTimeGPSInformative = new System.Windows.Forms.Label();
+            this.labelInsertPausesWhenGPSdifferMinSeconds = new System.Windows.Forms.Label();
+            this.txtSetTimeGPSAtImport = new System.Windows.Forms.CheckBox();
             this.labelRemoveIdenticalGPS = new System.Windows.Forms.Label();
-            this.labelDetectRestLaps = new System.Windows.Forms.Label();
             this.txtRemoveIdenticalGPSAtImport = new System.Windows.Forms.CheckBox();
             this.txtRemoveIdenticalGPSEditMenu = new System.Windows.Forms.CheckBox();
-            this.labelRemoveIdenticalGPSInformative = new System.Windows.Forms.Label();
+            this.labelDetectRestLaps = new System.Windows.Forms.Label();
+            this.labelAdjustPausesToDevice = new System.Windows.Forms.Label();
             this.txtDetectRestLapsAtImport = new System.Windows.Forms.CheckBox();
+            this.txtDetectRestLapsEditMenu = new System.Windows.Forms.CheckBox();
+            this.labelDetectRestLapsInformative = new System.Windows.Forms.Label();
+            this.labelAdjustPausesToDeviceInformative = new System.Windows.Forms.Label();
+            this.txtAdjustPausesToDeviceAtImport = new System.Windows.Forms.CheckBox();
+            this.txtAdjustPausesToDeviceEditMenu = new System.Windows.Forms.CheckBox();
+            this.labelRemoveIdenticalGPSInformative = new System.Windows.Forms.Label();
             this.labelElevationToGPS = new System.Windows.Forms.Label();
             this.txtElevationToGPSAtImport = new System.Windows.Forms.CheckBox();
             this.txtElevationToGPSEditMenu = new System.Windows.Forms.CheckBox();
-            this.labelInsertPausesWhenGPSdifferMinSeconds = new System.Windows.Forms.Label();
-            this.txtSetTimeGPSAtImport = new System.Windows.Forms.CheckBox();
-            this.txtDetectRestLapsEditMenu = new System.Windows.Forms.CheckBox();
-            this.labelDetectRestLapsInformative = new System.Windows.Forms.Label();
             this.labelElevationToGPSInformative = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericInsertPauses)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -89,7 +93,6 @@ namespace MiscPlugin.UI.Settings
             // 
             // txtExtendGPSAtImport
             // 
-            this.txtExtendGPSAtImport.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtExtendGPSAtImport, "txtExtendGPSAtImport");
             this.txtExtendGPSAtImport.Name = "txtExtendGPSAtImport";
             this.txtExtendGPSAtImport.UseVisualStyleBackColor = false;
@@ -104,14 +107,11 @@ namespace MiscPlugin.UI.Settings
             // 
             // labelExtendGPSInformative
             // 
-            this.labelExtendGPSInformative.AllowDrop = true;
             resources.ApplyResources(this.labelExtendGPSInformative, "labelExtendGPSInformative");
             this.labelExtendGPSInformative.Name = "labelExtendGPSInformative";
-            this.labelExtendGPSInformative.UseCompatibleTextRendering = true;
             // 
             // txtInsertPausesAtImport
             // 
-            this.txtInsertPausesAtImport.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtInsertPausesAtImport, "txtInsertPausesAtImport");
             this.txtInsertPausesAtImport.Name = "txtInsertPausesAtImport";
             this.txtInsertPausesAtImport.UseVisualStyleBackColor = false;
@@ -155,22 +155,27 @@ namespace MiscPlugin.UI.Settings
             this.tableLayoutPanel1.Controls.Add(this.labelSetTimeGPS, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtSetTimeGPSEditMenu, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelSetTimeGPSInformative, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.labelRemoveIdenticalGPS, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.labelDetectRestLaps, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtRemoveIdenticalGPSAtImport, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtRemoveIdenticalGPSEditMenu, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.labelRemoveIdenticalGPSInformative, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtDetectRestLapsAtImport, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelElevationToGPS, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtElevationToGPSAtImport, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtElevationToGPSEditMenu, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelInsertPausesWhenGPSdifferMinSeconds, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.numericInsertPauses, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtSetTimeGPSAtImport, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtDetectRestLapsEditMenu, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelDetectRestLapsInformative, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelInsertPausesInformative, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelElevationToGPSInformative, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelRemoveIdenticalGPS, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtRemoveIdenticalGPSAtImport, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtRemoveIdenticalGPSEditMenu, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelDetectRestLaps, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelAdjustPausesToDevice, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtDetectRestLapsAtImport, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtDetectRestLapsEditMenu, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelDetectRestLapsInformative, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelAdjustPausesToDeviceInformative, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtAdjustPausesToDeviceAtImport, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtAdjustPausesToDeviceEditMenu, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelRemoveIdenticalGPSInformative, 3, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelElevationToGPS, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txtElevationToGPSAtImport, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txtElevationToGPSEditMenu, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelElevationToGPSInformative, 3, 7);
+            this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(560, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // labelActivateAtImport
@@ -185,14 +190,13 @@ namespace MiscPlugin.UI.Settings
             // 
             // txtExtendGPSEditMenu
             // 
-            this.txtExtendGPSEditMenu.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtExtendGPSEditMenu, "txtExtendGPSEditMenu");
             this.txtExtendGPSEditMenu.Name = "txtExtendGPSEditMenu";
             this.txtExtendGPSEditMenu.UseVisualStyleBackColor = false;
+            this.txtExtendGPSEditMenu.CheckedChanged += new System.EventHandler(this.txtExtendGPSEditMenu_CheckedChanged);
             // 
             // txtInsertPausesEditMenu
             // 
-            this.txtInsertPausesEditMenu.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtInsertPausesEditMenu, "txtInsertPausesEditMenu");
             this.txtInsertPausesEditMenu.Name = "txtInsertPausesEditMenu";
             this.txtInsertPausesEditMenu.UseVisualStyleBackColor = false;
@@ -205,7 +209,6 @@ namespace MiscPlugin.UI.Settings
             // 
             // txtSetTimeGPSEditMenu
             // 
-            this.txtSetTimeGPSEditMenu.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtSetTimeGPSEditMenu, "txtSetTimeGPSEditMenu");
             this.txtSetTimeGPSEditMenu.Name = "txtSetTimeGPSEditMenu";
             this.txtSetTimeGPSEditMenu.UseVisualStyleBackColor = false;
@@ -213,23 +216,28 @@ namespace MiscPlugin.UI.Settings
             // 
             // labelSetTimeGPSInformative
             // 
-            this.labelSetTimeGPSInformative.AllowDrop = true;
             resources.ApplyResources(this.labelSetTimeGPSInformative, "labelSetTimeGPSInformative");
             this.labelSetTimeGPSInformative.Name = "labelSetTimeGPSInformative";
+            // 
+            // labelInsertPausesWhenGPSdifferMinSeconds
+            // 
+            resources.ApplyResources(this.labelInsertPausesWhenGPSdifferMinSeconds, "labelInsertPausesWhenGPSdifferMinSeconds");
+            this.labelInsertPausesWhenGPSdifferMinSeconds.Name = "labelInsertPausesWhenGPSdifferMinSeconds";
+            // 
+            // txtSetTimeGPSAtImport
+            // 
+            resources.ApplyResources(this.txtSetTimeGPSAtImport, "txtSetTimeGPSAtImport");
+            this.txtSetTimeGPSAtImport.Name = "txtSetTimeGPSAtImport";
+            this.txtSetTimeGPSAtImport.UseVisualStyleBackColor = true;
+            this.txtSetTimeGPSAtImport.CheckedChanged += new System.EventHandler(this.txtSetTimeGPSAtImport_CheckedChanged);
             // 
             // labelRemoveIdenticalGPS
             // 
             resources.ApplyResources(this.labelRemoveIdenticalGPS, "labelRemoveIdenticalGPS");
             this.labelRemoveIdenticalGPS.Name = "labelRemoveIdenticalGPS";
             // 
-            // labelDetectRestLaps
-            // 
-            resources.ApplyResources(this.labelDetectRestLaps, "labelDetectRestLaps");
-            this.labelDetectRestLaps.Name = "labelDetectRestLaps";
-            // 
             // txtRemoveIdenticalGPSAtImport
             // 
-            this.txtRemoveIdenticalGPSAtImport.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtRemoveIdenticalGPSAtImport, "txtRemoveIdenticalGPSAtImport");
             this.txtRemoveIdenticalGPSAtImport.Name = "txtRemoveIdenticalGPSAtImport";
             this.txtRemoveIdenticalGPSAtImport.UseVisualStyleBackColor = false;
@@ -237,24 +245,63 @@ namespace MiscPlugin.UI.Settings
             // 
             // txtRemoveIdenticalGPSEditMenu
             // 
-            this.txtRemoveIdenticalGPSEditMenu.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtRemoveIdenticalGPSEditMenu, "txtRemoveIdenticalGPSEditMenu");
             this.txtRemoveIdenticalGPSEditMenu.Name = "txtRemoveIdenticalGPSEditMenu";
             this.txtRemoveIdenticalGPSEditMenu.UseVisualStyleBackColor = false;
             this.txtRemoveIdenticalGPSEditMenu.CheckedChanged += new System.EventHandler(this.txtRemoveIdenticalGPSEditMenu_CheckedChanged);
             // 
-            // labelRemoveIdenticalGPSInformative
+            // labelDetectRestLaps
             // 
-            resources.ApplyResources(this.labelRemoveIdenticalGPSInformative, "labelRemoveIdenticalGPSInformative");
-            this.labelRemoveIdenticalGPSInformative.Name = "labelRemoveIdenticalGPSInformative";
+            resources.ApplyResources(this.labelDetectRestLaps, "labelDetectRestLaps");
+            this.labelDetectRestLaps.Name = "labelDetectRestLaps";
+            // 
+            // labelAdjustPausesToDevice
+            // 
+            resources.ApplyResources(this.labelAdjustPausesToDevice, "labelAdjustPausesToDevice");
+            this.labelAdjustPausesToDevice.Name = "labelAdjustPausesToDevice";
             // 
             // txtDetectRestLapsAtImport
             // 
-            this.txtDetectRestLapsAtImport.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.txtDetectRestLapsAtImport, "txtDetectRestLapsAtImport");
             this.txtDetectRestLapsAtImport.Name = "txtDetectRestLapsAtImport";
             this.txtDetectRestLapsAtImport.UseVisualStyleBackColor = false;
             this.txtDetectRestLapsAtImport.CheckedChanged += new System.EventHandler(this.txtDetectRestLapsAtImport_CheckedChanged);
+            // 
+            // txtDetectRestLapsEditMenu
+            // 
+            resources.ApplyResources(this.txtDetectRestLapsEditMenu, "txtDetectRestLapsEditMenu");
+            this.txtDetectRestLapsEditMenu.Name = "txtDetectRestLapsEditMenu";
+            this.txtDetectRestLapsEditMenu.UseVisualStyleBackColor = true;
+            this.txtDetectRestLapsEditMenu.CheckedChanged += new System.EventHandler(this.txtDetectRestLapsEditMenu_CheckedChanged);
+            // 
+            // labelDetectRestLapsInformative
+            // 
+            resources.ApplyResources(this.labelDetectRestLapsInformative, "labelDetectRestLapsInformative");
+            this.labelDetectRestLapsInformative.Name = "labelDetectRestLapsInformative";
+            // 
+            // labelAdjustPausesToDeviceInformative
+            // 
+            resources.ApplyResources(this.labelAdjustPausesToDeviceInformative, "labelAdjustPausesToDeviceInformative");
+            this.labelAdjustPausesToDeviceInformative.Name = "labelAdjustPausesToDeviceInformative";
+            // 
+            // txtAdjustPausesToDeviceAtImport
+            // 
+            resources.ApplyResources(this.txtAdjustPausesToDeviceAtImport, "txtAdjustPausesToDeviceAtImport");
+            this.txtAdjustPausesToDeviceAtImport.Name = "txtAdjustPausesToDeviceAtImport";
+            this.txtAdjustPausesToDeviceAtImport.UseVisualStyleBackColor = false;
+            this.txtAdjustPausesToDeviceAtImport.CheckedChanged += new System.EventHandler(this.txtAdjustPausesToDeviceAtImport_CheckedChanged);
+            // 
+            // txtAdjustPausesToDeviceEditMenu
+            // 
+            resources.ApplyResources(this.txtAdjustPausesToDeviceEditMenu, "txtAdjustPausesToDeviceEditMenu");
+            this.txtAdjustPausesToDeviceEditMenu.Name = "txtAdjustPausesToDeviceEditMenu";
+            this.txtAdjustPausesToDeviceEditMenu.UseVisualStyleBackColor = false;
+            this.txtAdjustPausesToDeviceEditMenu.CheckedChanged += new System.EventHandler(this.txtAdjustPausesToDeviceEditMenu_CheckedChanged);
+            // 
+            // labelRemoveIdenticalGPSInformative
+            // 
+            resources.ApplyResources(this.labelRemoveIdenticalGPSInformative, "labelRemoveIdenticalGPSInformative");
+            this.labelRemoveIdenticalGPSInformative.Name = "labelRemoveIdenticalGPSInformative";
             // 
             // labelElevationToGPS
             // 
@@ -275,30 +322,6 @@ namespace MiscPlugin.UI.Settings
             this.txtElevationToGPSEditMenu.UseVisualStyleBackColor = true;
             this.txtElevationToGPSEditMenu.CheckedChanged += new System.EventHandler(this.txtElevationToGPSEditMenu_CheckedChanged);
             // 
-            // labelInsertPausesWhenGPSdifferMinSeconds
-            // 
-            resources.ApplyResources(this.labelInsertPausesWhenGPSdifferMinSeconds, "labelInsertPausesWhenGPSdifferMinSeconds");
-            this.labelInsertPausesWhenGPSdifferMinSeconds.Name = "labelInsertPausesWhenGPSdifferMinSeconds";
-            // 
-            // txtSetTimeGPSAtImport
-            // 
-            resources.ApplyResources(this.txtSetTimeGPSAtImport, "txtSetTimeGPSAtImport");
-            this.txtSetTimeGPSAtImport.Name = "txtSetTimeGPSAtImport";
-            this.txtSetTimeGPSAtImport.UseVisualStyleBackColor = true;
-            this.txtSetTimeGPSAtImport.CheckedChanged += new System.EventHandler(this.txtSetTimeGPSAtImport_CheckedChanged);
-            // 
-            // txtDetectRestLapsEditMenu
-            // 
-            resources.ApplyResources(this.txtDetectRestLapsEditMenu, "txtDetectRestLapsEditMenu");
-            this.txtDetectRestLapsEditMenu.Name = "txtDetectRestLapsEditMenu";
-            this.txtDetectRestLapsEditMenu.UseVisualStyleBackColor = true;
-            this.txtDetectRestLapsEditMenu.CheckedChanged += new System.EventHandler(this.txtDetectRestLapsEditMenu_CheckedChanged);
-            // 
-            // labelDetectRestLapsInformative
-            // 
-            resources.ApplyResources(this.labelDetectRestLapsInformative, "labelDetectRestLapsInformative");
-            this.labelDetectRestLapsInformative.Name = "labelDetectRestLapsInformative";
-            // 
             // labelElevationToGPSInformative
             // 
             resources.ApplyResources(this.labelElevationToGPSInformative, "labelElevationToGPSInformative");
@@ -310,7 +333,7 @@ namespace MiscPlugin.UI.Settings
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.linkInformativeUrl);
-            this.MinimumSize = new System.Drawing.Size(240, 230);
+            this.MinimumSize = new System.Drawing.Size(0, 230);
             this.Name = "MiscPluginPageControl";
             ((System.ComponentModel.ISupportInitialize)(this.numericInsertPauses)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -352,5 +375,9 @@ namespace MiscPlugin.UI.Settings
         private Label labelInsertPausesWhenGPSdifferMinSeconds;
         private CheckBox txtSetTimeGPSAtImport;
         private CheckBox txtDetectRestLapsEditMenu;
+        private Label labelAdjustPausesToDevice;
+        private Label labelAdjustPausesToDeviceInformative;
+        private CheckBox txtAdjustPausesToDeviceAtImport;
+        private CheckBox txtAdjustPausesToDeviceEditMenu;
     }
 }

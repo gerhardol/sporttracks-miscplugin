@@ -20,6 +20,11 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_AdjustPausesToDevice_Text">
+            <summary>
+              Looks up a localized string similar to Adjust Pauses to Device Time.
+            </summary>
+        </member>
         <member name="P:MiscPlugin.Properties.Resources.Edit_DetectRestLaps_Text">
             <summary>
               Looks up a localized string similar to Detect Rest Laps .
@@ -38,6 +43,11 @@
         <member name="P:MiscPlugin.Properties.Resources.Edit_ExtendGPS_Text">
             <summary>
               Looks up a localized string similar to Extend GPS Track to Activity.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_FixHR_Text">
+            <summary>
+              Looks up a localized string similar to Fix initial HR spikes.
             </summary>
         </member>
         <member name="P:MiscPlugin.Properties.Resources.Edit_InsertPauses_Text">
@@ -73,6 +83,16 @@
         <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelActivateAtImport_Text">
             <summary>
               Looks up a localized string similar to Activate at Import.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelAdjustPausesToDevice_Text">
+            <summary>
+              Looks up a localized string similar to Adjust Pauses to Device Time.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text">
+            <summary>
+              Looks up a localized string similar to Adjust Pauses so the activity time matches the device time (or manually entered time).
             </summary>
         </member>
         <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_labelDetectRestLaps_Text">

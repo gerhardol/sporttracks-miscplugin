@@ -52,99 +52,102 @@ namespace MiscPlugin
         public void ReadOptions(XmlDocument xmlDoc, XmlNamespaceManager nsmgr, XmlElement pluginNode)
         {
             String attr;
-            attr = pluginNode.GetAttribute(xmlTags.Verbose);
-            if (attr.Length > 0) { Verbose = XmlConvert.ToInt16(attr); }
-            else { Verbose = 0; }
 
-            attr = pluginNode.GetAttribute(xmlTags.ExtendGPSAtImport);
-            if (attr.Length > 0) { ExtendGPSAtImport = XmlConvert.ToBoolean(attr); }
-            else { ExtendGPSAtImport = false; }
-            attr = pluginNode.GetAttribute(xmlTags.ExtendGPSEditMenu);
-            if (attr.Length > 0) { ExtendGPSEditMenu = XmlConvert.ToBoolean(attr); }
-            else { ExtendGPSEditMenu = true; }
+            attr = pluginNode.GetAttribute(xmlTags.AdjustPausesToDeviceAtImport);
+            if (attr.Length > 0) { AdjustPausesToDeviceAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.AdjustPausesToDeviceEditMenu);
+            if (attr.Length > 0) { AdjustPausesToDeviceEditMenu = XmlConvert.ToBoolean(attr); }
 
-            attr = pluginNode.GetAttribute(xmlTags.InsertPausesAtImport);
-            if (attr.Length > 0) { InsertPausesAtImport = XmlConvert.ToBoolean(attr); }
-            else { InsertPausesAtImport = false; }
-            attr = pluginNode.GetAttribute(xmlTags.InsertPausesEditMenu);
-            if (attr.Length > 0) { InsertPausesEditMenu = XmlConvert.ToBoolean(attr); }
-            else { InsertPausesEditMenu = true; }
-            attr = pluginNode.GetAttribute(xmlTags.InsertPausesWhenGPSdifferMinSeconds);
-            if (attr.Length > 0) { InsertPausesWhenGPSdifferMinSeconds = XmlConvert.ToInt16(attr); }
-            else { InsertPausesWhenGPSdifferMinSeconds = 180; }
-            attr = pluginNode.GetAttribute(xmlTags.InsertPausesAdjacentCheckSeconds);
-            if (attr.Length > 0) { InsertPausesAdjacentCheckSeconds = XmlConvert.ToInt16(attr); }
-            else { InsertPausesAdjacentCheckSeconds = 3; }
-            attr = pluginNode.GetAttribute(xmlTags.InsertPausesGPSOffsetSeconds);
-            if (attr.Length > 0) { InsertPausesGPSOffsetSeconds = XmlConvert.ToInt16(attr); }
-            else { InsertPausesGPSOffsetSeconds = 1; }
-
-            attr = pluginNode.GetAttribute(xmlTags.Laps2CadenceEditMenu);
-            if (attr.Length > 0) { Laps2CadenceEditMenu = XmlConvert.ToBoolean(attr); }
-            else { Laps2CadenceEditMenu = false; }
-
-            attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsEditMenu);
-            if (attr.Length > 0) { DetectRestLapsEditMenu = XmlConvert.ToBoolean(attr); }
-            else { DetectRestLapsEditMenu = false; }
             attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsAtImport);
             if (attr.Length > 0) { DetectRestLapsAtImport = XmlConvert.ToBoolean(attr); }
-            else { DetectRestLapsAtImport = false; }
+            attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsEditMenu);
+            if (attr.Length > 0) { DetectRestLapsEditMenu = XmlConvert.ToBoolean(attr); }
             attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsAlternativeAlgorithm);
             if (attr.Length > 0) { DetectRestLapsAlternativeAlgorithm = XmlConvert.ToInt16(attr); }
-            else { DetectRestLapsAlternativeAlgorithm = 0; }
             attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsLapDistance);
             if (attr.Length > 0) { DetectRestLapsLapDistance = XmlConvert.ToInt16(attr); }
-            else { DetectRestLapsLapDistance = 1000; }
             attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsSpeedFactor);
             if (attr.Length > 0) { DetectRestLapsSpeedFactor = (float)XmlConvert.ToDouble(attr); }
-            else { DetectRestLapsSpeedFactor = 1.1F; }
-
-            attr = pluginNode.GetAttribute(xmlTags.RemoveIdenticalGPSAtImport);
-            if (attr.Length > 0) { RemoveIdenticalGPSAtImport = XmlConvert.ToBoolean(attr); }
-            else { RemoveIdenticalGPSAtImport = false; }
-            attr = pluginNode.GetAttribute(xmlTags.RemoveIdenticalGPSEditMenu);
-            if (attr.Length > 0) { RemoveIdenticalGPSEditMenu = XmlConvert.ToBoolean(attr); }
-            else { RemoveIdenticalGPSEditMenu = false; }
 
             attr = pluginNode.GetAttribute(xmlTags.ElevationToGPSAtImport);
             if (attr.Length > 0) { ElevationToGPSAtImport = XmlConvert.ToBoolean(attr); }
-            else { ElevationToGPSAtImport = false; }
             attr = pluginNode.GetAttribute(xmlTags.ElevationToGPSEditMenu);
             if (attr.Length > 0) { ElevationToGPSEditMenu = XmlConvert.ToBoolean(attr); }
-            else { ElevationToGPSEditMenu = true; }
+
+            attr = pluginNode.GetAttribute(xmlTags.ExtendGPSAtImport);
+            if (attr.Length > 0) { ExtendGPSAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.ExtendGPSEditMenu);
+            if (attr.Length > 0) { ExtendGPSEditMenu = XmlConvert.ToBoolean(attr); }
+
+            attr = pluginNode.GetAttribute(xmlTags.FixHRAtImport);
+            if (attr.Length > 0) { FixHRAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.FixHREditMenu);
+            if (attr.Length > 0) { FixHREditMenu = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.FixHRStartHR);
+            if (attr.Length > 0) { FixHRStartHR = XmlConvert.ToInt16(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.FixHRTruncateHR);
+            if (attr.Length > 0) { FixHRTruncateHR = XmlConvert.ToInt16(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.FixHRCheckSeconds);
+            if (attr.Length > 0) { FixHRCheckSeconds = XmlConvert.ToInt16(attr); }
+
+            attr = pluginNode.GetAttribute(xmlTags.InsertPausesAtImport);
+            if (attr.Length > 0) { InsertPausesAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.InsertPausesEditMenu);
+            if (attr.Length > 0) { InsertPausesEditMenu = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.InsertPausesWhenGPSdifferMinSeconds);
+            if (attr.Length > 0) { InsertPausesWhenGPSdifferMinSeconds = XmlConvert.ToInt16(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.InsertPausesAdjacentCheckSeconds);
+            if (attr.Length > 0) { InsertPausesAdjacentCheckSeconds = XmlConvert.ToInt16(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.InsertPausesGPSOffsetSeconds);
+            if (attr.Length > 0) { InsertPausesGPSOffsetSeconds = XmlConvert.ToInt16(attr); }
+
+            attr = pluginNode.GetAttribute(xmlTags.Laps2CadenceEditMenu);
+            if (attr.Length > 0) { Laps2CadenceEditMenu = XmlConvert.ToBoolean(attr); }
+
+            attr = pluginNode.GetAttribute(xmlTags.RemoveIdenticalGPSAtImport);
+            if (attr.Length > 0) { RemoveIdenticalGPSAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.RemoveIdenticalGPSEditMenu);
+            if (attr.Length > 0) { RemoveIdenticalGPSEditMenu = XmlConvert.ToBoolean(attr); }
 
             attr = pluginNode.GetAttribute(xmlTags.SetTimeGPSAtImport);
             if (attr.Length > 0) { SetTimeGPSAtImport = XmlConvert.ToBoolean(attr); }
-            else { SetTimeGPSAtImport = false; }
             attr = pluginNode.GetAttribute(xmlTags.SetTimeGPSEditMenu);
             if (attr.Length > 0) { SetTimeGPSEditMenu = XmlConvert.ToBoolean(attr); }
-            else { SetTimeGPSEditMenu = true; }
 
+            attr = pluginNode.GetAttribute(xmlTags.Verbose);
+            if (attr.Length > 0) { Verbose = XmlConvert.ToInt16(attr); }
         }
 
         public void WriteOptions(XmlDocument xmlDoc, XmlElement pluginNode)
         {
-            pluginNode.SetAttribute(xmlTags.Verbose, XmlConvert.ToString(Verbose));
-
+            pluginNode.SetAttribute(xmlTags.AdjustPausesToDeviceAtImport, XmlConvert.ToString(AdjustPausesToDeviceAtImport));
+            pluginNode.SetAttribute(xmlTags.AdjustPausesToDeviceEditMenu, XmlConvert.ToString(AdjustPausesToDeviceEditMenu));
+            pluginNode.SetAttribute(xmlTags.DetectRestLapsAtImport, XmlConvert.ToString(DetectRestLapsAtImport));
+            pluginNode.SetAttribute(xmlTags.DetectRestLapsEditMenu, XmlConvert.ToString(DetectRestLapsEditMenu));
+            pluginNode.SetAttribute(xmlTags.DetectRestLapsAlternativeAlgorithm, XmlConvert.ToString(DetectRestLapsAlternativeAlgorithm));
+            pluginNode.SetAttribute(xmlTags.DetectRestLapsLapDistance, XmlConvert.ToString(DetectRestLapsLapDistance));
+            pluginNode.SetAttribute(xmlTags.DetectRestLapsSpeedFactor, XmlConvert.ToString(DetectRestLapsSpeedFactor));
+            pluginNode.SetAttribute(xmlTags.ElevationToGPSAtImport, XmlConvert.ToString(ElevationToGPSAtImport));
+            pluginNode.SetAttribute(xmlTags.ElevationToGPSEditMenu, XmlConvert.ToString(ElevationToGPSEditMenu));
             pluginNode.SetAttribute(xmlTags.ExtendGPSAtImport, XmlConvert.ToString(ExtendGPSAtImport));
             pluginNode.SetAttribute(xmlTags.ExtendGPSEditMenu, XmlConvert.ToString(ExtendGPSEditMenu));
+            pluginNode.SetAttribute(xmlTags.FixHRAtImport, XmlConvert.ToString(FixHRAtImport));
+            pluginNode.SetAttribute(xmlTags.FixHREditMenu, XmlConvert.ToString(FixHREditMenu));
+            pluginNode.SetAttribute(xmlTags.FixHRStartHR, XmlConvert.ToString(FixHRStartHR));
+            pluginNode.SetAttribute(xmlTags.FixHRTruncateHR, XmlConvert.ToString(FixHRTruncateHR));
+            pluginNode.SetAttribute(xmlTags.FixHRCheckSeconds, XmlConvert.ToString(FixHRCheckSeconds));
             pluginNode.SetAttribute(xmlTags.InsertPausesAtImport, XmlConvert.ToString(InsertPausesAtImport));
             pluginNode.SetAttribute(xmlTags.InsertPausesEditMenu, XmlConvert.ToString(InsertPausesEditMenu));
             pluginNode.SetAttribute(xmlTags.InsertPausesWhenGPSdifferMinSeconds, XmlConvert.ToString(InsertPausesWhenGPSdifferMinSeconds));
             pluginNode.SetAttribute(xmlTags.InsertPausesAdjacentCheckSeconds, XmlConvert.ToString(InsertPausesAdjacentCheckSeconds));
             pluginNode.SetAttribute(xmlTags.InsertPausesGPSOffsetSeconds, XmlConvert.ToString(InsertPausesGPSOffsetSeconds));
             pluginNode.SetAttribute(xmlTags.Laps2CadenceEditMenu, XmlConvert.ToString(Laps2CadenceEditMenu));
-            pluginNode.SetAttribute(xmlTags.DetectRestLapsAtImport, XmlConvert.ToString(DetectRestLapsAtImport));
-            pluginNode.SetAttribute(xmlTags.DetectRestLapsEditMenu, XmlConvert.ToString(DetectRestLapsEditMenu));
-            pluginNode.SetAttribute(xmlTags.DetectRestLapsAlternativeAlgorithm, XmlConvert.ToString(DetectRestLapsAlternativeAlgorithm));
-            pluginNode.SetAttribute(xmlTags.DetectRestLapsLapDistance, XmlConvert.ToString(DetectRestLapsLapDistance));
-            pluginNode.SetAttribute(xmlTags.DetectRestLapsSpeedFactor, XmlConvert.ToString(DetectRestLapsSpeedFactor));
             pluginNode.SetAttribute(xmlTags.RemoveIdenticalGPSAtImport, XmlConvert.ToString(RemoveIdenticalGPSAtImport));
             pluginNode.SetAttribute(xmlTags.RemoveIdenticalGPSEditMenu, XmlConvert.ToString(RemoveIdenticalGPSEditMenu));
-            pluginNode.SetAttribute(xmlTags.ElevationToGPSAtImport, XmlConvert.ToString(ElevationToGPSAtImport));
-            pluginNode.SetAttribute(xmlTags.ElevationToGPSEditMenu, XmlConvert.ToString(ElevationToGPSEditMenu));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSAtImport, XmlConvert.ToString(SetTimeGPSAtImport));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSEditMenu, XmlConvert.ToString(SetTimeGPSEditMenu));
+
+            pluginNode.SetAttribute(xmlTags.Verbose, XmlConvert.ToString(Verbose));
         }
         #endregion
         
@@ -155,33 +158,40 @@ namespace MiscPlugin
 
         #region Private members
         private static IApplication application;
-        public static int  Verbose;  //Only changed in xml file
+        public static bool AdjustPausesToDeviceAtImport = false;
+        public static bool AdjustPausesToDeviceEditMenu = false;
+        public static bool DetectRestLapsAtImport = false;
+        public static bool DetectRestLapsEditMenu = false;
+        public static int DetectRestLapsAlternativeAlgorithm = 0; //Only changed in xml file
+        public static int DetectRestLapsLapDistance = 1000; //Only changed in xml file
+        public static float DetectRestLapsSpeedFactor = 1.1F; //Only changed in xml file
+        public static bool ElevationToGPSAtImport = false;
+        public static bool ElevationToGPSEditMenu = false;
+        public static bool ExtendGPSAtImport = false;
+        public static bool ExtendGPSEditMenu = false;
+        public static bool FixHRAtImport = false;
+        public static bool FixHREditMenu = false;
+        public static int FixHRStartHR = 100; //Only changed in xml file
+        public static int FixHRCheckSeconds = 500; //Only changed in xml file
+        public static int FixHRTruncateHR = 150; //Only changed in xml file
+        public static bool InsertPausesAtImport = false;
+        public static bool InsertPausesEditMenu = false;
+        public static int InsertPausesWhenGPSdifferMinSeconds = 180;
+        public static int InsertPausesAdjacentCheckSeconds = 3; //Only changed in xml file
+        public static int InsertPausesGPSOffsetSeconds = 1; //Only changed in xml file
+        public static bool Laps2CadenceEditMenu = false; //Only changed in xml file
+        public static bool RemoveIdenticalGPSAtImport = false;
+        public static bool RemoveIdenticalGPSEditMenu = false;
+        public static bool SetTimeGPSAtImport = false;
+        public static bool SetTimeGPSEditMenu = false;
 
-        public static bool DetectRestLapsAtImport;
-        public static bool DetectRestLapsEditMenu;
-        public static int DetectRestLapsAlternativeAlgorithm; //Only changed in xml file
-        public static int DetectRestLapsLapDistance; //Only changed in xml file
-        public static float DetectRestLapsSpeedFactor; //Only changed in xml file
-        public static bool ElevationToGPSAtImport;
-        public static bool ElevationToGPSEditMenu;
-        public static bool ExtendGPSAtImport;
-        public static bool ExtendGPSEditMenu;
-        public static bool InsertPausesAtImport;
-        public static bool InsertPausesEditMenu;
-        public static int InsertPausesWhenGPSdifferMinSeconds;
-        public static int InsertPausesAdjacentCheckSeconds; //Only changed in xml file
-        public static int InsertPausesGPSOffsetSeconds; //Only changed in xml file
-        public static bool Laps2CadenceEditMenu; //Only changed in xml file
-        public static bool RemoveIdenticalGPSAtImport;
-        public static bool RemoveIdenticalGPSEditMenu;
-        public static bool SetTimeGPSAtImport;
-        public static bool SetTimeGPSEditMenu;
+        public static int Verbose = 0;  //Only changed in xml file
         #endregion
 
         private class xmlTags
         {
-            public const string Verbose = "Verbose";
-
+            public const string AdjustPausesToDeviceAtImport = "AdjustPausesToDeviceAtImport";
+            public const string AdjustPausesToDeviceEditMenu = "AdjustPausesToDeviceEditMenu";
             public const string DetectRestLapsAtImport = "DetectRestLapsAtImport";
             public const string DetectRestLapsEditMenu = "DetectRestLapsEditMenu";
             public const string DetectRestLapsAlternativeAlgorithm = "DetectRestLapsAlternativeAlgorithm";
@@ -191,6 +201,11 @@ namespace MiscPlugin
             public const string ElevationToGPSEditMenu = "ElevationToGPSEditMenu";
             public const string ExtendGPSAtImport = "ExtendGPSAtImport";
             public const string ExtendGPSEditMenu = "ExtendGPSEditMenu";
+            public const string FixHRAtImport = "FixHRAtImport";
+            public const string FixHREditMenu = "FixHRAtImport";
+            public const string FixHRStartHR = "FixHRStartHR";
+            public const string FixHRTruncateHR = "FixHRTruncateHR";
+            public const string FixHRCheckSeconds = "FixHRCheckSeconds";
             public const string InsertPausesAtImport = "InsertPausesAtImport";
             public const string InsertPausesEditMenu = "InsertPausesEditMenu";
             public const string InsertPausesWhenGPSdifferMinSeconds = "InsertPauseWhenGPSdifferMinSeconds";
@@ -201,6 +216,28 @@ namespace MiscPlugin
             public const string RemoveIdenticalGPSEditMenu = "RemoveIdenticalGPSEditMenu";
             public const string SetTimeGPSAtImport = "SetTimeGPSAtImport";
             public const string SetTimeGPSEditMenu = "SetTimeGPSEditMenu";
+
+            public const string Verbose = "Verbose";
         }
-     }
+        #region Utility
+        public static DateTime Min(DateTime t1, DateTime t2)
+        {
+            if (DateTime.Compare(t1, t2) > 0)
+            {
+                return t2;
+            }
+            return t1;
+        }
+
+        public static DateTime Max(DateTime t1, DateTime t2)
+        {
+            if (DateTime.Compare(t1, t2) < 0)
+            {
+                return t2;
+            }
+            return t1;
+        }
+
+        #endregion
+    }
 }

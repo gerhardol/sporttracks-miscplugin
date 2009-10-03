@@ -61,6 +61,15 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adjust Pauses to Device Time.
+        /// </summary>
+        internal static string Edit_AdjustPausesToDevice_Text {
+            get {
+                return ResourceManager.GetString("Edit_AdjustPausesToDevice_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detect Rest Laps .
         /// </summary>
         internal static string Edit_DetectRestLaps_Text {
@@ -93,6 +102,15 @@ namespace MiscPlugin.Properties {
         internal static string Edit_ExtendGPS_Text {
             get {
                 return ResourceManager.GetString("Edit_ExtendGPS_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fix initial HR spikes.
+        /// </summary>
+        internal static string Edit_FixHR_Text {
+            get {
+                return ResourceManager.GetString("Edit_FixHR_Text", resourceCulture);
             }
         }
         
@@ -156,6 +174,24 @@ namespace MiscPlugin.Properties {
         internal static string UI_Settings_PageControl_labelActivateAtImport_Text {
             get {
                 return ResourceManager.GetString("UI_Settings_PageControl_labelActivateAtImport_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adjust Pauses to Device Time.
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelAdjustPausesToDevice_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelAdjustPausesToDevice_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adjust Pauses so the activity time matches the device time (or manually entered time).
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text", resourceCulture);
             }
         }
         

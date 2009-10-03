@@ -123,7 +123,6 @@
   <data name="UI_Settings_MiscPluginPage_Title" xml:space="preserve">
     <value>MiscPlugin</value>
   </data>
-
   <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
     <value>Plugin Webpage</value>
   </data>
@@ -133,7 +132,6 @@
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
     <value>Edit Menu</value>
   </data>
-
   <data name="Edit_ExtendGPS_Text" xml:space="preserve">
     <value>Extend GPS Track to Activity</value>
   </data>
@@ -143,7 +141,6 @@
   <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
     <value>Extend GPS Track to Activity Start/End if GPS track is shorter than the clock or heart rate track</value>
   </data>
-
   <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
     <value>Set Time/Pace on GPS Points</value>
   </data>
@@ -153,7 +150,6 @@
   <data name="UI_Settings_PageControl_labelSetTimeGPSInformative_Text" xml:space="preserve">
     <value>Set the time on GPS points using the Distance track if it exists, otherwise using the activity time</value>
   </data>
-
   <data name="Edit_InsertPauses_Text" xml:space="preserve">
     <value>Insert Pauses at GPS Gaps</value>
   </data>
@@ -166,7 +162,6 @@
   <data name="UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text" xml:space="preserve">
     <value>Min GPS gap</value>
   </data>
-  
   <data name="UI_Settings_PageControl_labelDetectRestLapsInformative_Text" xml:space="preserve">
     <value>Detect rest laps. Currently only warmup and cooldown.</value>
   </data>
@@ -185,7 +180,6 @@
   <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
     <value>Detect Rest Laps </value>
   </data>
-
   <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
     <value>Remove Identical GPS Points While Moving</value>
   </data>
@@ -195,14 +189,25 @@
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Remove identical GPS points where the distance track indicates moving. (Fix for Edge 705 one second recording.)</value>
   </data>
-
   <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
     <value>Put Laps and Stops in CadenceTrack</value>
   </data>
-    <data name="Edit_ExportActivityToCompareTracks_Text" xml:space="preserve">
+  <data name="Edit_ExportActivityToCompareTracks_Text" xml:space="preserve">
     <value>Export To CompareTracks</value>
   </data>
   <data name="Edit_LiveUpdate_Text" xml:space="preserve">
     <value>LiveUpdate</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
+    <value>Adjust Pauses so the activity time matches the device time (or manually entered time)</value>
+  </data>
+  <data name="Edit_AdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Adjust Pauses to Device Time</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Adjust Pauses to Device Time</value>
+  </data>
+  <data name="Edit_FixHR_Text" xml:space="preserve">
+    <value>Fix initial HR spikes</value>
   </data>
 </root>

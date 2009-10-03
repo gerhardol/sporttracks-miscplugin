@@ -147,7 +147,7 @@
     <value>6</value>
   </data>
   <data name="txtExtendGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 20</value>
+    <value>153, 20</value>
   </data>
   <data name="txtExtendGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -205,10 +205,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelExtendGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 17</value>
+    <value>273, 17</value>
   </data>
   <data name="labelExtendGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 38</value>
+    <value>282, 38</value>
   </data>
   <data name="labelExtendGPSInformative.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -232,7 +232,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtInsertPausesAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 60</value>
+    <value>153, 60</value>
   </data>
   <data name="txtInsertPausesAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 14</value>
@@ -289,10 +289,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelInsertPausesInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 57</value>
+    <value>273, 57</value>
   </data>
   <data name="labelInsertPausesInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 38</value>
+    <value>282, 38</value>
   </data>
   <data name="labelInsertPausesInformative.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -310,13 +310,13 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelInsertPausesInformative.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>15</value>
   </data>
   <data name="numericInsertPauses.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
   <data name="numericInsertPauses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 100</value>
+    <value>153, 100</value>
   </data>
   <data name="numericInsertPauses.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
@@ -337,7 +337,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;numericInsertPauses.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>13</value>
   </data>
   <data name="tableLayoutPanel1.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -358,7 +358,7 @@
     <value>True</value>
   </data>
   <data name="labelActivateAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 2</value>
+    <value>153, 2</value>
   </data>
   <data name="labelActivateAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -385,7 +385,7 @@
     <value>True</value>
   </data>
   <data name="labelEditMenuItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 2</value>
+    <value>210, 2</value>
   </data>
   <data name="labelEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -412,7 +412,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtExtendGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 20</value>
+    <value>210, 20</value>
   </data>
   <data name="txtExtendGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -436,7 +436,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtInsertPausesEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 60</value>
+    <value>210, 60</value>
   </data>
   <data name="txtInsertPausesEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -490,7 +490,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtSetTimeGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 128</value>
+    <value>210, 128</value>
   </data>
   <data name="txtSetTimeGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -517,10 +517,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelSetTimeGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 125</value>
+    <value>273, 125</value>
   </data>
   <data name="labelSetTimeGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 38</value>
+    <value>282, 38</value>
   </data>
   <data name="labelSetTimeGPSInformative.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -540,243 +540,6 @@
   <data name="&gt;&gt;labelSetTimeGPSInformative.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="labelRemoveIdenticalGPS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelRemoveIdenticalGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelRemoveIdenticalGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 245</value>
-  </data>
-  <data name="labelRemoveIdenticalGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
-  </data>
-  <data name="labelRemoveIdenticalGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="labelRemoveIdenticalGPS.Text" xml:space="preserve">
-    <value>Remove Identical GPS</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPS.Name" xml:space="preserve">
-    <value>labelRemoveIdenticalGPS</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPS.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPS.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="labelDetectRestLaps.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelDetectRestLaps.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelDetectRestLaps.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 165</value>
-  </data>
-  <data name="labelDetectRestLaps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
-  </data>
-  <data name="labelDetectRestLaps.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="labelDetectRestLaps.Text" xml:space="preserve">
-    <value>Detect Rest Laps</value>
-  </data>
-  <data name="&gt;&gt;labelDetectRestLaps.Name" xml:space="preserve">
-    <value>labelDetectRestLaps</value>
-  </data>
-  <data name="&gt;&gt;labelDetectRestLaps.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelDetectRestLaps.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelDetectRestLaps.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSAtImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 248</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 14</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSAtImport.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.Name" xml:space="preserve">
-    <value>txtRemoveIdenticalGPSAtImport</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSEditMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 248</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 16</value>
-  </data>
-  <data name="txtRemoveIdenticalGPSEditMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.Name" xml:space="preserve">
-    <value>txtRemoveIdenticalGPSEditMenu</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="labelRemoveIdenticalGPSInformative.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="labelRemoveIdenticalGPSInformative.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelRemoveIdenticalGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 245</value>
-  </data>
-  <data name="labelRemoveIdenticalGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 38</value>
-  </data>
-  <data name="labelRemoveIdenticalGPSInformative.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="labelRemoveIdenticalGPSInformative.Text" xml:space="preserve">
-    <value>Placeholder text</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.Name" xml:space="preserve">
-    <value>labelRemoveIdenticalGPSInformative</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="txtDetectRestLapsAtImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="txtDetectRestLapsAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 168</value>
-  </data>
-  <data name="txtDetectRestLapsAtImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 16</value>
-  </data>
-  <data name="txtDetectRestLapsAtImport.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;txtDetectRestLapsAtImport.Name" xml:space="preserve">
-    <value>txtDetectRestLapsAtImport</value>
-  </data>
-  <data name="&gt;&gt;txtDetectRestLapsAtImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtDetectRestLapsAtImport.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;txtDetectRestLapsAtImport.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="labelElevationToGPS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelElevationToGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 205</value>
-  </data>
-  <data name="labelElevationToGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
-  </data>
-  <data name="labelElevationToGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="labelElevationToGPS.Text" xml:space="preserve">
-    <value>Elevation To GPS</value>
-  </data>
-  <data name="&gt;&gt;labelElevationToGPS.Name" xml:space="preserve">
-    <value>labelElevationToGPS</value>
-  </data>
-  <data name="&gt;&gt;labelElevationToGPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelElevationToGPS.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelElevationToGPS.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="txtElevationToGPSAtImport.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtElevationToGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 208</value>
-  </data>
-  <data name="txtElevationToGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="txtElevationToGPSAtImport.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSAtImport.Name" xml:space="preserve">
-    <value>txtElevationToGPSAtImport</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSAtImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSAtImport.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSAtImport.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="txtElevationToGPSEditMenu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtElevationToGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 208</value>
-  </data>
-  <data name="txtElevationToGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="txtElevationToGPSEditMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSEditMenu.Name" xml:space="preserve">
-    <value>txtElevationToGPSEditMenu</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSEditMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSEditMenu.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;txtElevationToGPSEditMenu.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
   <data name="labelInsertPausesWhenGPSdifferMinSeconds.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -784,7 +547,7 @@
     <value>True</value>
   </data>
   <data name="labelInsertPausesWhenGPSdifferMinSeconds.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 103</value>
+    <value>75, 103</value>
   </data>
   <data name="labelInsertPausesWhenGPSdifferMinSeconds.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -805,13 +568,13 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelInsertPausesWhenGPSdifferMinSeconds.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>12</value>
   </data>
   <data name="txtSetTimeGPSAtImport.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtSetTimeGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 128</value>
+    <value>153, 128</value>
   </data>
   <data name="txtSetTimeGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -829,13 +592,172 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;txtSetTimeGPSAtImport.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>14</value>
+  </data>
+  <data name="labelRemoveIdenticalGPS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelRemoveIdenticalGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelRemoveIdenticalGPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 285</value>
+  </data>
+  <data name="labelRemoveIdenticalGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 13</value>
+  </data>
+  <data name="labelRemoveIdenticalGPS.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="labelRemoveIdenticalGPS.Text" xml:space="preserve">
+    <value>Remove Identical GPS</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPS.Name" xml:space="preserve">
+    <value>labelRemoveIdenticalGPS</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPS.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPS.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSAtImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 288</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 14</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSAtImport.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.Name" xml:space="preserve">
+    <value>txtRemoveIdenticalGPSAtImport</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSAtImport.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSEditMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 288</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 16</value>
+  </data>
+  <data name="txtRemoveIdenticalGPSEditMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.Name" xml:space="preserve">
+    <value>txtRemoveIdenticalGPSEditMenu</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtRemoveIdenticalGPSEditMenu.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="labelDetectRestLaps.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDetectRestLaps.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelDetectRestLaps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 205</value>
+  </data>
+  <data name="labelDetectRestLaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
+  </data>
+  <data name="labelDetectRestLaps.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="labelDetectRestLaps.Text" xml:space="preserve">
+    <value>Detect Rest Laps</value>
+  </data>
+  <data name="&gt;&gt;labelDetectRestLaps.Name" xml:space="preserve">
+    <value>labelDetectRestLaps</value>
+  </data>
+  <data name="&gt;&gt;labelDetectRestLaps.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDetectRestLaps.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelDetectRestLaps.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="labelAdjustPausesToDevice.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAdjustPausesToDevice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 165</value>
+  </data>
+  <data name="labelAdjustPausesToDevice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="labelAdjustPausesToDevice.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="labelAdjustPausesToDevice.Text" xml:space="preserve">
+    <value>labelAdjustPausesToDevice</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDevice.Name" xml:space="preserve">
+    <value>labelAdjustPausesToDevice</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDevice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDevice.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDevice.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtDetectRestLapsAtImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtDetectRestLapsAtImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 208</value>
+  </data>
+  <data name="txtDetectRestLapsAtImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 16</value>
+  </data>
+  <data name="txtDetectRestLapsAtImport.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtDetectRestLapsAtImport.Name" xml:space="preserve">
+    <value>txtDetectRestLapsAtImport</value>
+  </data>
+  <data name="&gt;&gt;txtDetectRestLapsAtImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtDetectRestLapsAtImport.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtDetectRestLapsAtImport.ZOrder" xml:space="preserve">
+    <value>21</value>
   </data>
   <data name="txtDetectRestLapsEditMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtDetectRestLapsEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 168</value>
+    <value>210, 208</value>
   </data>
   <data name="txtDetectRestLapsEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -853,7 +775,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;txtDetectRestLapsEditMenu.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>22</value>
   </data>
   <data name="labelDetectRestLapsInformative.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -862,10 +784,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelDetectRestLapsInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 165</value>
+    <value>273, 205</value>
   </data>
   <data name="labelDetectRestLapsInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 38</value>
+    <value>282, 38</value>
   </data>
   <data name="labelDetectRestLapsInformative.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -883,16 +805,190 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelDetectRestLapsInformative.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="labelAdjustPausesToDeviceInformative.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelAdjustPausesToDeviceInformative.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 165</value>
+  </data>
+  <data name="labelAdjustPausesToDeviceInformative.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 38</value>
+  </data>
+  <data name="labelAdjustPausesToDeviceInformative.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="labelAdjustPausesToDeviceInformative.Text" xml:space="preserve">
+    <value>Placeholder</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDeviceInformative.Name" xml:space="preserve">
+    <value>labelAdjustPausesToDeviceInformative</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDeviceInformative.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDeviceInformative.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelAdjustPausesToDeviceInformative.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="txtAdjustPausesToDeviceAtImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 168</value>
+  </data>
+  <data name="txtAdjustPausesToDeviceAtImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="txtAdjustPausesToDeviceAtImport.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceAtImport.Name" xml:space="preserve">
+    <value>txtAdjustPausesToDeviceAtImport</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceAtImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceAtImport.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceAtImport.ZOrder" xml:space="preserve">
     <value>25</value>
+  </data>
+  <data name="txtAdjustPausesToDeviceEditMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 168</value>
+  </data>
+  <data name="txtAdjustPausesToDeviceEditMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="txtAdjustPausesToDeviceEditMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceEditMenu.Name" xml:space="preserve">
+    <value>txtAdjustPausesToDeviceEditMenu</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceEditMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceEditMenu.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtAdjustPausesToDeviceEditMenu.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="labelRemoveIdenticalGPSInformative.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelRemoveIdenticalGPSInformative.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelRemoveIdenticalGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 285</value>
+  </data>
+  <data name="labelRemoveIdenticalGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 38</value>
+  </data>
+  <data name="labelRemoveIdenticalGPSInformative.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="labelRemoveIdenticalGPSInformative.Text" xml:space="preserve">
+    <value>Placeholder text</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.Name" xml:space="preserve">
+    <value>labelRemoveIdenticalGPSInformative</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelRemoveIdenticalGPSInformative.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="labelElevationToGPS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelElevationToGPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 245</value>
+  </data>
+  <data name="labelElevationToGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="labelElevationToGPS.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="labelElevationToGPS.Text" xml:space="preserve">
+    <value>Elevation To GPS</value>
+  </data>
+  <data name="&gt;&gt;labelElevationToGPS.Name" xml:space="preserve">
+    <value>labelElevationToGPS</value>
+  </data>
+  <data name="&gt;&gt;labelElevationToGPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelElevationToGPS.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelElevationToGPS.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="txtElevationToGPSAtImport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtElevationToGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 248</value>
+  </data>
+  <data name="txtElevationToGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="txtElevationToGPSAtImport.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSAtImport.Name" xml:space="preserve">
+    <value>txtElevationToGPSAtImport</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSAtImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSAtImport.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSAtImport.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="txtElevationToGPSEditMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtElevationToGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 248</value>
+  </data>
+  <data name="txtElevationToGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="txtElevationToGPSEditMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSEditMenu.Name" xml:space="preserve">
+    <value>txtElevationToGPSEditMenu</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSEditMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSEditMenu.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtElevationToGPSEditMenu.ZOrder" xml:space="preserve">
+    <value>30</value>
   </data>
   <data name="labelElevationToGPSInformative.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="labelElevationToGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 205</value>
+    <value>273, 245</value>
   </data>
   <data name="labelElevationToGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 38</value>
+    <value>282, 38</value>
   </data>
   <data name="labelElevationToGPSInformative.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -910,16 +1006,16 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelElevationToGPSInformative.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>31</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 14</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>453, 285</value>
+    <value>560, 325</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -937,7 +1033,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelExtendGPSInformative" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="txtExtendGPSAtImport" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtInsertPausesAtImport" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelActivateAtImport" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelEditMenuItem" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelInsertPauses" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelExtendGPS" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtExtendGPSEditMenu" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="txtInsertPausesEditMenu" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelSetTimeGPS" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSetTimeGPSEditMenu" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelSetTimeGPSInformative" Row="4" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelRemoveIdenticalGPS" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelDetectRestLaps" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtRemoveIdenticalGPSAtImport" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtRemoveIdenticalGPSEditMenu" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelRemoveIdenticalGPSInformative" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="txtDetectRestLapsAtImport" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelElevationToGPS" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtElevationToGPSAtImport" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtElevationToGPSEditMenu" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelInsertPausesWhenGPSdifferMinSeconds" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="numericInsertPauses" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtSetTimeGPSAtImport" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtDetectRestLapsEditMenu" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelDetectRestLapsInformative" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelInsertPausesInformative" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelElevationToGPSInformative" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelExtendGPSInformative" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="txtExtendGPSAtImport" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtInsertPausesAtImport" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelActivateAtImport" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelEditMenuItem" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelInsertPauses" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelExtendGPS" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtExtendGPSEditMenu" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="txtInsertPausesEditMenu" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelSetTimeGPS" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSetTimeGPSEditMenu" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelSetTimeGPSInformative" Row="4" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelInsertPausesWhenGPSdifferMinSeconds" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="numericInsertPauses" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtSetTimeGPSAtImport" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelInsertPausesInformative" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelRemoveIdenticalGPS" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtRemoveIdenticalGPSAtImport" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtRemoveIdenticalGPSEditMenu" Row="8" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelDetectRestLaps" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelAdjustPausesToDevice" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtDetectRestLapsAtImport" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtDetectRestLapsEditMenu" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelDetectRestLapsInformative" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelAdjustPausesToDeviceInformative" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="txtAdjustPausesToDeviceAtImport" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtAdjustPausesToDeviceEditMenu" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelRemoveIdenticalGPSInformative" Row="8" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelElevationToGPS" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtElevationToGPSAtImport" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtElevationToGPSEditMenu" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelElevationToGPSInformative" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -955,7 +1051,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>473, 302</value>
+    <value>580, 342</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MiscPluginPageControl</value>

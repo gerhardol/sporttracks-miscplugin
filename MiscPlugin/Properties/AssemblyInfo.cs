@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MiscPlugin")]
-[assembly: AssemblyCopyright("Copyright Gerhard Olsson©  2008")]
+[assembly: AssemblyCopyright("Copyright Gerhard Olsson©  2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -38,28 +38,11 @@ namespace MiscPlugin.Edit
         {
             this.activity = activity;
         }
-        public static DateTime Min(DateTime t1, DateTime t2)
-        {
-            if (DateTime.Compare(t1, t2) > 0)
-            {
-                return t2;
-            }
-            return t1;
-        }
-
-        public static DateTime Max(DateTime t1, DateTime t2)
-        {
-            if (DateTime.Compare(t1, t2) < 0)
-            {
-                return t2;
-            }
-            return t1;
-        }
-
         public static bool isEnabled(IActivity activity)
         {
             //Need at least 2 points in GPS route to extend route
             if (activity != null
+                && MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds > 0
                 && activity.GPSRoute != null && activity.GPSRoute.Count > 1)
             {
                 //overkill to check here
@@ -81,7 +64,14 @@ namespace MiscPlugin.Edit
                 
         public int Run()
         {
-            if (MiscPlugin.Plugin.Verbose > 0) {
+            //Do not use stopped time while adjusting
+            bool OriginalStoppedUse = activity.Category.UseParentSettings;
+            float OriginalStoppedSpeed = activity.Category.StoppedMetersPerSecond;
+            activity.Category.UseParentSettings = false;
+            activity.Category.StoppedMetersPerSecond = 0;
+
+            if (MiscPlugin.Plugin.Verbose > 0)
+            {
                 if (activity.TimerPauses == null || activity.TimerPauses.Count == 0)
                 {
                     activity.Notes += "No existing pauses" + Environment.NewLine;
@@ -99,8 +89,9 @@ namespace MiscPlugin.Edit
             int minTime = MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds;
             for (int nEntry = 1; nEntry < activity.GPSRoute.Count; nEntry++)
             {
-                if (minTime < (activity.GPSRoute.EntryDateTime(activity.GPSRoute[nEntry]).Subtract(
-                              activity.GPSRoute.EntryDateTime(activity.GPSRoute[nEntry - 1]))).TotalSeconds
+                if (minTime + 2 * MiscPlugin.Plugin.InsertPausesGPSOffsetSeconds
+                    < (activity.GPSRoute.EntryDateTime(activity.GPSRoute[nEntry]).Subtract(
+                       activity.GPSRoute.EntryDateTime(activity.GPSRoute[nEntry - 1]))).TotalSeconds
                 )
                 {
                     //Here there should potentially be a check if the new pause is slightly
@@ -156,6 +147,10 @@ namespace MiscPlugin.Edit
 
                 }
             }
+            activity.Category.UseParentSettings = OriginalStoppedUse;
+            activity.Category.StoppedMetersPerSecond = OriginalStoppedSpeed;
+
+            ActivityInfoCache.Instance.ClearInfo(activity);
             return 0;
         }
     }

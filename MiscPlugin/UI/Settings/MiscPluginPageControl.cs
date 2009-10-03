@@ -58,6 +58,9 @@ namespace MiscPlugin.UI.Settings
             txtInsertPausesAtImport.Checked = MiscPlugin.Plugin.InsertPausesAtImport;
             txtInsertPausesEditMenu.Checked = MiscPlugin.Plugin.InsertPausesEditMenu;
             numericInsertPauses.Value = MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds;
+            txtAdjustPausesToDeviceAtImport.Checked = MiscPlugin.Plugin.AdjustPausesToDeviceAtImport;
+            txtAdjustPausesToDeviceEditMenu.Checked = MiscPlugin.Plugin.AdjustPausesToDeviceEditMenu;
+            txtSetTimeGPSAtImport.Checked = MiscPlugin.Plugin.SetTimeGPSAtImport;
             txtSetTimeGPSEditMenu.Checked = MiscPlugin.Plugin.SetTimeGPSEditMenu;
             txtDetectRestLapsAtImport.Checked = MiscPlugin.Plugin.DetectRestLapsAtImport;
             txtDetectRestLapsEditMenu.Checked = MiscPlugin.Plugin.DetectRestLapsEditMenu;
@@ -89,6 +92,8 @@ namespace MiscPlugin.UI.Settings
             labelInsertPauses.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPauses_Text;
             labelInsertPausesWhenGPSdifferMinSeconds.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text;
             labelInsertPausesInformative.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPausesInformative_Text;
+            labelAdjustPausesToDevice.Text = Properties.Resources.UI_Settings_PageControl_labelAdjustPausesToDevice_Text;
+            labelAdjustPausesToDeviceInformative.Text = Properties.Resources.UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text;
             labelSetTimeGPS.Text = Properties.Resources.UI_Settings_PageControl_labelSetTimeGPS_Text;
             labelSetTimeGPSInformative.Text = Properties.Resources.UI_Settings_PageControl_labelSetTimeGPSInformative_Text;
             labelDetectRestLaps.Text = Properties.Resources.UI_Settings_PageControl_labelDetectRestLaps_Text;
@@ -126,6 +131,14 @@ namespace MiscPlugin.UI.Settings
             MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds = (int)numericInsertPauses.Value;
         }
 
+        private void txtAdjustPausesToDeviceAtImport_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.AdjustPausesToDeviceAtImport = txtAdjustPausesToDeviceAtImport.Checked;
+        }
+        private void txtAdjustPausesToDeviceEditMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.AdjustPausesToDeviceEditMenu = txtAdjustPausesToDeviceEditMenu.Checked;
+        }
         private void txtSetTimeGPSAtImport_CheckedChanged(object sender, EventArgs e)
         {
             MiscPlugin.Plugin.SetTimeGPSAtImport = txtSetTimeGPSAtImport.Checked;
