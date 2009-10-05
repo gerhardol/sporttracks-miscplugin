@@ -120,14 +120,12 @@
   <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
     <value>Page Web du plugin</value>
   </data>
-  
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Activer à l'importation</value>
   </data>
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
     <value>Modifier le Menu</value>
   </data>
-  
   <data name="Edit_ExtendGPS_Text" xml:space="preserve">
     <value>Etendre la trace GPS vers Activité</value>
   </data>
@@ -137,7 +135,6 @@
   <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
     <value>Etend la trace GPS vers Activité Debut/Fin si la trace GPS est plus courte que l'horloge ou que la trace de la fréquence cardiaque</value>
   </data>
-
   <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
     <value>Etablir le temps/allure sur la trace GPS</value>
   </data>
@@ -147,7 +144,6 @@
   <data name="UI_Settings_PageControl_labelSetTimeGPSInformative_Text" xml:space="preserve">
     <value>Etablir le temps sur les points GPS en utilisant la trace de distance si elle existe, sinon en utilisant le temps de l'activité</value>
   </data>
-
   <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
     <value>Detecter les tours de repos</value>
   </data>
@@ -157,7 +153,6 @@
   <data name="UI_Settings_PageControl_labelDetectRestLapsInformative_Text" xml:space="preserve">
     <value>Detecter les tours de repos. Actuellement seulement l'échauffement et la récupération.</value>
   </data>
-
   <data name="Edit_InsertPauses_Text" xml:space="preserve">
     <value>Insérer des pauses aux écarts GPS</value>
   </data>
@@ -170,7 +165,6 @@
   <data name="UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text" xml:space="preserve">
     <value>Ecart GPS minimum</value>
   </data>
-
   <data name="Edit_ElevationToGPS_Text" xml:space="preserve">
     <value>Trace d'altitude aux points GPS</value>
   </data>
@@ -180,7 +174,6 @@
   <data name="UI_Settings_PageControl_labelElevationToGPSInformative_Text" xml:space="preserve">
     <value>Appliquer la trace d'altitude séparée à la trace GPS</value>
   </data>
-
   <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
     <value>Retirer les points GPS identique pendant le déplacement</value>
   </data>
@@ -190,5 +183,22 @@
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Retirer les points GPS identiques où la trace de distance indique du déplacement. (Correctif pour le Edge 705 enregistrement d'une seconde.)</value>
   </data>
-
+  <data name="Edit_AdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Ajuster les pauses aux temps du périphérique</value>
+  </data>
+  <data name="Edit_FixHR_Text" xml:space="preserve">
+    <value>Définir les piques de FC initiales</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
+    <value>Ajuster les pauses pour que les temps de l’activité correspondent aux temps du périphérique (ou du temps mis manuellement)</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Ajuster les pauses aux temps du périphérique</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Définir la FC au départ de l’activité, filtrant les piques</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Définir les piques de FC initiales</value>
+  </data>
 </root>

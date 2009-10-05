@@ -126,7 +126,6 @@
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
     <value>Bewerk menu</value>
   </data>
-  
   <data name="Edit_ExtendGPS_Text" xml:space="preserve">
     <value>GPS track uitbreiden naar activiteit</value>
   </data>
@@ -136,7 +135,6 @@
   <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
     <value>GPS track uitbreiden naar activiteit Start/Stop indien GPS track kleiner is dan horloge of hartslag track</value>
   </data>
-
   <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
     <value>Tijd/tempo op GPS track zetten</value>
   </data>
@@ -146,7 +144,6 @@
   <data name="UI_Settings_PageControl_labelSetTimeGPSInformative_Text" xml:space="preserve">
     <value>Tijd zetten op GPS punten via de Afstandstrack indien deze bestaat, anders tijd van activiteit gebruiken</value>
   </data>
-
   <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
     <value>Rustrondes detecteren</value>
   </data>
@@ -156,7 +153,6 @@
   <data name="UI_Settings_PageControl_labelDetectRestLapsInformative_Text" xml:space="preserve">
     <value>Rustrondes detecteren. Momenteel enkel opwarmen en cooling down.</value>
   </data>
-
   <data name="Edit_InsertPauses_Text" xml:space="preserve">
     <value>Pauzes invoegen bij GPS leegtes</value>
   </data>
@@ -169,7 +165,6 @@
   <data name="UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text" xml:space="preserve">
     <value>Min GPS leegte</value>
   </data>
-
   <data name="Edit_ElevationToGPS_Text" xml:space="preserve">
     <value>Hoogtetrack naar GPS punten</value>
   </data>
@@ -179,7 +174,6 @@
   <data name="UI_Settings_PageControl_labelElevationToGPSInformative_Text" xml:space="preserve">
     <value>De aparte hoogtetrack toepassen op de GPS track</value>
   </data>
-
   <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
     <value>Tijdens verplaatsen identieke GPS punten verwijderen</value>
   </data>
@@ -189,8 +183,25 @@
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Identieke GPS punten verwijderen als afstandstrack beweging aangeeft (Fix voor Edge 705 one second recording.)</value>
   </data>
-
   <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
     <value>Plaats Rondes en Stops in Cadans Track</value>
+  </data>
+  <data name="Edit_AdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Pauzes bijstellen naar toestel tijd</value>
+  </data>
+  <data name="Edit_FixHR_Text" xml:space="preserve">
+    <value>Bijstellen oorspronkelijke HF pieken</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
+    <value>Pauzes bijstellen zodat tijd overeenkomt met toestel tijd (of manueel ingevoerde tijd)</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Pauzes bijstellen naar toestel tijd</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Bijstellen oorspronkelijke HF pieken</value>
   </data>
 </root>

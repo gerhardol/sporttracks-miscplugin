@@ -120,14 +120,12 @@
   <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
     <value>link a la WEB del plugin</value>
   </data>
-  
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Realizar al Importar</value>
   </data>
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
     <value>Menu Editar</value>
   </data>
-
   <data name="Edit_ExtendGPS_Text" xml:space="preserve">
     <value>Extender el Track de GPS a la Actividad</value>
   </data>
@@ -137,7 +135,6 @@
   <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
     <value>Extender el Track de GPS, si es más corto que el reloj o los datos de RC</value>
   </data>
-
   <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
     <value>Agregar Tiempo/Paso en el track de GPS</value>
   </data>
@@ -147,7 +144,6 @@
   <data name="UI_Settings_PageControl_labelSetTimeGPSInformative_Text" xml:space="preserve">
     <value>Agregar Tiempo/Paso en el track de GPS</value>
   </data>
-
   <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
     <value>Detecta Secciones de Descanso</value>
   </data>
@@ -157,7 +153,6 @@
   <data name="UI_Settings_PageControl_labelDetectRestLapsInformative_Text" xml:space="preserve">
     <value>Detectar Secciones de Descanso, solo Calentamiento y Enfriamiento</value>
   </data>
-
   <data name="Edit_InsertPauses_Text" xml:space="preserve">
     <value>Insertar pausas en los huecos del GPS</value>
   </data>
@@ -170,7 +165,6 @@
   <data name="UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text" xml:space="preserve">
     <value>Hueco GPS Mínimo </value>
   </data>
-
   <data name="Edit_ElevationToGPS_Text" xml:space="preserve">
     <value>Track de Elevación a puntos GPS</value>
   </data>
@@ -180,7 +174,6 @@
   <data name="UI_Settings_PageControl_labelElevationToGPSInformative_Text" xml:space="preserve">
     <value>Aplicar el Track de elevacón separado al track GPS</value>
   </data>
-
   <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
     <value>Elimina Puntos GPS Identicos en movimiento</value>
   </data>
@@ -190,5 +183,22 @@
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Elimina puntos GPS identicos,  cuando la el track de distancia indique movimiento. (Fix for Edge 705 one second recording.)</value>
   </data>
-
+  <data name="Edit_AdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Ajustar Pausas al Tiempo del Dispositivo</value>
+  </data>
+  <data name="Edit_FixHR_Text" xml:space="preserve">
+    <value>Arreglar picos iniciales del RC</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
+    <value>Ajustar Pausas para coincidir con el tiempo del dispositivo (o tiempo manual)</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Ajustar Pausas al Tiempo del Dispositivo</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Ajustar  RC al inicio de la actividad, Filtrar Picos</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Arreglar picos iniciales del RC</value>
+  </data>
 </root>

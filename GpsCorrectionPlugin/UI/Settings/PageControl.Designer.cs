@@ -119,7 +119,7 @@ namespace GpsCorrectionPlugin.UI.Settings
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.linkInformativeUrl);
-            this.MinimumSize = new System.Drawing.Size(240, 230);
+            this.MinimumSize = new System.Drawing.Size(240, 100);
             this.Name = "PageControl";
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

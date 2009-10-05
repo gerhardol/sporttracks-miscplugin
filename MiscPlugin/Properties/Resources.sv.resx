@@ -120,14 +120,12 @@
   <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
     <value>Plugin websida</value>
   </data>
-  
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Aktivera vid import</value>
   </data>
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
     <value>Ändra aktivitet menyn</value>
   </data>
-  
   <data name="Edit_ExtendGPS_Text" xml:space="preserve">
     <value>Utöka GPS spår till aktivitet</value>
   </data>
@@ -137,7 +135,6 @@
   <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
     <value>Utöka GPS-spår till aktivitet start/slut om GPS-spår är kortare än klockad tid eller annat spår (som hjärtslag-spår)</value>
   </data>
-
   <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
     <value>Sätt tid/tempo på GPS punkter</value>
   </data>
@@ -147,7 +144,6 @@
   <data name="UI_Settings_PageControl_labelSetTimeGPSInformative_Text" xml:space="preserve">
     <value>Sätt tidsstämpel på GPS punkter genom att använda distansspår om det existerar, annars aktivitetens totala längd.</value>
   </data>
-
   <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
     <value>Detektera vilo varv</value>
   </data>
@@ -157,7 +153,6 @@
   <data name="UI_Settings_PageControl_labelDetectRestLapsInformative_Text" xml:space="preserve">
     <value>Detektera vilo varv. Enbart långsamma uppvärmning/nedvarvnings varv.</value>
   </data>
-
   <data name="Edit_InsertPauses_Text" xml:space="preserve">
     <value>Lägg in pauser vid GPS uppehåll</value>
   </data>
@@ -170,7 +165,6 @@
   <data name="UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text" xml:space="preserve">
     <value>Min GPS uppehåll</value>
   </data>
-
   <data name="Edit_ElevationToGPS_Text" xml:space="preserve">
     <value>Höjd spår till GPS punkter</value>
   </data>
@@ -180,7 +174,6 @@
   <data name="UI_Settings_PageControl_labelElevationToGPS_Text" xml:space="preserve">
     <value>Höjd spår till GPS punkter</value>
   </data>
-
   <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
     <value>Ta bort identiska GPS punkter vid rörelse</value>
   </data>
@@ -190,9 +183,25 @@
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Ta bort identiska GPS punkter då distansspår indikerar att enheten rört sig. Fix för Edge 705 per sekund inspelning.</value>
   </data>
-
   <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
     <value>Lägg etapper och pauser i kadensspår</value>
   </data>
-
+  <data name="Edit_AdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Justera pauser efter GPS enhet tid</value>
+  </data>
+  <data name="Edit_FixHR_Text" xml:space="preserve">
+    <value>Fixa HR vid aktivitetens början</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
+    <value>Justera pauser så aktivitetstiden matchar GPS tiden (eller manuellt inmatad tid)</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelAdjustPausesToDevice_Text" xml:space="preserve">
+    <value>Justera pauser efter GPS enhet tid</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Fixa HR vid aktivitetens början</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Fixa HR vid aktivitetens början</value>
+  </data>
 </root>
