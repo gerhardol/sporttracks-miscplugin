@@ -193,7 +193,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>set st2plgoutdir=g:\Users\go\dev\web
-set st2plgFile=%25st2plgOutdir%25\$(ProjectName)-0.1.x.st2plugin
+set st2plgFile=%25st2plgOutdir%25\$(ProjectName)-0.2.x.st2plugin
 del %25st2plgFile%25
 rem if $(ConfigurationName)==Release 
 "%25programfiles%25\7-zip\7z" a -r -tzip %25st2plgFile%25  "$(TargetDir)"  -x!*.st2plugin -x!*.tmp -x!*.pdb -x!$(ProjectName).xml

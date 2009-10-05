@@ -331,7 +331,7 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://hem.bredband.net/gerhardnospam/index.htm.
+        ///   Looks up a localized string similar to http://code.google.com/p/sporttracks-miscplugin/wiki/MiscPlugin.
         /// </summary>
         internal static string UI_Settings_PageControl_linkInformativeUrl_Url {
             get {

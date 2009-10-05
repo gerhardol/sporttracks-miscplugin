@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UI_Settings_PageControl_linkInformativeUrl_Url" xml:space="preserve">
-    <value>http://hem.bredband.net/gerhardnospam/index.htm</value>
+    <value>http://code.google.com/p/sporttracks-miscplugin/wiki/MiscPlugin</value>
   </data>
   <data name="UI_Settings_MiscPluginPage_Title" xml:space="preserve">
     <value>MiscPlugin</value>

@@ -79,7 +79,7 @@ namespace GpsCorrectionPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gps Correction.
+        ///   Looks up a localized string similar to GpsCorrection.
         /// </summary>
         internal static string UI_Settings_Page_Title {
             get {
@@ -133,7 +133,7 @@ namespace GpsCorrectionPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://hem.bredband.net/gerhardnospam/index_gpscorrection.htm.
+        ///   Looks up a localized string similar to http://code.google.com/p/sporttracks-miscplugin/wiki/GpsCorrection.
         /// </summary>
         internal static string UI_Settings_PageControl_linkInformativeUrl_Url {
             get {

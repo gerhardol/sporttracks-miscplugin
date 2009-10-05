@@ -172,7 +172,7 @@
         </member>
         <member name="P:MiscPlugin.Properties.Resources.UI_Settings_PageControl_linkInformativeUrl_Url">
             <summary>
-              Looks up a localized string similar to http://hem.bredband.net/gerhardnospam/index.htm.
+              Looks up a localized string similar to http://code.google.com/p/sporttracks-miscplugin/wiki/MiscPlugin.
             </summary>
         </member>
         <member name="T:MiscPlugin.UI.Settings.MiscPluginPageControl">

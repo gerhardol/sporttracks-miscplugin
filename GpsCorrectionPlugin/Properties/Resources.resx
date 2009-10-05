@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UI_Settings_PageControl_linkInformativeUrl_Url" xml:space="preserve">
-    <value>http://hem.bredband.net/gerhardnospam/index_gpscorrection.htm</value>
+    <value>http://code.google.com/p/sporttracks-miscplugin/wiki/GpsCorrection</value>
   </data>
   <data name="UI_Settings_Page_Title" xml:space="preserve">
-    <value>Gps Correction</value>
+    <value>GpsCorrection</value>
   </data>
   <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
     <value>Plugin Webpage</value>
@@ -132,7 +132,6 @@
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
     <value>Edit Menu</value>
   </data>
-  
   <data name="Edit_CorrectGPSFromDistance_Text" xml:space="preserve">
     <value>Adjust GPS from Device Distance</value>
   </data>
