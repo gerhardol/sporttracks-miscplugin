@@ -131,6 +131,7 @@ namespace MiscPlugin.DataImport
                             tmp.Run();
                         }
                     }
+                    activity.UseEnteredData = MiscPlugin.Plugin.SetUseEnteredDataAtImport;
                 }
             }
             foreach (object item in updated)
