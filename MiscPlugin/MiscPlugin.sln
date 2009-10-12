@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C# Express 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscPlugin", "MiscPlugin.csproj", "{7187C7CA-7E36-4F0F-8B83-09547D6FB626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamplePlugin", "..\stv3\SamplePlugin\SamplePlugin.csproj", "{8A7EBCE8-1745-43FA-A4AD-C0B67139A82F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevationCorrectionAnalysisPlugin", "..\ElevationCorrectionAnalysisPlugin\ElevationCorrectionAnalysisPlugin.csproj", "{77878345-694E-478E-8D27-77F708F5C9EF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsCorrectionPlugin", "..\GpsCorrectionPlugin\GpsCorrectionPlugin.csproj", "{1EBEC546-4E31-4819-B10E-E88AE751CDD1}"
 EndProject
 Global
@@ -19,14 +15,6 @@ Global
 		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A7EBCE8-1745-43FA-A4AD-C0B67139A82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A7EBCE8-1745-43FA-A4AD-C0B67139A82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A7EBCE8-1745-43FA-A4AD-C0B67139A82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A7EBCE8-1745-43FA-A4AD-C0B67139A82F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77878345-694E-478E-8D27-77F708F5C9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77878345-694E-478E-8D27-77F708F5C9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77878345-694E-478E-8D27-77F708F5C9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77878345-694E-478E-8D27-77F708F5C9EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.Release|Any CPU.ActiveCfg = Release|Any CPU

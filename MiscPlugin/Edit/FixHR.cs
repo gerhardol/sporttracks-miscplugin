@@ -55,8 +55,9 @@ namespace MiscPlugin.Edit
             ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
             bool change = false;
 
-            INumericTimeDataSeries ntrack = new NumericTimeDataSeries();;
+            INumericTimeDataSeries ntrack = new NumericTimeDataSeries();
             INumericTimeDataSeries otrack = activity.HeartRatePerMinuteTrack;
+            int FixHRCheckSeconds = MiscPlugin.Plugin.FixHRCheckSeconds;
             if (DateTime.Compare(info.ActualTrackStart, DateTime.MinValue) > 0
                 && DateTime.Compare(info.ActualTrackStart, otrack.StartTime) < 0)
             {
@@ -66,12 +67,13 @@ namespace MiscPlugin.Edit
                         + otrack.StartTime + Environment.NewLine;
                 }
                 change = true;
+                FixHRCheckSeconds -= (int)otrack.StartTime.Subtract(info.ActualTrackStart).TotalSeconds;
                 ntrack.Add(info.ActualTrackStart, MiscPlugin.Plugin.FixHRStartHR);
             }
             int i;
             int n = 0;
             for (i = 0; i < otrack.Count; i++){
-                if (otrack[i].ElapsedSeconds > MiscPlugin.Plugin.FixHRCheckSeconds 
+                if (otrack[i].ElapsedSeconds > FixHRCheckSeconds 
                     || otrack[i].Value < MiscPlugin.Plugin.FixHRTruncateHR)
                 {
                     ntrack.Add(otrack.EntryDateTime(otrack[i]),otrack[i].Value);

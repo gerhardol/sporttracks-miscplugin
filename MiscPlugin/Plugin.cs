@@ -207,7 +207,7 @@ namespace MiscPlugin
             public const string ExtendGPSAtImport = "ExtendGPSAtImport";
             public const string ExtendGPSEditMenu = "ExtendGPSEditMenu";
             public const string FixHRAtImport = "FixHRAtImport";
-            public const string FixHREditMenu = "FixHRAtImport";
+            public const string FixHREditMenu = "FixHREditMenu";
             public const string FixHRStartHR = "FixHRStartHR";
             public const string FixHRTruncateHR = "FixHRTruncateHR";
             public const string FixHRCheckSeconds = "FixHRCheckSeconds";
