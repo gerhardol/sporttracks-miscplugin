@@ -105,6 +105,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataImport\ExtendDataImporters.cs" />
+<<<<<<< .mine
+    <Compile Include="Edit\AdjustPausesToDevice.cs" />
+    <Compile Include="Edit\AdjustPausesToDeviceAction.cs" />
+    <Compile Include="Edit\AdjustPausesToDeviceExtendActions.cs" />
+    <Compile Include="Edit\FixHR.cs" />
+    <Compile Include="Edit\FixHRAction.cs" />
+    <Compile Include="Edit\FixHRExtendActions.cs" />
+=======
     <Compile Include="Edit\AdjustPausesToDevice.cs" />
     <Compile Include="Edit\AdjustPausesToDeviceAction.cs" />
     <Compile Include="Edit\AdjustPausesToDeviceExtendActions.cs" />
@@ -112,6 +120,7 @@
     <Compile Include="Edit\FixHR.cs" />
     <Compile Include="Edit\FixHRAction.cs" />
     <Compile Include="Edit\FixHRExtendActions.cs" />
+>>>>>>> .r31
     <Compile Include="Edit\ElevationToGPS.cs" />
     <Compile Include="Edit\ElevationToGPSAction.cs" />
     <Compile Include="Edit\ElevationToGPSExtendActions.cs" />

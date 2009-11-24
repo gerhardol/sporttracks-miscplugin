@@ -147,8 +147,8 @@ namespace MiscPlugin.Edit
 
                 }
             }
-            activity.Category.StoppedMetersPerSecond = OriginalStoppedSpeed;
             activity.Category.UseParentSettings = OriginalStoppedUse;
+            activity.Category.StoppedMetersPerSecond = OriginalStoppedSpeed;
 
             ActivityInfoCache.Instance.ClearInfo(activity);
             return 0;
