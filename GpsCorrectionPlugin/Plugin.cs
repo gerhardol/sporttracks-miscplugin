@@ -54,21 +54,16 @@ namespace GpsCorrectionPlugin
             String attr;
             attr = pluginNode.GetAttribute(xmlTags.Verbose);
             if (attr.Length > 0) { Verbose = XmlConvert.ToInt16(attr); }
-            else { Verbose = 0; }
 
             attr = pluginNode.GetAttribute(xmlTags.CorrectGpsFromDistanceAtImport);
             if (attr.Length > 0) CorrectGpsFromDistanceAtImport = XmlConvert.ToBoolean(attr);
-            else { CorrectGpsFromDistanceAtImport = false; }
             attr = pluginNode.GetAttribute(xmlTags.CorrectGpsFromDistanceEditMenu);
             if (attr.Length > 0) CorrectGpsFromDistanceEditMenu = XmlConvert.ToBoolean(attr);
-            else { CorrectGpsFromDistanceEditMenu = true; }
 
             attr = pluginNode.GetAttribute(xmlTags.DistanceDiffToPowerAtImport);
             if (attr.Length > 0) DistanceDiffToPowerAtImport = XmlConvert.ToBoolean(attr);
-            else { DistanceDiffToPowerAtImport = false; }
             attr = pluginNode.GetAttribute(xmlTags.DistanceDiffToPowerEditMenu);
             if (attr.Length > 0) DistanceDiffToPowerEditMenu = XmlConvert.ToBoolean(attr);
-            else { DistanceDiffToPowerEditMenu = true; }
         }
 
         public void WriteOptions(XmlDocument xmlDoc, XmlElement pluginNode)
@@ -87,12 +82,12 @@ namespace GpsCorrectionPlugin
 
         #region Private members
         private static IApplication application;
-        public static int Verbose;  //Only changed in xml file
+        public static int Verbose = 0;  //Only changed in xml file
 
-        public static bool CorrectGpsFromDistanceAtImport;
-        public static bool CorrectGpsFromDistanceEditMenu;
-        public static bool DistanceDiffToPowerAtImport; //Only changed in xml file
-        public static bool DistanceDiffToPowerEditMenu; //Only changed in xml file
+        public static bool CorrectGpsFromDistanceAtImport = false;
+        public static bool CorrectGpsFromDistanceEditMenu = true;
+        public static bool DistanceDiffToPowerAtImport = false; //Only changed in xml file
+        public static bool DistanceDiffToPowerEditMenu = true; //Only changed in xml file
         private class xmlTags
         {
             public const string Verbose = "Verbose";

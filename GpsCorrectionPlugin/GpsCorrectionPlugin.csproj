@@ -45,7 +45,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>C:\Documents and Settings\All Users\Application Data\ZoneFiveSoftware\SportTracks\2.0\Plugins\Update\0df3f6d7-13ed-4a11-9e65-fbd6df847b08\GpsCorrectionPlugin\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -172,10 +172,20 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>set st2plgoutdir=g:\Users\go\dev\web
-set st2plgFile=%25st2plgOutdir%25\$(ProjectName)-0.2.x.st2plugin
+    <PostBuildEvent>set guid=0df3f6d7-13ed-4a11-9e65-fbd6df847b08
+set st2plgoutdir=g:\Users\go\dev\web
+
+set StTarget="%25ALLUSERSPROFILE%25\ZoneFiveSoftware\SportTracks\2.0\Plugins\Update\%25guid%25\$(ProjectName)"
+set st2plgFile="%25st2plgOutdir%25\$(ProjectName)-0.2.x.st2plugin"
+set 7z=%25programfiles%25\7-zip\7z
+
+REM XCOPY depreciated in Vista, use for XP compatibility
+mkdir %25StTarget%25
+xcopy  $(TargetDir)*.* "%25StTarget%25" /I/Y/Q/E &lt;NUL:
+
 del %25st2plgFile%25
 rem if $(ConfigurationName)==Release 
-"%25programfiles%25\7-zip\7z" a -r -tzip %25st2plgFile%25  "$(TargetDir)"  -x!*.st2plugin -x!*.tmp -x!*.pdb -x!$(ProjectName).xml</PostBuildEvent>
+"%25programfiles%25\7-zip\7z" a -r -tzip %25st2plgFile%25  "$(TargetDir)"  -x!*.st2plugin -x!*.tmp -x!*.pdb -x!$(ProjectName).xml
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
