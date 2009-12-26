@@ -160,13 +160,13 @@ class SetTimeGPS
             if (activity != null)
             {
                 ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
-                if (MiscPlugin.Plugin.Verbose > 0)
+                if (MiscPlugin.Plugin.Verbose > 9)
                 {
                     activity.Notes += "Setting time on GPS points: ";
-                
-                activity.Notes += info.ActualTrackStart.ToString() + " " + info.ActualTrackEnd.ToString() + " xxxc ";
-                //if (activity.DistanceMetersTrack != null && activity.DistanceMetersTrack.Count>0)
-            }
+
+                    activity.Notes += info.ActualTrackStart.ToString() + " " + info.ActualTrackEnd.ToString() + Environment.NewLine;
+                    //if (activity.DistanceMetersTrack != null && activity.DistanceMetersTrack.Count>0)
+                }
             }
 
             IGPSRoute newRoute = new GPSRoute();
@@ -181,10 +181,10 @@ class SetTimeGPS
                 DateTime time = SpeedDistTrack.GetTimeAtDistanceMeters(dist);
                 newRoute.Add(time,
                             gpsRoute[g].Value);
-                if (activity != null)
+                if (MiscPlugin.Plugin.Verbose > 999 && activity != null)
                 {
-                    //activity.Notes += time +
-                    //    " " + gpsRoute[0].Value.DistanceMetersToPoint(gpsRoute[g].Value) + " xxxc ";
+                    activity.Notes += time +
+                        " " + gpsRoute[0].Value.DistanceMetersToPoint(gpsRoute[g].Value) + Environment.NewLine;
                 }
             }
 
@@ -192,10 +192,10 @@ class SetTimeGPS
         }
     public IGPSRoute getGPSRouteOld()
         {
-            if (activity != null)
+            if (MiscPlugin.Plugin.Verbose > 99 && activity != null)
             {
                 ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
-                //activity.Notes += info.ActualTrackStart.ToString() + " " + info.ActualTrackEnd.ToString() + " xxxc ";
+                activity.Notes += info.ActualTrackStart.ToString() + " " + info.ActualTrackEnd.ToString();
                 //if (activity.DistanceMetersTrack != null && activity.DistanceMetersTrack.Count>0)
             }
 

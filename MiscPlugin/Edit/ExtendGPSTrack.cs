@@ -39,8 +39,7 @@ namespace MiscPlugin.Edit
         }
         public static bool isEnabled(IActivity activity)
         {
-            //Alternatve versions: Use ActualTrackStart etc - a little slower
-            // or use HRM track start/end
+            //Alternatve version is to use ActualTrackStart etc - a little slower to open Edit, avoid!
             //ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
 
             //Need at least 2 points to extend route
@@ -50,38 +49,57 @@ namespace MiscPlugin.Edit
                 DateTime gpsStart = activity.GPSRoute.StartTime;
                 DateTime gpsEnd = activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1]);
 
-                if (activity.UseEnteredData &&
-                    (activity.StartTime < gpsStart || activity.StartTime.Add(activity.TotalTimeEntered) > gpsEnd))
+                if (MiscPlugin.Plugin.Verbose > 99)
+                {
+                    DateTime startTime = activity.StartTime;
+                    DateTime endTime = activity.StartTime.Add(activity.TotalTimeEntered).AddMilliseconds(-activity.TotalTimeEntered.Milliseconds);
+                    activity.Notes += "ExtendGPS Edit GPS: " + gpsStart + " " + gpsEnd
+                         + " " + activity.UseEnteredData + " " + activity.HasStartTime + Environment.NewLine;
+                    activity.Notes += "ExtendGPS Edit Manual: "
+                        + " " + startTime + " " + DateTime.Compare(startTime, gpsStart)
+                        + " " + endTime + " " + DateTime.Compare(endTime, gpsEnd)
+                        + " " + activity.StartTime.Add(activity.TotalTimeEntered) + " " + DateTime.Compare(activity.StartTime.Add(activity.TotalTimeEntered), gpsEnd)
+                        + Environment.NewLine;
+                    if (activity.HeartRatePerMinuteTrack != null && activity.HeartRatePerMinuteTrack.Count > 1)
+                    {
+                        startTime = activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[0]);
+                        endTime = activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[activity.HeartRatePerMinuteTrack.Count - 1]);
+                        activity.Notes += "ExtendGPS Edit HR: "
+                        + " " + startTime + " " + DateTime.Compare(startTime, gpsStart)
+                        + " " + endTime + " " + DateTime.Compare(endTime, gpsEnd)
+                        + Environment.NewLine;
+                    }
+                    if (activity.Laps != null && activity.Laps.Count > 1)
+                    {
+                        startTime = activity.Laps[0].StartTime;
+                        endTime = activity.Laps[activity.Laps.Count - 1].StartTime.Add(new TimeSpan(activity.Laps[activity.Laps.Count - 1].TotalTime.Seconds));
+                        activity.Notes += "ExtendGPS Edit Laps: "
+                            + " " + startTime + " " + DateTime.Compare(startTime, gpsStart)
+                            + " " + endTime + " " + DateTime.Compare(endTime, gpsEnd)
+                            + Environment.NewLine;
+                    }
+                }
+
+                if (activity.UseEnteredData && activity.HasStartTime &&
+                    (0 > DateTime.Compare(activity.StartTime, gpsStart) ||
+                    //TimerPauses not added here - must be calculated
+                    //Must adjust activity.TotalTimeEntered to closest second
+                     0 < DateTime.Compare(activity.StartTime.Add(activity.TotalTimeEntered).AddMilliseconds(-activity.TotalTimeEntered.Milliseconds), gpsEnd)))
                 {
                     return true;
                 }
-                //No check for UseEnteredData here
                 if (activity.HeartRatePerMinuteTrack != null && activity.HeartRatePerMinuteTrack.Count > 1 &&
-                    (gpsStart > activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[0])
-                   || gpsEnd < activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[activity.HeartRatePerMinuteTrack.Count - 1])))
+                    (0 > DateTime.Compare(activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[0]), gpsStart) || 
+                     0 < DateTime.Compare(activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[activity.HeartRatePerMinuteTrack.Count - 1]), gpsEnd)))
                 {
                     return true;
                 }
                 if (activity.Laps != null && activity.Laps.Count > 0 &&
-                    (activity.Laps[0].StartTime < gpsStart
-                    || gpsEnd < activity.Laps[activity.Laps.Count - 1].StartTime.Add(new TimeSpan(activity.Laps[activity.Laps.Count - 1].TotalTime.Seconds))))
+                   (0 > DateTime.Compare(activity.Laps[0].StartTime, gpsStart)
+                   || 0 < DateTime.Compare(activity.Laps[activity.Laps.Count - 1].StartTime.Add(new TimeSpan(activity.Laps[activity.Laps.Count - 1].TotalTime.Seconds)), gpsEnd)))
                 {
                     return true;
                 }
-                // Extend end is for some reason not working with compareTo
-                //                   || false && (0>activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1]).CompareTo
-                //                 (activity.Laps[activity.Laps.Count-1].StartTime.Add(new TimeSpan(activity.Laps[activity.Laps.Count-1].TotalTime.Seconds))))))
-
-                //                && (activity.Laps[0].StartTime < activity.GPSRoute.EntryDateTime(activity.GPSRoute[0])
-                //                 || activity.Laps[activity.Laps.Count-1].StartTime+ activity.Laps[activity.Laps.Count-1].TotalTime > activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1])))
-                //                            && (info.ActualTrackStart < activity.GPSRoute.EntryDateTime(activity.GPSRoute[0])
-                //                 || info.ActualTrackEnd > activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1])))
-
-                //                && activity.HeartRatePerMinuteTrack != null && activity.HeartRatePerMinuteTrack.Count > 0
-                //                && (activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[0]) 
-                //                  < activity.GPSRoute.               EntryDateTime(activity.GPSRoute[0])
-                //                 || activity.HeartRatePerMinuteTrack.EntryDateTime(activity.HeartRatePerMinuteTrack[activity.HeartRatePerMinuteTrack.Count - 1])
-                //                  > activity.GPSRoute.               EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1])))
             }
             return false;
         }
@@ -89,17 +107,22 @@ namespace MiscPlugin.Edit
         {
             ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
             DateTime currTime = info.ActualTrackStart;
-            DateTime lapTime = activity.Laps[0].StartTime;
-            if (0 < DateTime.Compare(currTime, lapTime))
+            DateTime manualTime = activity.StartTime;
+            if (activity.UseEnteredData && 0 < DateTime.Compare(currTime, manualTime))
             {
-                currTime = lapTime;
+                currTime = manualTime;
             }
-            lapTime = activity.StartTime;
-            if (activity.UseEnteredData && 0 < DateTime.Compare(currTime, lapTime))
+            if (activity.Laps != null && activity.Laps.Count > 0)
             {
-                currTime = lapTime;
+                //Laps are not part of the "track" information, must be checked separately
+                DateTime lapTime = activity.Laps[0].StartTime;
+                if (0 < DateTime.Compare(currTime, lapTime))
+                {
+                    currTime = lapTime;
+                }
             }
             
+            //When extending, use (0,ExtPoints) to set direction
             int ExtPoints = 3;
             if (ExtPoints > activity.GPSRoute.Count-1)
             {
@@ -110,15 +133,28 @@ namespace MiscPlugin.Edit
             DateTime endTime = activity.GPSRoute.EntryDateTime(activity.GPSRoute[i0]);
 
             IGPSRoute newRoute = new GPSRoute();
-            //Could add more points, but that will only make it difficult to edit
             TimeSpan gpsTspan = activity.GPSRoute.EntryDateTime(activity.GPSRoute[i1]).Subtract(endTime);
-
-            if (currTime  < endTime) {
+            if (gpsTspan.TotalSeconds <= 0) {
+                //No time set on GPS - use average speed
+                gpsTspan = TimeSpan.FromSeconds(info.Time.TotalSeconds / info.DistanceMeters
+                    * activity.GPSRoute[i0].Value.DistanceMetersToPoint(activity.GPSRoute[i1].Value));
+            }
+            if (MiscPlugin.Plugin.Verbose > 0)
+            {
+                activity.Notes += "ExtendGPS Start: " + currTime + " " + endTime + " " + gpsTspan + Environment.NewLine;
+            }
+            if (currTime < endTime)
+            {
                IGPSPoint gpsPt = new GPSPoint(
                    extrapollate(endTime.Subtract(currTime), gpsTspan, activity.GPSRoute[i0].Value.LatitudeDegrees, activity.GPSRoute[i1].Value.LatitudeDegrees),
                    extrapollate(endTime.Subtract(currTime), gpsTspan, activity.GPSRoute[i0].Value.LongitudeDegrees, activity.GPSRoute[i1].Value.LongitudeDegrees),
                    activity.GPSRoute[i0].Value.ElevationMeters);
                newRoute.Add(currTime, gpsPt);
+               if (activity.UseEnteredData)
+               {
+                   activity.StartTime = currTime;
+               }
+ 
             }
 
             for (; i0 < activity.GPSRoute.Count; i0++)
@@ -127,23 +163,39 @@ namespace MiscPlugin.Edit
             }
 
             endTime = info.ActualTrackEnd;
-            TimeSpan ltspan = new TimeSpan(activity.Laps[activity.Laps.Count - 1].TotalTime.Seconds);
-            lapTime = activity.Laps[activity.Laps.Count - 1].StartTime.Add(ltspan);
-            if (0 > DateTime.Compare(endTime, lapTime))
+            manualTime = activity.StartTime.Add(activity.TotalTimeEntered);
+            if (0 > DateTime.Compare(endTime, manualTime) && activity.UseEnteredData)
             {
-                endTime = lapTime;
+                endTime = manualTime;
             }
-            lapTime = activity.StartTime.Add(activity.TotalTimeEntered);
-            if (0 > DateTime.Compare(endTime, lapTime) && activity.UseEnteredData)
+            if (activity.Laps != null && activity.Laps.Count > 0)
             {
-                endTime = lapTime;
+                if (activity.Laps != null && activity.Laps.Count > 0)
+                {
+                    TimeSpan ltspan = new TimeSpan(activity.Laps[activity.Laps.Count - 1].TotalTime.Seconds);
+                    DateTime lapTime = activity.Laps[activity.Laps.Count - 1].StartTime.Add(ltspan);
+                    if (0 > DateTime.Compare(endTime, lapTime))
+                    {
+                        endTime = lapTime;
+                    }
+                }
             }
 
             currTime = activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1]);
             i1 = activity.GPSRoute.Count - 1;
             i0 = i1 - ExtPoints;
             gpsTspan = currTime.Subtract(activity.GPSRoute.EntryDateTime(activity.GPSRoute[i0]));
-            
+            if (gpsTspan.TotalSeconds <= 0)
+            {
+                //No time set on GPS - use average speed
+                gpsTspan = TimeSpan.FromSeconds(info.Time.TotalSeconds / info.DistanceMeters 
+                    * activity.GPSRoute[i0].Value.DistanceMetersToPoint(activity.GPSRoute[i1].Value));
+            }
+
+            if (MiscPlugin.Plugin.Verbose > 0)
+            {
+                activity.Notes += "ExtendGPS End: " + currTime + " " + endTime + " " + gpsTspan + Environment.NewLine;
+            }
             if (currTime < endTime)
             {
                IGPSPoint gpsPt = new GPSPoint(

@@ -92,7 +92,7 @@ namespace MiscPlugin.Export
                 //TODO: Not yet implemented
                 string tmpDir = System.Environment.GetEnvironmentVariable("TEMP");
                 string ctDir = System.Environment.GetEnvironmentVariable("TEMP");
-                //xxx string ctDir = "C:\\Program Files\\CompareTracks\\Db\\";
+                //string ctDir = "C:\\Program Files\\CompareTracks\\Db\\";
                 //int ctActNo = 1;
                 //int ctFileNo = 1;
                 String ctTrkDb = ctDir + "MsTrip.txt";
@@ -111,7 +111,7 @@ namespace MiscPlugin.Export
 
                 catch
                 {
-                    //xxx addListItem("Cannot find CompareTracks DB file:" + ctTrkDb);
+                    //addListItem("Cannot find CompareTracks DB file:" + ctTrkDb);
                     //               string pattern = 
                     //	@"^(?<ctactno>.{5})";
                     //	Match ma = re.Match(sr.ReadLine());
@@ -123,7 +123,7 @@ namespace MiscPlugin.Export
                 finally
                 {
                     reader.Close();
-                    //xxx parse for last line
+                    //parse for last line
                 }
                 string[] files = Directory.GetFiles(ctDir + "Track\\track*.txt");
                 foreach (string i in files)
