@@ -46,7 +46,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>C:\Documents and Settings\All Users\Application Data\ZoneFiveSoftware\SportTracks\2.0\Plugins\Update\d8bd1522-d1b0-11db-9705-005056c00008\MiscPlugin\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -105,14 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataImport\ExtendDataImporters.cs" />
-<<<<<<< .mine
-    <Compile Include="Edit\AdjustPausesToDevice.cs" />
-    <Compile Include="Edit\AdjustPausesToDeviceAction.cs" />
-    <Compile Include="Edit\AdjustPausesToDeviceExtendActions.cs" />
-    <Compile Include="Edit\FixHR.cs" />
-    <Compile Include="Edit\FixHRAction.cs" />
-    <Compile Include="Edit\FixHRExtendActions.cs" />
-=======
     <Compile Include="Edit\AdjustPausesToDevice.cs" />
     <Compile Include="Edit\AdjustPausesToDeviceAction.cs" />
     <Compile Include="Edit\AdjustPausesToDeviceExtendActions.cs" />
@@ -120,7 +112,6 @@
     <Compile Include="Edit\FixHR.cs" />
     <Compile Include="Edit\FixHRAction.cs" />
     <Compile Include="Edit\FixHRExtendActions.cs" />
->>>>>>> .r31
     <Compile Include="Edit\ElevationToGPS.cs" />
     <Compile Include="Edit\ElevationToGPSAction.cs" />
     <Compile Include="Edit\ElevationToGPSExtendActions.cs" />
@@ -202,8 +193,17 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>set st2plgoutdir=g:\Users\go\dev\web
-set st2plgFile=%25st2plgOutdir%25\$(ProjectName)-0.2.x.st2plugin
+    <PostBuildEvent>set guid=d8bd1522-d1b0-11db-9705-005056c00008
+set st2plgoutdir=g:\Users\go\dev\web
+
+set StTarget="%25ALLUSERSPROFILE%25\ZoneFiveSoftware\SportTracks\2.0\Plugins\Update\%25guid%25\$(ProjectName)"
+set st2plgFile="%25st2plgOutdir%25\$(ProjectName)-0.2.x.st2plugin"
+set 7z=%25programfiles%25\7-zip\7z
+
+REM XCOPY depreciated in Vista, use for XP compatibility
+mkdir %25StTarget%25
+xcopy  $(TargetDir)*.* "%25StTarget%25" /I/Y/Q/E &lt;NUL:
+
 del %25st2plgFile%25
 rem if $(ConfigurationName)==Release 
 "%25programfiles%25\7-zip\7z" a -r -tzip %25st2plgFile%25  "$(TargetDir)"  -x!*.st2plugin -x!*.tmp -x!*.pdb -x!$(ProjectName).xml

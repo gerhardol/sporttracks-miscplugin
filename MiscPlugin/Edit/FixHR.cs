@@ -55,8 +55,9 @@ namespace MiscPlugin.Edit
             ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
             bool change = false;
 
-            INumericTimeDataSeries ntrack = new NumericTimeDataSeries();;
+            INumericTimeDataSeries ntrack = new NumericTimeDataSeries();
             INumericTimeDataSeries otrack = activity.HeartRatePerMinuteTrack;
+            int FixHRCheckSeconds = MiscPlugin.Plugin.FixHRCheckSeconds;
             if (DateTime.Compare(info.ActualTrackStart, DateTime.MinValue) > 0
                 && DateTime.Compare(info.ActualTrackStart, otrack.StartTime) < 0)
             {
@@ -67,23 +68,51 @@ namespace MiscPlugin.Edit
                 }
                 change = true;
                 ntrack.Add(info.ActualTrackStart, MiscPlugin.Plugin.FixHRStartHR);
+                FixHRCheckSeconds -= (int)otrack.StartTime.Subtract(info.ActualTrackStart).TotalSeconds;
             }
             int i;
             int n = 0;
-            for (i = 0; i < otrack.Count; i++){
-                if (otrack[i].ElapsedSeconds > MiscPlugin.Plugin.FixHRCheckSeconds 
-                    || otrack[i].Value < MiscPlugin.Plugin.FixHRTruncateHR)
+            int m = 0;
+            for (i = 0; i < otrack.Count; i++)
+            {
+                if ((otrack[i].Value <= Plugin.GetApplication().Logbook.Athlete.InfoEntries.LastEntryAsOfDate(activity.StartTime).MaximumHeartRatePerMinute
+                    && otrack[i].Value >= Plugin.GetApplication().Logbook.Athlete.InfoEntries.LastEntryAsOfDate(activity.StartTime).RestingHeartRatePerMinute)
+                    &&
+                    (otrack[i].ElapsedSeconds > FixHRCheckSeconds
+                    || otrack[i].Value < MiscPlugin.Plugin.FixHRTruncateHR))
                 {
-                    ntrack.Add(otrack.EntryDateTime(otrack[i]),otrack[i].Value);
-                } else {
-                    n++;
+                    ntrack.Add(otrack.EntryDateTime(otrack[i]), otrack[i].Value);
                 }
-            }
+                else
+                {
+                    //Special handling if dropping first point
+                    if (i == 0 && !change && otrack[i].ElapsedSeconds == 0)
+                    {
+                        ntrack.Add(info.ActualTrackStart, MiscPlugin.Plugin.FixHRStartHR);
+                    }
+                 //For verbose, track which of the conditions occurred
+                    if (otrack[i].ElapsedSeconds <= FixHRCheckSeconds
+                      && otrack[i].Value >= MiscPlugin.Plugin.FixHRTruncateHR)
+                    {
+                        n++;
+                    }else{
+                        m++;
+                    }
+                }
+                
+           }
             if (n > 0 && MiscPlugin.Plugin.Verbose > 0)
             {
                 activity.Notes += "Removed HR: " + n + " over " + MiscPlugin.Plugin.FixHRTruncateHR + Environment.NewLine;
             }
-            if (change || n > 0)
+            if (m > 0 && MiscPlugin.Plugin.Verbose > 0)
+            {
+                activity.Notes += "Removed HR: " + m + " outside rest/max "
+                    + Plugin.GetApplication().Logbook.Athlete.InfoEntries.LastEntryAsOfDate(activity.StartTime).RestingHeartRatePerMinute + "/"
+                    + Plugin.GetApplication().Logbook.Athlete.InfoEntries.LastEntryAsOfDate(activity.StartTime).MaximumHeartRatePerMinute 
+                    + Environment.NewLine;
+            }
+            if (change || m > 0)
             {
                 activity.HeartRatePerMinuteTrack = ntrack;
                 ActivityInfoCache.Instance.ClearInfo(activity);
