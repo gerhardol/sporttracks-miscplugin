@@ -123,21 +123,11 @@ namespace MiscPlugin.DataImport
                     IActivity activity = (IActivity)item;
 
                     PostImport(activity);
-<<<<<<< .mine
                     if (MiscPlugin.Plugin.FixHRAtImport)
                     {
-                        if (FixHR.isEnabled(activity))
+                        if (FixNaN.isEnabled(activity))
                         {
-                            FixHR tmp = new FixHR(activity);
-                            tmp.Run();
-                        }
-                    }
-=======
-                    if (MiscPlugin.Plugin.FixHRAtImport)
-                    {
-                        if (FixHR.isEnabled(activity))
-                        {
-                            FixHR tmp = new FixHR(activity);
+                            FixNaN tmp = new FixNaN(activity);
                             tmp.Run();
                         }
                     }
@@ -148,7 +138,6 @@ namespace MiscPlugin.DataImport
                             tmp.Run();
                         }
                     }
->>>>>>> .r31
                 }
             }
             foreach (object item in updated)

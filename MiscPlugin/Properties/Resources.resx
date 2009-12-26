@@ -210,4 +210,7 @@
   <data name="Edit_FixHR_Text" xml:space="preserve">
     <value>Fix initial HR spikes</value>
   </data>
+  <data name="Edit_FixNaN_Text" xml:space="preserve">
+    <value>Fix NaN in Tracks</value>
+  </data>
 </root>

@@ -25,7 +25,7 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
-    class AdjustPausesToDeviceExtendAction : IExtendActivityEditActions
+    class AdjustPausesToDeviceExtendActions : IExtendActivityEditActions
     {
         #region IExtendActivityEditActions Members
 

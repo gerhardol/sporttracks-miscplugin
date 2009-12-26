@@ -90,6 +90,9 @@ namespace MiscPlugin
             attr = pluginNode.GetAttribute(xmlTags.FixHRCheckSeconds);
             if (attr.Length > 0) { FixHRCheckSeconds = XmlConvert.ToInt16(attr); }
 
+            attr = pluginNode.GetAttribute(xmlTags.FixNaNEditMenu);
+            if (attr.Length > 0) { FixNaNEditMenu = XmlConvert.ToBoolean(attr); }
+
             attr = pluginNode.GetAttribute(xmlTags.InsertPausesAtImport);
             if (attr.Length > 0) { InsertPausesAtImport = XmlConvert.ToBoolean(attr); }
             attr = pluginNode.GetAttribute(xmlTags.InsertPausesEditMenu);
@@ -114,16 +117,11 @@ namespace MiscPlugin
             attr = pluginNode.GetAttribute(xmlTags.SetTimeGPSEditMenu);
             if (attr.Length > 0) { SetTimeGPSEditMenu = XmlConvert.ToBoolean(attr); }
 
-<<<<<<< .mine
-            attr = pluginNode.GetAttribute(xmlTags.Verbose);
-            if (attr.Length > 0) { Verbose = XmlConvert.ToInt16(attr); }
-=======
             attr = pluginNode.GetAttribute(xmlTags.SetUseEnteredDataAtImport);
             if (attr.Length > 0) { SetUseEnteredDataAtImport = XmlConvert.ToBoolean(attr); }
 
             attr = pluginNode.GetAttribute(xmlTags.Verbose);
             if (attr.Length > 0) { Verbose = XmlConvert.ToInt16(attr); }
->>>>>>> .r31
         }
 
         public void WriteOptions(XmlDocument xmlDoc, XmlElement pluginNode)
@@ -144,6 +142,7 @@ namespace MiscPlugin
             pluginNode.SetAttribute(xmlTags.FixHRStartHR, XmlConvert.ToString(FixHRStartHR));
             pluginNode.SetAttribute(xmlTags.FixHRTruncateHR, XmlConvert.ToString(FixHRTruncateHR));
             pluginNode.SetAttribute(xmlTags.FixHRCheckSeconds, XmlConvert.ToString(FixHRCheckSeconds));
+            pluginNode.SetAttribute(xmlTags.FixNaNEditMenu, XmlConvert.ToString(FixNaNEditMenu));
             pluginNode.SetAttribute(xmlTags.InsertPausesAtImport, XmlConvert.ToString(InsertPausesAtImport));
             pluginNode.SetAttribute(xmlTags.InsertPausesEditMenu, XmlConvert.ToString(InsertPausesEditMenu));
             pluginNode.SetAttribute(xmlTags.InsertPausesWhenGPSdifferMinSeconds, XmlConvert.ToString(InsertPausesWhenGPSdifferMinSeconds));
@@ -154,14 +153,9 @@ namespace MiscPlugin
             pluginNode.SetAttribute(xmlTags.RemoveIdenticalGPSEditMenu, XmlConvert.ToString(RemoveIdenticalGPSEditMenu));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSAtImport, XmlConvert.ToString(SetTimeGPSAtImport));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSEditMenu, XmlConvert.ToString(SetTimeGPSEditMenu));
-<<<<<<< .mine
-
-            pluginNode.SetAttribute(xmlTags.Verbose, XmlConvert.ToString(Verbose));
-=======
             pluginNode.SetAttribute(xmlTags.SetUseEnteredDataAtImport, XmlConvert.ToString(SetUseEnteredDataAtImport));
 
             pluginNode.SetAttribute(xmlTags.Verbose, XmlConvert.ToString(Verbose));
->>>>>>> .r31
         }
         #endregion
         
@@ -172,7 +166,7 @@ namespace MiscPlugin
 
         #region Private members
         private static IApplication application;
-<<<<<<< .mine
+
         public static bool AdjustPausesToDeviceAtImport = false;
         public static bool AdjustPausesToDeviceEditMenu = false;
         public static bool DetectRestLapsAtImport = false;
@@ -189,33 +183,7 @@ namespace MiscPlugin
         public static int FixHRStartHR = 100; //Only changed in xml file
         public static int FixHRCheckSeconds = 500; //Only changed in xml file
         public static int FixHRTruncateHR = 150; //Only changed in xml file
-        public static bool InsertPausesAtImport = false;
-        public static bool InsertPausesEditMenu = false;
-        public static int InsertPausesWhenGPSdifferMinSeconds = 180;
-        public static int InsertPausesAdjacentCheckSeconds = 3; //Only changed in xml file
-        public static int InsertPausesGPSOffsetSeconds = 1; //Only changed in xml file
-        public static bool Laps2CadenceEditMenu = false; //Only changed in xml file
-        public static bool RemoveIdenticalGPSAtImport = false;
-        public static bool RemoveIdenticalGPSEditMenu = false;
-        public static bool SetTimeGPSAtImport = false;
-        public static bool SetTimeGPSEditMenu = false;
-=======
-        public static bool AdjustPausesToDeviceAtImport = false;
-        public static bool AdjustPausesToDeviceEditMenu = false;
-        public static bool DetectRestLapsAtImport = false;
-        public static bool DetectRestLapsEditMenu = false;
-        public static int DetectRestLapsAlternativeAlgorithm = 0; //Only changed in xml file
-        public static int DetectRestLapsLapDistance = 1000; //Only changed in xml file
-        public static float DetectRestLapsSpeedFactor = 1.1F; //Only changed in xml file
-        public static bool ElevationToGPSAtImport = false;
-        public static bool ElevationToGPSEditMenu = false;
-        public static bool ExtendGPSAtImport = false;
-        public static bool ExtendGPSEditMenu = false;
-        public static bool FixHRAtImport = false;
-        public static bool FixHREditMenu = false;
-        public static int FixHRStartHR = 100; //Only changed in xml file
-        public static int FixHRCheckSeconds = 500; //Only changed in xml file
-        public static int FixHRTruncateHR = 150; //Only changed in xml file
+        public static bool FixNaNEditMenu = false;
         public static bool InsertPausesAtImport = false;
         public static bool InsertPausesEditMenu = false;
         public static int InsertPausesWhenGPSdifferMinSeconds = 180;
@@ -227,7 +195,6 @@ namespace MiscPlugin
         public static bool SetTimeGPSAtImport = false;
         public static bool SetTimeGPSEditMenu = false;
         public static bool SetUseEnteredDataAtImport = false;
->>>>>>> .r31
 
         public static int Verbose = 0;  //Only changed in xml file
         #endregion
@@ -245,19 +212,12 @@ namespace MiscPlugin
             public const string ElevationToGPSEditMenu = "ElevationToGPSEditMenu";
             public const string ExtendGPSAtImport = "ExtendGPSAtImport";
             public const string ExtendGPSEditMenu = "ExtendGPSEditMenu";
-<<<<<<< .mine
-            public const string FixHRAtImport = "FixHRAtImport";
-            public const string FixHREditMenu = "FixHRAtImport";
-            public const string FixHRStartHR = "FixHRStartHR";
-            public const string FixHRTruncateHR = "FixHRTruncateHR";
-            public const string FixHRCheckSeconds = "FixHRCheckSeconds";
-=======
             public const string FixHRAtImport = "FixHRAtImport";
             public const string FixHREditMenu = "FixHREditMenu";
             public const string FixHRStartHR = "FixHRStartHR";
             public const string FixHRTruncateHR = "FixHRTruncateHR";
             public const string FixHRCheckSeconds = "FixHRCheckSeconds";
->>>>>>> .r31
+            public const string FixNaNEditMenu = "FixNaNEditMenu";
             public const string InsertPausesAtImport = "InsertPausesAtImport";
             public const string InsertPausesEditMenu = "InsertPausesEditMenu";
             public const string InsertPausesWhenGPSdifferMinSeconds = "InsertPauseWhenGPSdifferMinSeconds";
@@ -268,14 +228,9 @@ namespace MiscPlugin
             public const string RemoveIdenticalGPSEditMenu = "RemoveIdenticalGPSEditMenu";
             public const string SetTimeGPSAtImport = "SetTimeGPSAtImport";
             public const string SetTimeGPSEditMenu = "SetTimeGPSEditMenu";
-<<<<<<< .mine
-
-            public const string Verbose = "Verbose";
-=======
             public const string SetUseEnteredDataAtImport = "SetUseEnteredDataAtImport";
 
             public const string Verbose = "Verbose";
->>>>>>> .r31
         }
         #region Utility
         public static DateTime Min(DateTime t1, DateTime t2)

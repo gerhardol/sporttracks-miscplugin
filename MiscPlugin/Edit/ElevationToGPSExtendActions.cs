@@ -25,7 +25,7 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
-    class ElevationToGPSExtendAction : IExtendActivityEditActions
+    class ElevationToGPSExtendActions : IExtendActivityEditActions
     {
         #region IExtendActivityEditActions Members
         IList<IAction> IExtendActivityEditActions.GetActions(IList<IActivity> activities)

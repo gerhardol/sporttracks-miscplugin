@@ -50,6 +50,11 @@
               Looks up a localized string similar to Fix initial HR spikes.
             </summary>
         </member>
+        <member name="P:MiscPlugin.Properties.Resources.Edit_FixNaN_Text">
+            <summary>
+              Looks up a localized string similar to Fix NaN in Tracks.
+            </summary>
+        </member>
         <member name="P:MiscPlugin.Properties.Resources.Edit_InsertPauses_Text">
             <summary>
               Looks up a localized string similar to Insert Pauses at GPS Gaps.

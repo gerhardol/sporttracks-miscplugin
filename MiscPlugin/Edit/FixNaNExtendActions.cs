@@ -25,32 +25,31 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
-    class MergeTrackExtendActions : IExtendActivityEditActions
+    class FixNaNExtendActions : IExtendActivityEditActions
     {
         #region IExtendActivityEditActions Members
 
         IList<IAction> IExtendActivityEditActions.GetActions(IList<IActivity> activities)
         {
             IList<IActivity> activities2 = new List<IActivity>();
-            if (!MiscPlugin.Plugin.DetectRestLapsEditMenu) return null;
 
+            if (!MiscPlugin.Plugin.FixHREditMenu) return null;
             foreach (IActivity activity in activities)
-                {
-                    if (!DetectRestLaps.isEnabled(activity)) continue;
-                    activities2.Add(activity);
+            {
+                activities2.Add(activity);
             }
             if (activities2.Count == 0) return null;
             return new IAction[] {
-                new DetectRestLapsAction(activities2)
+                new FixNaNAction(activities2)
             };
         }
 
         IList<IAction> IExtendActivityEditActions.GetActions(IActivity activity)
         {
-            if (!MiscPlugin.Plugin.DetectRestLapsEditMenu) return null;
-
+            if (!MiscPlugin.Plugin.FixHREditMenu) return null;
+                
             return new IAction[] {
-                new DetectRestLapsAction(activity)
+                new FixNaNAction(activity)
             };
         }
         #endregion

@@ -108,10 +108,16 @@
     <Compile Include="Edit\AdjustPausesToDevice.cs" />
     <Compile Include="Edit\AdjustPausesToDeviceAction.cs" />
     <Compile Include="Edit\AdjustPausesToDeviceExtendActions.cs" />
-    <Compile Include="Edit\SetUseEnteredData.cs" />
+    <Compile Include="Edit\ExtendGPS.cs" />
+    <Compile Include="Edit\ExtendGPSAction.cs" />
+    <Compile Include="Edit\ExtendGPSExtendActions.cs" />
     <Compile Include="Edit\FixHR.cs" />
     <Compile Include="Edit\FixHRAction.cs" />
     <Compile Include="Edit\FixHRExtendActions.cs" />
+    <Compile Include="Edit\SetUseEnteredData.cs" />
+    <Compile Include="Edit\FixNaN.cs" />
+    <Compile Include="Edit\FixNaNAction.cs" />
+    <Compile Include="Edit\FixNaNExtendActions.cs" />
     <Compile Include="Edit\ElevationToGPS.cs" />
     <Compile Include="Edit\ElevationToGPSAction.cs" />
     <Compile Include="Edit\ElevationToGPSExtendActions.cs" />
@@ -129,9 +135,6 @@
     <Compile Include="Edit\DetectRestLaps.cs" />
     <Compile Include="Edit\DetectRestLapsAction.cs" />
     <Compile Include="Edit\DetectRestLapsExtendActions.cs" />
-    <Compile Include="Edit\ExtendGPSTrack.cs" />
-    <Compile Include="Edit\ExtendGPSTrackAction.cs" />
-    <Compile Include="Edit\ExtendGPSTrackExtendActions.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

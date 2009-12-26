@@ -25,7 +25,7 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
-    class FixHRExtendAction : IExtendActivityEditActions
+    class FixHRExtendActions : IExtendActivityEditActions
     {
         #region IExtendActivityEditActions Members
 
