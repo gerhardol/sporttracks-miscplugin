@@ -213,4 +213,7 @@
   <data name="Edit_FixNaN_Text" xml:space="preserve">
     <value>Fix NaN in Tracks</value>
   </data>
+  <data name="UI_Activities_PageControl_tmp_Text" xml:space="preserve">
+    <value>tmp</value>
+  </data>
 </root>

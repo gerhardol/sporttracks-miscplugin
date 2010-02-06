@@ -37,7 +37,7 @@ namespace MiscPlugin.DataImport
             {
                 if (DetectRestLaps.isEnabled(activity))
                 {
-                    DetectRestLaps tmp = new DetectRestLaps(activity);
+                    DetectRestLaps tmp = new DetectRestLaps(activity, 1);
                     tmp.Run();
                 }
             }

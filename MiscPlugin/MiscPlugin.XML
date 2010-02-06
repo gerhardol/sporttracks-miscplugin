@@ -4,6 +4,23 @@
         <name>MiscPlugin</name>
     </assembly>
     <members>
+        <member name="F:MiscPlugin.UI.Activities.EditTrackInfoPageControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MiscPlugin.UI.Activities.EditTrackInfoPageControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MiscPlugin.UI.Activities.EditTrackInfoPageControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:MiscPlugin.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -78,6 +95,11 @@
         <member name="P:MiscPlugin.Properties.Resources.Edit_SetTimeGPS_Text">
             <summary>
               Looks up a localized string similar to Set Time/Pace on GPS Points.
+            </summary>
+        </member>
+        <member name="P:MiscPlugin.Properties.Resources.UI_Activities_PageControl_tmp_Text">
+            <summary>
+              Looks up a localized string similar to tmp.
             </summary>
         </member>
         <member name="P:MiscPlugin.Properties.Resources.UI_Settings_MiscPluginPage_Title">

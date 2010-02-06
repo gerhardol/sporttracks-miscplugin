@@ -169,6 +169,15 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to tmp.
+        /// </summary>
+        internal static string UI_Activities_PageControl_tmp_Text {
+            get {
+                return ResourceManager.GetString("UI_Activities_PageControl_tmp_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MiscPlugin.
         /// </summary>
         internal static string UI_Settings_MiscPluginPage_Title {

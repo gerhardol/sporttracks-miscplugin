@@ -33,7 +33,7 @@ namespace MiscPlugin.Edit
         {
             IList<IActivity> activities2 = new List<IActivity>();
 
-            if (!MiscPlugin.Plugin.FixHREditMenu) return null;
+            if (!MiscPlugin.Plugin.FixNaNEditMenu) return null;
             foreach (IActivity activity in activities)
             {
                 activities2.Add(activity);
@@ -46,7 +46,7 @@ namespace MiscPlugin.Edit
 
         IList<IAction> IExtendActivityEditActions.GetActions(IActivity activity)
         {
-            if (!MiscPlugin.Plugin.FixHREditMenu) return null;
+            if (!MiscPlugin.Plugin.FixNaNEditMenu) return null;
                 
             return new IAction[] {
                 new FixNaNAction(activity)

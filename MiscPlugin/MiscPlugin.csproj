@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <StartAction>Program</StartAction>
-    <StartProgram> C:\Program Files\Zone Five Software\SportTracks 2.0\SportTracks.exe</StartProgram>
+    <StartProgram> C:\Program Files\Zone Five Software\SportTracks 2.1\SportTracks.exe</StartProgram>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
@@ -17,6 +17,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,7 +30,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -41,7 +41,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\MiscPlugin.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,7 +51,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>MiscPlugin.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Data, Version=2.1.3326.18908, Culture=neutral, processorArchitecture=MSIL">
@@ -98,6 +100,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Activities\EditTrackInfoPageControl.resx">
+      <DependentUpon>EditTrackInfoPageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Settings\MiscPluginPageControl.resx">
       <DependentUpon>MiscPluginPageControl.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -140,6 +145,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Activities\EditTrackDetailPages.cs" />
+    <Compile Include="UI\Activities\EditTrackInfoPage.cs" />
+    <Compile Include="UI\Activities\EditTrackInfoPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Activities\EditTrackInfoPageControl.designer.cs">
+      <DependentUpon>EditTrackInfoPageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Settings\MiscPluginPage.cs" />
     <Compile Include="UI\Settings\MiscPluginExtendSettingsPages.cs" />
     <Compile Include="UI\Settings\MiscPluginPageControl.cs">
@@ -150,6 +163,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
@@ -164,6 +182,11 @@
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
       <Visible>False</Visible>
@@ -197,6 +220,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>set guid=d8bd1522-d1b0-11db-9705-005056c00008
+REM To create a .st2plugin, create environment variable (or set it below)
 set st2plgoutdir=g:\Users\go\dev\web
 
 set StTarget="%25ALLUSERSPROFILE%25\ZoneFiveSoftware\SportTracks\2.0\Plugins\Update\%25guid%25\$(ProjectName)"
@@ -207,9 +231,12 @@ REM XCOPY depreciated in Vista, use for XP compatibility
 mkdir %25StTarget%25
 xcopy  $(TargetDir)*.* "%25StTarget%25" /I/Y/Q/E &lt;NUL:
 
+if "%25st2plgoutdir%25"=="" GOTO END
+if not EXIST "%25st2plgoutdir%25" GOTO END
+if not "$(ConfigurationName)"=="Release" GOTO END 
 del %25st2plgFile%25
-rem if $(ConfigurationName)==Release 
-"%25programfiles%25\7-zip\7z" a -r -tzip %25st2plgFile%25  "$(TargetDir)"  -x!*.st2plugin -x!*.tmp -x!*.pdb -x!$(ProjectName).xml
-</PostBuildEvent>
+"%25programfiles%25\7-zip\7z" a -r -tzip %25st2plgFile%25  "$(TargetDir)*"  -x!*.st2plugin -x!*.tmp -x!*.pdb -x!$(ProjectName).xml
+
+:END</PostBuildEvent>
   </PropertyGroup>
 </Project>

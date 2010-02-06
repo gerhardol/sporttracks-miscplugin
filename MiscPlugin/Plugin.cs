@@ -49,6 +49,11 @@ namespace MiscPlugin
             set { application = value; }
         }
 
+        public static IApplication GetApplication()
+        {
+            return application;
+        }
+
         public void ReadOptions(XmlDocument xmlDoc, XmlNamespaceManager nsmgr, XmlElement pluginNode)
         {
             String attr;
@@ -66,6 +71,8 @@ namespace MiscPlugin
             if (attr.Length > 0) { DetectRestLapsAlternativeAlgorithm = XmlConvert.ToInt16(attr); }
             attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsLapDistance);
             if (attr.Length > 0) { DetectRestLapsLapDistance = XmlConvert.ToInt16(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsSlowSpeedFactor);
+            if (attr.Length > 0) { DetectRestLapsSlowSpeedFactor = (float)XmlConvert.ToDouble(attr); }
             attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsSpeedFactor);
             if (attr.Length > 0) { DetectRestLapsSpeedFactor = (float)XmlConvert.ToDouble(attr); }
 
@@ -132,6 +139,7 @@ namespace MiscPlugin
             pluginNode.SetAttribute(xmlTags.DetectRestLapsEditMenu, XmlConvert.ToString(DetectRestLapsEditMenu));
             pluginNode.SetAttribute(xmlTags.DetectRestLapsAlternativeAlgorithm, XmlConvert.ToString(DetectRestLapsAlternativeAlgorithm));
             pluginNode.SetAttribute(xmlTags.DetectRestLapsLapDistance, XmlConvert.ToString(DetectRestLapsLapDistance));
+            pluginNode.SetAttribute(xmlTags.DetectRestLapsSlowSpeedFactor, XmlConvert.ToString(DetectRestLapsSlowSpeedFactor));
             pluginNode.SetAttribute(xmlTags.DetectRestLapsSpeedFactor, XmlConvert.ToString(DetectRestLapsSpeedFactor));
             pluginNode.SetAttribute(xmlTags.ElevationToGPSAtImport, XmlConvert.ToString(ElevationToGPSAtImport));
             pluginNode.SetAttribute(xmlTags.ElevationToGPSEditMenu, XmlConvert.ToString(ElevationToGPSEditMenu));
@@ -159,11 +167,6 @@ namespace MiscPlugin
         }
         #endregion
         
-        public static IApplication GetApplication()
-        {
-            return application;
-        }
-
         #region Private members
         private static IApplication application;
 
@@ -173,6 +176,7 @@ namespace MiscPlugin
         public static bool DetectRestLapsEditMenu = false;
         public static int DetectRestLapsAlternativeAlgorithm = 0; //Only changed in xml file
         public static int DetectRestLapsLapDistance = 1000; //Only changed in xml file
+        public static float DetectRestLapsSlowSpeedFactor = 2F; //Only changed in xml file
         public static float DetectRestLapsSpeedFactor = 1.1F; //Only changed in xml file
         public static bool ElevationToGPSAtImport = false;
         public static bool ElevationToGPSEditMenu = false;
@@ -207,7 +211,8 @@ namespace MiscPlugin
             public const string DetectRestLapsEditMenu = "DetectRestLapsEditMenu";
             public const string DetectRestLapsAlternativeAlgorithm = "DetectRestLapsAlternativeAlgorithm";
             public const string DetectRestLapsLapDistance = "DetectRestLapsLapDistance";
-            public const string DetectRestLapsSpeedFactor = "DetectRestLapsSpeedFactor";
+            public const string DetectRestLapsSlowSpeedFactor = "DetectRestLapsSlowSpeedFactor";
+            public const string DetectRestLapsSpeedFactor     = "DetectRestLapsSpeedFactor";
             public const string ElevationToGPSAtImport = "ElevationToGPSAtImport";
             public const string ElevationToGPSEditMenu = "ElevationToGPSEditMenu";
             public const string ExtendGPSAtImport = "ExtendGPSAtImport";

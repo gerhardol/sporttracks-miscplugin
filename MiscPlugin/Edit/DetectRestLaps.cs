@@ -37,21 +37,34 @@ namespace MiscPlugin.Edit
         {
             this.activity = activity;
         }
+        public DetectRestLaps(IActivity activity, int checkType)
+        {
+            this.checkType = checkType;
+            this.activity = activity;
+        }
         public static bool isEnabled(IActivity activity)
         {
-            if (activity != null
-                && activity.Laps.Count > 1
-                && (activity.Laps[0].Rest == false 
-                   || activity.Laps[activity.Laps.Count-1].Rest == false))
+            if (activity != null && activity.Laps != null && activity.Laps.Count > 1)
             {
                 return true;
             }
             return false;
         }
+
         public int Run() 
         {
+            if (checkType == 1 && (activity.Laps[0].Rest == true
+               || activity.Laps[activity.Laps.Count - 1].Rest == true))
+            {
+                //Purge update in certain situations, do not slow down Edit
+                //(should be all laps)
+                return 1;
+            }
+
             ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
             bool update = false;
+            String tmpNotes = "";
+
             //Two warmup laps
             if ((info.RecordedLapDetailInfo[0].LapDistanceMeters + info.RecordedLapDetailInfo[1].LapDistanceMeters)
             < 2 * MiscPlugin.Plugin.DetectRestLapsLapDistance
@@ -91,6 +104,25 @@ namespace MiscPlugin.Edit
                 activity.Laps[activity.Laps.Count - 1].Rest = true;
                 update = true;
             }
+            //Slooow laps
+            for (int i = 0; i < activity.Laps.Count; i++)
+            {
+                if (MiscPlugin.Plugin.Verbose > 999)
+                {
+                    activity.Notes += i + ": " + MiscPlugin.Plugin.DetectRestLapsSlowSpeedFactor
+                  * info.RecordedLapDetailInfo[i].LapDistanceMeters / activity.Laps[i].TotalTime.TotalSeconds + " "
+                  + activity.TotalDistanceMetersEntered / activity.TotalTimeEntered.TotalSeconds + Environment.NewLine;
+                }
+
+                if (MiscPlugin.Plugin.DetectRestLapsSlowSpeedFactor
+                * info.RecordedLapDetailInfo[i].LapDistanceMeters / activity.Laps[i].TotalTime.TotalSeconds
+                  < activity.TotalDistanceMetersEntered / activity.TotalTimeEntered.TotalSeconds)
+                {
+                    activity.Laps[i].Rest = true;
+                    tmpNotes += " Slow:" + i;
+                    update = true;
+                }
+            }
             if (update)
             {
                 //Need to manually set activity as updated to get ST noticing it
@@ -98,12 +130,14 @@ namespace MiscPlugin.Edit
                 if (MiscPlugin.Plugin.Verbose > 0)
                 {
                     activity.Notes += "DetectRestLaps set lap 0/1/last rest to " + activity.Laps[0].Rest + "  " + 
-                        activity.Laps[1].Rest + " " + activity.Laps[activity.Laps.Count - 1].Rest + Environment.NewLine;
+                        activity.Laps[1].Rest + " " + activity.Laps[activity.Laps.Count - 1].Rest
+                        + tmpNotes + Environment.NewLine;
                 }
             }
             return 0;
         }
 
         private IActivity activity = null;
+        private int checkType = 0;
     }
 }
