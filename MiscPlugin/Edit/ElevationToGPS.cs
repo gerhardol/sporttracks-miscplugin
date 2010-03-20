@@ -55,6 +55,10 @@ class ElevationToGPS
                 
         public int Run()
         {
+            if (!isEnabled(activity))
+            {
+                return 1;
+            }
             if (MiscPlugin.Plugin.Verbose > 0)
             {
                activity.Notes += "Applying Elevation Track to GPS elevation"+Environment.NewLine;

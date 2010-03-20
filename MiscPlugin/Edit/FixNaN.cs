@@ -52,6 +52,10 @@ namespace MiscPlugin.Edit
                 
         public int Run()
         {
+            if (!isEnabled(activity))
+            {
+                return 1;
+            }
             //Some Copy&Paste programming - this should be fixed soon anyway in the core program
             //The problem occurs after Edit->Data Tracks but is fixed at next startup
 

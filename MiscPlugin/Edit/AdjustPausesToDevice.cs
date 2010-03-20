@@ -52,7 +52,11 @@ namespace MiscPlugin.Edit
 
                 
         public int Run()
-        { 
+        {
+            if (!isEnabled(activity))
+            {
+                return 1;
+            }
             //Do not use stopped time while adjusting
             bool OriginalStoppedUse = activity.Category.UseParentSettings;
             float OriginalStoppedSpeed = activity.Category.StoppedMetersPerSecond;

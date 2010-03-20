@@ -52,6 +52,10 @@ namespace MiscPlugin.Edit
                 
         public int Run()
         {
+            if (!isEnabled(activity))
+            {
+                return 1;
+            }
             ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
             bool change = false;
 

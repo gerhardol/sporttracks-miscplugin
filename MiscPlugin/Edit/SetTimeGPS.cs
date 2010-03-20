@@ -37,10 +37,18 @@ class SetTimeGPS
     {
         return 1;
     }
+    public static bool isEnabled(IGPSRoute gpsRoute)
+    {
+        if (gpsRoute != null && gpsRoute.Count > 0)
+        {
+            return true;
+        }
+        return false;
+    }
     public static bool isEnabled(IActivity activity)
     {
         if (activity != null
-            && activity.GPSRoute != null && activity.GPSRoute.Count > 0
+            && isEnabled(activity.GPSRoute)
             && activity.TotalTimeEntered != null)
         {
             return true;
@@ -50,7 +58,7 @@ class SetTimeGPS
     public static bool isEnabled(IRoute route)
     {
         if (route != null
-            && route.GPSRoute != null && route.GPSRoute.Count > 0)
+            && isEnabled(route.GPSRoute))
         //Note: not gui modifyable right now
         //&& route.TotalTime)
         {
@@ -157,6 +165,10 @@ class SetTimeGPS
 
     public IGPSRoute getGPSRoute()
         {
+            if (!isEnabled(gpsRoute))
+            {
+                return gpsRoute;
+            }
             if (activity != null)
             {
                 ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);

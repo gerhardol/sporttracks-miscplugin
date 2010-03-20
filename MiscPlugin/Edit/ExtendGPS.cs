@@ -105,6 +105,10 @@ namespace MiscPlugin.Edit
         }
         public int Run() 
         {
+            if (!isEnabled(activity))
+            {
+                return 1;
+            }
             ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
             DateTime currTime = info.ActualTrackStart;
             DateTime manualTime = activity.StartTime;

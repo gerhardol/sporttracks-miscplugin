@@ -98,66 +98,69 @@ namespace MiscPlugin.Edit
         {
             foreach (IActivity activity in activities)
             {
-                IValueRangeSeries<DateTime> pauses = activity.TimerPauses;
-                IActivityLaps laps = activity.Laps;
-                INumericTimeDataSeries ntrack = new NumericTimeDataSeries();
-                int g;
-
-                if (activity.CadencePerMinuteTrack == null)
+                if (isEnabled(activity))
                 {
-                    activity.CadencePerMinuteTrack = new NumericTimeDataSeries();
-                }
+                    IValueRangeSeries<DateTime> pauses = activity.TimerPauses;
+                    IActivityLaps laps = activity.Laps;
+                    INumericTimeDataSeries ntrack = new NumericTimeDataSeries();
+                    int g;
 
-                for (g = 0; g < pauses.Count; g++)
-                {
-                    if (g > 0 && pauses[g - 1].Lower < pauses[g].Lower.Subtract(new TimeSpan(0, 0, 1))
-                        || activity.StartTime < pauses[g].Lower.Subtract(new TimeSpan(0, 0, 1)))
+                    if (activity.CadencePerMinuteTrack == null)
                     {
-                        activity.CadencePerMinuteTrack.Add(pauses[g].Lower.Subtract(new TimeSpan(0, 0, 1)), 0);
-                    }
-                    activity.CadencePerMinuteTrack.Add(pauses[g].Lower, 200);
-                    if (g < pauses.Count - 1 && pauses[g + 1].Lower > pauses[g].Lower.AddSeconds(1)
-                        || activity.GPSRoute != null && activity.GPSRoute.Count>= 0 && 
-                        activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count-1]) >
-                            pauses[g].Lower.AddSeconds(1))
-                    {
-                        activity.CadencePerMinuteTrack.Add(pauses[g].Lower.AddSeconds(1), 0);
+                        activity.CadencePerMinuteTrack = new NumericTimeDataSeries();
                     }
 
-                    if (g > 0 && pauses[g - 1].Upper < pauses[g].Upper.Subtract(new TimeSpan(0, 0, 1))
-                        || activity.StartTime < pauses[g].Upper.Subtract(new TimeSpan(0, 0, 1)))
+                    for (g = 0; g < pauses.Count; g++)
                     {
-                        activity.CadencePerMinuteTrack.Add(pauses[g].Upper.Subtract(new TimeSpan(0, 0, 1)), 0);
-                    }
-                    activity.CadencePerMinuteTrack.Add(pauses[g].Upper, 200);
-                    if (g < pauses.Count - 1 && pauses[g + 1].Upper > pauses[g].Upper.AddSeconds(1)
-                        || activity.GPSRoute != null && activity.GPSRoute.Count >= 0 &&
-                        activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1]) >
-                            pauses[g].Upper.AddSeconds(1))
-                    {
-                        activity.CadencePerMinuteTrack.Add(pauses[g].Upper.AddSeconds(1), 0);
-                    }
-                }
+                        if (g > 0 && pauses[g - 1].Lower < pauses[g].Lower.Subtract(new TimeSpan(0, 0, 1))
+                            || activity.StartTime < pauses[g].Lower.Subtract(new TimeSpan(0, 0, 1)))
+                        {
+                            activity.CadencePerMinuteTrack.Add(pauses[g].Lower.Subtract(new TimeSpan(0, 0, 1)), 0);
+                        }
+                        activity.CadencePerMinuteTrack.Add(pauses[g].Lower, 200);
+                        if (g < pauses.Count - 1 && pauses[g + 1].Lower > pauses[g].Lower.AddSeconds(1)
+                            || activity.GPSRoute != null && activity.GPSRoute.Count >= 0 &&
+                            activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1]) >
+                                pauses[g].Lower.AddSeconds(1))
+                        {
+                            activity.CadencePerMinuteTrack.Add(pauses[g].Lower.AddSeconds(1), 0);
+                        }
 
-                for (g = 0; g < laps.Count; g++)
-                {
-                    if (g > 0 && laps[g - 1].StartTime < laps[g].StartTime.Subtract(new TimeSpan(0, 0, 1)))
-                    {
-                        activity.CadencePerMinuteTrack.Add(laps[g].StartTime.Subtract(new TimeSpan(0, 0, 1)), 0);
+                        if (g > 0 && pauses[g - 1].Upper < pauses[g].Upper.Subtract(new TimeSpan(0, 0, 1))
+                            || activity.StartTime < pauses[g].Upper.Subtract(new TimeSpan(0, 0, 1)))
+                        {
+                            activity.CadencePerMinuteTrack.Add(pauses[g].Upper.Subtract(new TimeSpan(0, 0, 1)), 0);
+                        }
+                        activity.CadencePerMinuteTrack.Add(pauses[g].Upper, 200);
+                        if (g < pauses.Count - 1 && pauses[g + 1].Upper > pauses[g].Upper.AddSeconds(1)
+                            || activity.GPSRoute != null && activity.GPSRoute.Count >= 0 &&
+                            activity.GPSRoute.EntryDateTime(activity.GPSRoute[activity.GPSRoute.Count - 1]) >
+                                pauses[g].Upper.AddSeconds(1))
+                        {
+                            activity.CadencePerMinuteTrack.Add(pauses[g].Upper.AddSeconds(1), 0);
+                        }
                     }
-                    activity.CadencePerMinuteTrack.Add(laps[g].StartTime, 254);
-                    if (g < laps.Count - 1 && laps[g + 1].StartTime > laps[g].StartTime.AddSeconds(1))
+
+                    for (g = 0; g < laps.Count; g++)
                     {
-                        activity.CadencePerMinuteTrack.Add(laps[g].StartTime.AddSeconds(1), 0);
+                        if (g > 0 && laps[g - 1].StartTime < laps[g].StartTime.Subtract(new TimeSpan(0, 0, 1)))
+                        {
+                            activity.CadencePerMinuteTrack.Add(laps[g].StartTime.Subtract(new TimeSpan(0, 0, 1)), 0);
+                        }
+                        activity.CadencePerMinuteTrack.Add(laps[g].StartTime, 254);
+                        if (g < laps.Count - 1 && laps[g + 1].StartTime > laps[g].StartTime.AddSeconds(1))
+                        {
+                            activity.CadencePerMinuteTrack.Add(laps[g].StartTime.AddSeconds(1), 0);
+                        }
                     }
+                    //Fudge to get ST notice the update
+                    for (g = 0; g < activity.CadencePerMinuteTrack.Count; g++)
+                    {
+                        ntrack.Add(activity.CadencePerMinuteTrack.EntryDateTime(activity.CadencePerMinuteTrack[g]),
+                            activity.CadencePerMinuteTrack[g].Value);
+                    }
+                    activity.CadencePerMinuteTrack = ntrack;
                 }
-                //Fudge to get ST notice the update
-                for (g = 0; g < activity.CadencePerMinuteTrack.Count; g++)
-                {
-                    ntrack.Add(activity.CadencePerMinuteTrack.EntryDateTime(activity.CadencePerMinuteTrack[g]),
-                        activity.CadencePerMinuteTrack[g].Value);
-                }
-                activity.CadencePerMinuteTrack = ntrack;
             }
         }
 

@@ -54,6 +54,10 @@ namespace MiscPlugin.Edit
 
         public int Run()
         {
+            if (!isEnabled(activity))
+            {
+                return 1;
+            }
             IGPSRoute newRoute = new GPSRoute();
             int g;
             if (MiscPlugin.Plugin.Verbose > 0)

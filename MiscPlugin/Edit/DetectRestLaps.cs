@@ -53,8 +53,9 @@ namespace MiscPlugin.Edit
 
         public int Run() 
         {
-            if (checkType == 1 && (activity.Laps[0].Rest == true
-               || activity.Laps[activity.Laps.Count - 1].Rest == true))
+            if (!isEnabled(activity)
+                || checkType == 1 && (activity.Laps[0].Rest == true
+                || activity.Laps[activity.Laps.Count - 1].Rest == true))
             {
                 //Purge update in certain situations, do not slow down Edit
                 //(should be all laps)
