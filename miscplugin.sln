@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscPlugin", "MiscPlugin\MiscPlugin.csproj", "{7187C7CA-7E36-4F0F-8B83-09547D6FB626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsCorrectionPlugin", "GpsCorrectionPlugin\GpsCorrectionPlugin.csproj", "{1EBEC546-4E31-4819-B10E-E88AE751CDD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		ST2.1Debug|Any CPU = ST2.1Debug|Any CPU
+		ST2.1Release|Any CPU = ST2.1Release|Any CPU
+		ST3.0Debug|Any CPU = ST3.0Debug|Any CPU
+		ST3.0Release|Any CPU = ST3.0Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST2.1Release|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST3.0Debug|Any CPU.ActiveCfg = ST3.0Debug|Any CPU
+		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST3.0Release|Any CPU.ActiveCfg = ST3.0Release|Any CPU
+		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST2.1Release|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST3.0Debug|Any CPU.ActiveCfg = ST3.0Debug|Any CPU
+		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST3.0Release|Any CPU.ActiveCfg = ST3.0Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

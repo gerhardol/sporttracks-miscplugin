@@ -23,7 +23,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Collections;
 
-using ICSharpCode.SharpZipLib.GZip;
+//using ICSharpCode.SharpZipLib.GZip;
 
 using ZoneFiveSoftware.Common.Data;
 using ZoneFiveSoftware.Common.Data.Fitness;
