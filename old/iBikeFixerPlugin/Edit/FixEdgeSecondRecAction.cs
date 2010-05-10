@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007 Gerhard Olsson 
+Copyright (C) 2007, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -27,32 +27,36 @@ using ZoneFiveSoftware.Common.Data;
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
+#if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Util;
+#endif
 
-namespace MiscPlugin.Edit
+namespace IBikeFixerPlugin.Edit
 {
     class FixEdgeSecondRecAction : IAction
     {
+#if !ST_2_1
+        public FixEdgeSecondRecAction(IDailyActivityView view)
+        {
+            this.dailyView = view;
+        }
+        public FixEdgeSecondRecAction(IActivityReportsView view)
+        {
+            this.reportView = view;
+        }
+#endif
         public FixEdgeSecondRecAction(IList<IActivity> activities)
         {
-            if (this.activities == null)
+            if (this._activities == null)
             {
-                this.activities = activities;
+                this._activities = activities;
             } else {
                 foreach (IActivity activity in activities)
                 {
-                    this.activities.Add(activity);
+                    this._activities.Add(activity);
                 }
             }
        }
-        public FixEdgeSecondRecAction(IActivity activity)
-        {
-            if (this.activities == null)
-            {
-                this.activities = new List<IActivity>();
-            }
-            this.activities.Add(activity);
-        }
-
         public static bool isEnabled(IActivity activity)
         {
             if (activity != null
@@ -92,6 +96,13 @@ namespace MiscPlugin.Edit
             get { return null; }
         }
 
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
         public void Refresh()
         {
         }
@@ -100,22 +111,25 @@ namespace MiscPlugin.Edit
         {
             foreach (IActivity activity in activities)
             {
-                int g;
-
-                for (g = 1; g < activity.GPSRoute.Count-1; g++)
+                if (isEnabled(activity))
                 {
-                    if (   Math.Abs(activity.GPSRoute[g-1].Value.ElevationMeters - activity.GPSRoute[g+1].Value.ElevationMeters)<0.1
-                        && Math.Abs(activity.GPSRoute[g-1].Value.ElevationMeters - activity.GPSRoute[g].Value.ElevationMeters)<=1
-                        && (activity.GPSRoute[g+1].ElapsedSeconds - activity.GPSRoute[g-1].ElapsedSeconds) < 2.1)
+                    int g;
+
+                    for (g = 1; g < activity.GPSRoute.Count - 1; g++)
                     {
-                        //activity.GPSRoute[g].Value.ElevationMeters = activity.GPSRoute[g-1].Value.ElevationMeters;
-                            IGPSPoint p = new GPSPoint( activity.GPSRoute[g].Value.LatitudeDegrees,
+                        if (Math.Abs(activity.GPSRoute[g - 1].Value.ElevationMeters - activity.GPSRoute[g + 1].Value.ElevationMeters) < 0.1
+                            && Math.Abs(activity.GPSRoute[g - 1].Value.ElevationMeters - activity.GPSRoute[g].Value.ElevationMeters) <= 1
+                            && (activity.GPSRoute[g + 1].ElapsedSeconds - activity.GPSRoute[g - 1].ElapsedSeconds) < 2.1)
+                        {
+                            //activity.GPSRoute[g].Value.ElevationMeters = activity.GPSRoute[g-1].Value.ElevationMeters;
+                            IGPSPoint p = new GPSPoint(activity.GPSRoute[g].Value.LatitudeDegrees,
                                 activity.GPSRoute[g].Value.LongitudeDegrees,
                                 activity.GPSRoute[g - 1].Value.ElevationMeters);
                             activity.GPSRoute.SetValueAt(g, p);
+                        }
                     }
+                    activity.Notes += "Edge Elevation fixed";
                 }
-                activity.Notes += "Edge Elevation fixed";
             }
         }
 
@@ -123,6 +137,15 @@ namespace MiscPlugin.Edit
         {
             get { return "FixEdgeSecondRecording"; }
 //            get { return Resources.Resources.Edit_PowerDistanceDiffToCadenceTrackAction_Text; }
+        }
+        public bool Visible
+        {
+            get
+            {
+                //if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
+                if (activities.Count > 0) return true;
+                return false;
+            }
         }
 
         #endregion
@@ -142,6 +165,36 @@ namespace MiscPlugin.Edit
             }
         }
 
-        private IList<IActivity> activities = null;
+#if !ST_2_1
+        private IDailyActivityView dailyView = null;
+        private IActivityReportsView reportView = null;
+#endif
+        private IList<IActivity> activities
+        {
+            get
+            {
+#if !ST_2_1
+                //activities are set either directly or by selection,
+                //not by more than one
+                if (_activities == null)
+                {
+                    if (dailyView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
+                    }
+                    else if (reportView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                    }
+                    else
+                    {
+                        return new List<IActivity>();
+                    }
+                }
+#endif
+                return _activities;
+            }
+        }
+        private IList<IActivity> _activities = null;
     }
 }

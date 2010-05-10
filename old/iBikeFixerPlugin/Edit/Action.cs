@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007 Gerhard Olsson 
+Copyright (C) 2007, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -27,32 +27,36 @@ using ZoneFiveSoftware.Common.Data;
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
+#if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Util;
+#endif
 
 namespace IBikeFixerPlugin.Edit
 {
     class Action : IAction
     {
+#if !ST_2_1
+        public Action(IDailyActivityView view)
+        {
+            this.dailyView = view;
+        }
+        public Action(IActivityReportsView view)
+        {
+            this.reportView = view;
+        }
+#endif
         public Action(IList<IActivity> activities)
         {
-            if (this.activities == null)
+            if (this._activities == null)
             {
-                this.activities = activities;
+                this._activities = activities;
             } else {
                 foreach (IActivity activity in activities)
                 {
-                    this.activities.Add(activity);
+                    this._activities.Add(activity);
                 }
             }
         }
-        public Action(IActivity activity)
-        {
-            if (this.activities == null)
-            {
-                this.activities = new List<IActivity>();
-            }
-             this.activities.Add(activity);
-        }
-
         public static bool isEnabled(IActivity activity)
         {
             if (activity != null
@@ -96,6 +100,13 @@ namespace IBikeFixerPlugin.Edit
             get { return null; }
         }
 
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
         public void Refresh()
         {
         }
@@ -108,8 +119,11 @@ namespace IBikeFixerPlugin.Edit
         {
             foreach (IActivity activity in activities)
             {
-                IBikeFixer tmp = new IBikeFixer(activity);
-                activity.PowerWattsTrack = tmp.GetPower();
+                if (isEnabled(activity))
+                {
+                   IBikeFixer tmp = new IBikeFixer(activity);
+                   activity.PowerWattsTrack = tmp.GetPower();
+                }
             }
         }
 
@@ -117,6 +131,15 @@ namespace IBikeFixerPlugin.Edit
         {
             get {
                 return Resources.Resources.Edit_Action_Text;
+            }
+        }
+        public bool Visible
+        {
+            get
+            {
+                //if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
+                if (activities.Count > 0) return true;
+                return false;
             }
         }
 
@@ -137,6 +160,36 @@ namespace IBikeFixerPlugin.Edit
             }
         }
 
-        private IList<IActivity> activities = null;
+#if !ST_2_1
+        private IDailyActivityView dailyView = null;
+        private IActivityReportsView reportView = null;
+#endif
+        private IList<IActivity> activities
+        {
+            get
+            {
+#if !ST_2_1
+                //activities are set either directly or by selection,
+                //not by more than one
+                if (_activities == null)
+                {
+                    if (dailyView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
+                    }
+                    else if (reportView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                    }
+                    else
+                    {
+                        return new List<IActivity>();
+                    }
+                }
+#endif
+                return _activities;
+            }
+        }
+        private IList<IActivity> _activities = null;
     }
 }

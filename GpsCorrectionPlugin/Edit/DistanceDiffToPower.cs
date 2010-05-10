@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -50,6 +50,8 @@ namespace GpsCorrectionPlugin.Edit
 
         public void Run()
         {
+            if (isEnabled(this.activity))
+            {
                 IDistanceDataTrack gpsDist = activity.GPSRoute.GetDistanceMetersTrack();
                 IDistanceDataTrack devDist = activity.DistanceMetersTrack;
                 INumericTimeDataSeries ptrack = new NumericTimeDataSeries();
@@ -57,15 +59,16 @@ namespace GpsCorrectionPlugin.Edit
 
                 for (g = 0; g < gpsDist.Count; g++)
                 {
-                    if (gpsDist.EntryDateTime(gpsDist[g]) < devDist.EntryDateTime(devDist[devDist.Count-1]) &&
-                        gpsDist.EntryDateTime(gpsDist[g]) > devDist.EntryDateTime(devDist[0])){
-                    ptrack.Add(gpsDist.EntryDateTime(gpsDist[g]),
-                      devDist.GetInterpolatedValue(gpsDist.EntryDateTime(gpsDist[g])).Value - gpsDist[g].Value);
-                }
+                    if (gpsDist.EntryDateTime(gpsDist[g]) < devDist.EntryDateTime(devDist[devDist.Count - 1]) &&
+                        gpsDist.EntryDateTime(gpsDist[g]) > devDist.EntryDateTime(devDist[0]))
+                    {
+                        ptrack.Add(gpsDist.EntryDateTime(gpsDist[g]),
+                          devDist.GetInterpolatedValue(gpsDist.EntryDateTime(gpsDist[g])).Value - gpsDist[g].Value);
+                    }
                 }
                 // Copy it to the selected PowerTrack
                 activity.PowerWattsTrack = ptrack;
-
+            }
         }
 
         private IActivity activity = null;

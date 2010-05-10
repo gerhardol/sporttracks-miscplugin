@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007 Gerhard Olsson 
+Copyright (C) 2007, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -26,10 +26,15 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace IBikeFixerPlugin.Edit
 {
+#if ST_2_1
     class ExtendAction : IExtendActivityEditActions
-    {
-        #region IExtendActivityEditActions Members
+#else
+    class ExtendAction : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+#endif
+   {
 
+#if ST_2_1
+       #region IExtendActivityEditActions Members
         IList<IAction> IExtendActivityEditActions.GetActions(IList<IActivity> activities)
         {
             IList<IActivity> activities2 = new List<IActivity>();
@@ -49,11 +54,33 @@ namespace IBikeFixerPlugin.Edit
         {
             if (!Action.isEnabled(activity)) return null;
                 
-            return new IAction[] {
-                new Action(activity)
-            };
+           IList<IActivity> activities2 = new List<IActivity>();
+           activities2.Add(activity);
+           return new IAction[] { new Action(activities2) };
+       }
+       #endregion
+#else
+       #region IExtendDailyActivityViewActions Members
+       public IList<IAction> GetActions(IDailyActivityView view,
+                                                 ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new Action(view) };
+            }
+            else return new IAction[0];
+        }
+        public IList<IAction> GetActions(IActivityReportsView view,
+                                         ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new Action(view) };
+            }
+            else return new IAction[0];
         }
         #endregion
+#endif
 
     }
 }

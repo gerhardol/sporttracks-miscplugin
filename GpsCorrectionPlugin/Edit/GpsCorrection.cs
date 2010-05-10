@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -52,8 +52,8 @@ namespace GpsCorrectionPlugin.Edit
             }
             return false;
         }
-        
-        public IGPSRoute GetGpsRoute() 
+
+        public IGPSRoute GetGpsRoute(IActivity activity) 
         {
             IDistanceDataTrack distTrack = activity.DistanceMetersTrack;
             IGPSRoute route = activity.GPSRoute;
@@ -89,7 +89,13 @@ namespace GpsCorrectionPlugin.Edit
             //Distance and GPS-distance (Remove first or last?)
              return route;
         }
-
+        public void Run()
+        {
+            if (isEnabled(this.activity))
+            {
+                activity.GPSRoute = GetGpsRoute(this.activity);
+            }
+        }
         private IActivity activity = null;
     }
 }

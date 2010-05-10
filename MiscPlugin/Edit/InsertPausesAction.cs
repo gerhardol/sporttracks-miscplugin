@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2009 Gerhard Olsson 
+Copyright (C) 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -26,30 +26,36 @@ using ZoneFiveSoftware.Common.Data;
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
+#if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Fitness;
+using ZoneFiveSoftware.Common.Visuals.Util;
+#endif
 
 namespace MiscPlugin.Edit
 {
     class InsertPausesAction : IAction
     {
+#if !ST_2_1
+        public InsertPausesAction(IDailyActivityView view)
+        {
+            this.dailyView = view;
+        }
+        public InsertPausesAction(IActivityReportsView view)
+        {
+            this.reportView = view;
+        }
+#endif
         public InsertPausesAction(IList<IActivity> activities)
         {
-            if (this.activities == null)
+            if (this._activities == null)
             {
-                this.activities = activities;
+                this._activities = activities;
             } else {
                 foreach (IActivity activity in activities)
                 {
-                    this.activities.Add(activity);
+                    this._activities.Add(activity);
                 }
             }
-        }
-        public InsertPausesAction(IActivity activity)
-        {
-            if (this.activities == null)
-            {
-                this.activities = new List<IActivity>();
-            }
-             this.activities.Add(activity);
         }
         #region IAction Members
 
@@ -75,6 +81,13 @@ namespace MiscPlugin.Edit
             get { return false; }
         }
 
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
         public Image Image
         {
             get { return null; }
@@ -98,6 +111,15 @@ namespace MiscPlugin.Edit
         {
             get { return Properties.Resources.Edit_InsertPauses_Text; }
         }
+        public bool Visible
+        {
+            get
+            {
+                if (!MiscPlugin.Plugin.InsertPausesEditMenu) return false;
+                if (activities.Count > 0) return true;
+                return false;
+            }
+        }
 
         #endregion
 
@@ -116,6 +138,36 @@ namespace MiscPlugin.Edit
             }
         }
 
-        private IList<IActivity> activities = null;
+#if !ST_2_1
+        private IDailyActivityView dailyView = null;
+        private IActivityReportsView reportView = null;
+#endif
+        private IList<IActivity> activities
+        {
+            get
+            {
+#if !ST_2_1
+                //activities are set either directly or by selection,
+                //not by more than one
+                if (_activities == null)
+                {
+                    if (dailyView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
+                    }
+                    else if (reportView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                    }
+                    else
+                    {
+                        return new List<IActivity>();
+                    }
+                }
+#endif
+                return _activities;
+            }
+        }
+        private IList<IActivity> _activities = null;
     }
 }

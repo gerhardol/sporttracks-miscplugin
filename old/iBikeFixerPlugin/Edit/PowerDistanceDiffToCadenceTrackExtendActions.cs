@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2008 Gerhard Olsson 
+Copyright (C) 2008, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -24,26 +24,17 @@ using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
 using ZoneFiveSoftware.Common.Visuals.Fitness;
 
-namespace MiscPlugin.Edit
+namespace IBikeFixerPlugin.Edit
 {
-    class PowerDistanceDiffToCadenceTrackExtendActions : IExtendActivityEditActions, IExtendRouteEditActions
-    {
-        #region IExtendRouteEditActions Members
+#if ST_2_1
+    class PowerDistanceDiffToCadenceTrackExtendActions : IExtendActivityEditActions
+#else
+    class PowerDistanceDiffToCadenceTrackExtendActions : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+#endif
+   {
 
-        IList<IAction> IExtendRouteEditActions.GetActions(IList<IRoute> routes)
-        {
-            return null;
-        }
-
-        IList<IAction> IExtendRouteEditActions.GetActions(IRoute route)
-        {
-            return null;
-        }
-
-        #endregion
-
+#if ST_2_1
         #region IExtendActivityEditActions Members
-
         IList<IAction> IExtendActivityEditActions.GetActions(IList<IActivity> activities)
         {
             IList<IActivity> activities2 = new List<IActivity>();
@@ -65,12 +56,33 @@ namespace MiscPlugin.Edit
         {
             if (!PowerDistanceDiffToCadenceTrackAction.isEnabled(activity)) return null;
 
-            return new IAction[] {
-                new PowerDistanceDiffToCadenceTrackAction(activity)
-            };
+            IList<IActivity> activities2 = new List<IActivity>();
+            activities2.Add(activity);
+            return new IAction[] { new PowerDistanceDiffToCadenceTrackAction(activities2) };
         }
-
+       }
+       #endregion
+#else
+       #region IExtendDailyActivityViewActions Members
+       public IList<IAction> GetActions(IDailyActivityView view,
+                                                 ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new PowerDistanceDiffToCadenceTrackAction(view) };
+            }
+            else return new IAction[0];
+        }
+        public IList<IAction> GetActions(IActivityReportsView view,
+                                         ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new PowerDistanceDiffToCadenceTrackAction(view) };
+            }
+            else return new IAction[0];
+        }
         #endregion
-
+#endif
     }
 }

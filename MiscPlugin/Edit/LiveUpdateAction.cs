@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -26,14 +26,24 @@ using ZoneFiveSoftware.Common.Data;
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
+#if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Fitness;
+using ZoneFiveSoftware.Common.Visuals.Util;
+#endif
 
 namespace MiscPlugin.Edit
 {
     class LiveUpdateAction : IAction
     {
+#if !ST_2_1
+        public LiveUpdateAction(IRouteView view)
+        {
+            this.routeView = view;
+        }
+#endif
         public LiveUpdateAction(IRoute route)
         {
-            this.route = route;
+            this._routes.Add(route);
         }
 
         public static bool isEnabled(IRoute route)
@@ -48,7 +58,16 @@ namespace MiscPlugin.Edit
         {
             get
             {
-                return isEnabled(route); 
+                Boolean enabled = false;
+                foreach (IActivity route in routes)
+                {
+                    if (RemoveIdenticalGPS.isEnabled(route))
+                    {
+                        enabled = true;
+                        break;
+                    }
+                }
+                return enabled; 
             }
         }
 
@@ -62,6 +81,13 @@ namespace MiscPlugin.Edit
             get { return null; }
         }
 
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
         public void Refresh()
         {
         }
@@ -73,6 +99,15 @@ namespace MiscPlugin.Edit
         public string Title
         {
             get { return Properties.Resources.Edit_LiveUpdate_Text; }
+        }
+        public bool Visible
+        {
+            get
+            {
+                //if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
+                if (routes.Count == 1) return true;
+                return false;
+            }
         }
 
         #endregion
@@ -92,6 +127,31 @@ namespace MiscPlugin.Edit
             }
         }
 
-        private IRoute route = null;
+#if !ST_2_1
+        private IRouteView routeView = null;
+#endif
+        private IList<IRoute> routes
+        {
+            get
+            {
+#if !ST_2_1
+                //activities are set either directly or by selection,
+                //not by more than one
+                if (_routes == null)
+                {
+                    if (routeView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IRoute>(routeView.SelectionProvider.SelectedItems);
+                    }
+                    else
+                    {
+                        return new List<IRoute>();
+                    }
+                }
+#endif
+                return _routes;
+            }
+        }
+        private IList<IRoute> _routes = null;
     }
 }

@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscPlugin", "MiscPlugin\Mi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsCorrectionPlugin", "GpsCorrectionPlugin\GpsCorrectionPlugin.csproj", "{1EBEC546-4E31-4819-B10E-E88AE751CDD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBikeFixerPlugin", "old\iBikeFixerPlugin\IBikeFixerPlugin.csproj", "{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevationCorrectionAnalysisPlugin", "old\ElevationCorrectionAnalysisPlugin\ElevationCorrectionAnalysisPlugin.csproj", "{77878345-694E-478E-8D27-77F708F5C9EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		ST2.1Debug|Any CPU = ST2.1Debug|Any CPU
@@ -13,14 +17,31 @@ Global
 		ST3.0Release|Any CPU = ST3.0Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Debug|Any CPU
+		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST2.1Debug|Any CPU.Build.0 = ST2.1Debug|Any CPU
 		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST2.1Release|Any CPU.ActiveCfg = ST2.1Release|Any CPU
 		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST3.0Debug|Any CPU.ActiveCfg = ST3.0Debug|Any CPU
 		{7187C7CA-7E36-4F0F-8B83-09547D6FB626}.ST3.0Release|Any CPU.ActiveCfg = ST3.0Release|Any CPU
-		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Debug|Any CPU
+		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST2.1Debug|Any CPU.Build.0 = ST2.1Debug|Any CPU
 		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST2.1Release|Any CPU.ActiveCfg = ST2.1Release|Any CPU
 		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST3.0Debug|Any CPU.ActiveCfg = ST3.0Debug|Any CPU
 		{1EBEC546-4E31-4819-B10E-E88AE751CDD1}.ST3.0Release|Any CPU.ActiveCfg = ST3.0Release|Any CPU
+		{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Debug|Any CPU
+		{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}.ST2.1Release|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}.ST2.1Release|Any CPU.Build.0 = ST2.1Release|Any CPU
+		{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}.ST3.0Debug|Any CPU.ActiveCfg = ST3.0Debug|Any CPU
+		{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}.ST3.0Debug|Any CPU.Build.0 = ST3.0Debug|Any CPU
+		{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}.ST3.0Release|Any CPU.ActiveCfg = ST3.0Release|Any CPU
+		{19753A5B-B44B-46DF-88CE-4D1A5648DF4E}.ST3.0Release|Any CPU.Build.0 = ST3.0Release|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST2.1Debug|Any CPU.ActiveCfg = ST2.1Debug|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST2.1Debug|Any CPU.Build.0 = ST2.1Debug|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST2.1Release|Any CPU.ActiveCfg = ST2.1Release|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST2.1Release|Any CPU.Build.0 = ST2.1Release|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST3.0Debug|Any CPU.ActiveCfg = ST3.0Debug|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST3.0Debug|Any CPU.Build.0 = ST3.0Debug|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST3.0Release|Any CPU.ActiveCfg = ST3.0Release|Any CPU
+		{77878345-694E-478E-8D27-77F708F5C9EF}.ST3.0Release|Any CPU.Build.0 = ST3.0Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

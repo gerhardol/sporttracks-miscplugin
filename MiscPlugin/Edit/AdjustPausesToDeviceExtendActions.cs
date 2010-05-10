@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2009 Gerhard Olsson 
+Copyright (C) 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,10 +25,15 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
+#if ST_2_1
     class AdjustPausesToDeviceExtendActions : IExtendActivityEditActions
+#else
+    class AdjustPausesToDeviceExtendActions : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+#endif
     {
-        #region IExtendActivityEditActions Members
 
+#if ST_2_1
+        #region IExtendActivityEditActions Members
         IList<IAction> IExtendActivityEditActions.GetActions(IList<IActivity> activities)
         {
             IList<IActivity> activities2 = new List<IActivity>();
@@ -48,11 +53,33 @@ namespace MiscPlugin.Edit
         {
             if (!MiscPlugin.Plugin.AdjustPausesToDeviceEditMenu) return null;
                 
-            return new IAction[] {
-                new AdjustPausesToDeviceAction(activity)
-            };
+            IList<IActivity> activities2 = new List<IActivity>();
+            activities2.Add(activity);
+            return new IAction[] { new AdjustPausesToDeviceAction(activities2) };
         }
         #endregion
+#else
+        #region IExtendDailyActivityViewActions Members
+        public IList<IAction> GetActions(IDailyActivityView view,
+                                                 ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new AdjustPausesToDeviceAction(view) };
+            }
+            else return new IAction[0];
+        }
+        public IList<IAction> GetActions(IActivityReportsView view,
+                                         ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new AdjustPausesToDeviceAction(view) };
+            }
+            else return new IAction[0];
+        }
+        #endregion
+#endif
 
     }
 }

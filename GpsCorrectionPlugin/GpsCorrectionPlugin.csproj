@@ -5,8 +5,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GpsCorrectionPlugin</RootNamespace>
     <AssemblyName>GpsCorrectionPlugin</AssemblyName>
+    <PluginId>0df3f6d7-13ed-4a11-9e65-fbd6df847b08</PluginId>
   </PropertyGroup>
   <Import Project="..\Common\Common-References.csproj" />
+  
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Plugin.cs" />

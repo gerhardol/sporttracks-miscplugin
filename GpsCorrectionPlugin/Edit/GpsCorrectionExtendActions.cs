@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,11 +25,16 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace GpsCorrectionPlugin.Edit
 {
+#if ST_2_1
     class ExtendAction : IExtendActivityEditActions
+#else
+    class ExtendAction : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+#endif
     {
-        #region IExtendActivityEditActions Members
 
-        IList<IAction> IExtendActivityEditActions.GetActions(IList<IActivity> activities)
+#if ST_2_1
+        #region IExtendActivityEditActions Members
+        public IList<IAction> GetActions(IList<IActivity> activities)
         {
             IList<IActivity> activities2 = new List<IActivity>();
             if (!GpsCorrectionPlugin.Plugin.CorrectGpsFromDistanceEditMenu) return null;
@@ -45,16 +50,38 @@ namespace GpsCorrectionPlugin.Edit
             };
         }
 
-        IList<IAction> IExtendActivityEditActions.GetActions(IActivity activity)
+        public IList<IAction> GetActions(IActivity activity)
         {
             if (!GpsCorrectionPlugin.Plugin.CorrectGpsFromDistanceEditMenu) return null;
             //if (!GpsCorrection.isEnabled(activity)) return null;
                 
-            return new IAction[] {
-                new GpsCorrectionAction(activity)
-            };
+            IList<IActivity> activities2 = new List<IActivity>();
+            activities2.Add(activity);
+            return new IAction[] { new GpsCorrectionAction(activities2) };
         }
         #endregion
+#else
+        #region IExtendDailyActivityViewActions Members
+        public IList<IAction> GetActions(IDailyActivityView view,
+                                                 ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new GpsCorrectionAction(view) };
+            }
+            else return new IAction[0];
+        }
+        public IList<IAction> GetActions(IActivityReportsView view,
+                                         ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new GpsCorrectionAction(view) };
+            }
+            else return new IAction[0];
+        }
+        #endregion
+#endif
 
     }
 }

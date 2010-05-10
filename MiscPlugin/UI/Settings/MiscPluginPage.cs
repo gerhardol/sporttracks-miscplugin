@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -24,10 +24,6 @@ using System.Windows.Forms;
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Visuals;
 using ZoneFiveSoftware.Common.Visuals.Fitness;
-
-//using MiscPlugin.Properties.Resources;
-//using MiscPlugin;
-//using MiscPlugin.Properties;
 
 namespace MiscPlugin.UI.Settings
 {

@@ -65,7 +65,7 @@ namespace GpsCorrectionPlugin.DataImport
                         if (GpsCorrection.isEnabled(activity))
                         {
                             GpsCorrection tmp = new GpsCorrection(activity);
-                            activity.GPSRoute = tmp.GetGpsRoute();
+                            tmp.Run();
                         }
                     }
                }

@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -23,10 +23,16 @@ using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
 using ZoneFiveSoftware.Common.Visuals.Fitness;
 
-namespace MiscPlugin.Export
+namespace MiscPlugin.Edit
 {
+#if ST_2_1
     class ExportActivityToCompareTracksExtendAction : IExtendActivityExportActions
+#else
+    class ExportActivityToCompareTracksExtendAction : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+#endif
     {
+
+#if ST_2_1
         #region IExtendActivityExportActions Members
 
         IList<IAction> IExtendActivityExportActions.GetActions(IList<IActivity> activities)
@@ -48,11 +54,33 @@ namespace MiscPlugin.Export
         {
             if (!ExportActivityToCompareTracksAction.isEnabled(activity)) return null;
 
-            return new IAction[] {
-                new ExportActivityToCompareTracksAction(activity)
-            };
+            IList<IActivity> activities2 = new List<IActivity>();
+            activities2.Add(activity);
+            return new IAction[] { new ExportActivityToCompareTracksAction(activities2) };
         }
  
         #endregion
+#else
+        #region IExtendDailyActivityViewActions Members
+        public IList<IAction> GetActions(IDailyActivityView view,
+                                                 ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.ExportMenu)
+            {
+                return new IAction[] { new ExportActivityToCompareTracksAction(view) };
+            }
+            else return new IAction[0];
+        }
+        public IList<IAction> GetActions(IActivityReportsView view,
+                                         ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.ExportMenu)
+            {
+                return new IAction[] { new ExportActivityToCompareTracksAction(view) };
+            }
+            else return new IAction[0];
+        }
+        #endregion
+#endif
     }
 }

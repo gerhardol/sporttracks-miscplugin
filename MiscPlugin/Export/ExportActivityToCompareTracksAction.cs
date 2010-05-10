@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,19 +25,28 @@ using ZoneFiveSoftware.Common.Data;
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
+#if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Fitness;
+using ZoneFiveSoftware.Common.Visuals.Util;
+#endif
 
-namespace MiscPlugin.Export
+namespace MiscPlugin.Edit
 {
     class ExportActivityToCompareTracksAction : IAction
     {
+#if !ST_2_1
+        public ExportActivityToCompareTracksAction(IDailyActivityView view)
+        {
+            this.dailyView = view;
+        }
+        public ExportActivityToCompareTracksAction(IActivityReportsView view)
+        {
+            this.reportView = view;
+        }
+#endif
         public ExportActivityToCompareTracksAction(IList<IActivity> activities)
         {
-            this.activities = activities;
-        }
-        public ExportActivityToCompareTracksAction(IActivity activity)
-        {
-            this.activities = new List<IActivity>();
-            this.activities.Add(activity);
+            this._activities = activities;
         }
 
         public static bool isEnabled(IActivity activity)
@@ -79,7 +88,13 @@ namespace MiscPlugin.Export
             get { return null; }
 //            get { return Properties.Resources.Image_16_CT; }
         }
-
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
         public void Refresh()
         {
         }
@@ -182,10 +197,16 @@ namespace MiscPlugin.Export
   
 	#endif        
         }
-
         public string Title
         {
             get { return Properties.Resources.Edit_ExportActivityToCompareTracks_Text; }
+        }
+        public bool Visible
+        {
+            get
+            {
+                return false;
+            }
         }
 
         #endregion
@@ -205,7 +226,37 @@ namespace MiscPlugin.Export
             }
         }
 
-        private IList<IActivity> activities = null;
+#if !ST_2_1
+        private IDailyActivityView dailyView = null;
+        private IActivityReportsView reportView = null;
+#endif
+        private IList<IActivity> activities
+        {
+            get
+            {
+#if !ST_2_1
+                //activities are set either directly or by selection,
+                //not by more than one
+                if (_activities == null)
+                {
+                    if (dailyView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
+                    }
+                    else if (reportView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                    }
+                    else
+                    {
+                        return new List<IActivity>();
+                    }
+                }
+#endif
+                return _activities;
+            }
+        }
+        private IList<IActivity> _activities = null;
         //private int outputFormat = 0;
     }
 }

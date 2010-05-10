@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -25,8 +25,15 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
+#if ST_2_1
     class LiveUpdateExtendActions : IExtendRouteEditActions
+#else
+    class LiveUpdateExtendActions : IExtendRouteViewActions
+#endif
     {
+
+#if ST_2_1
+        #region IExtendRouteEditActions Members
         IList<IAction> IExtendRouteEditActions.GetActions(IList<IRoute> routes)
         {
             return null;
@@ -40,6 +47,20 @@ namespace MiscPlugin.Edit
                 new LiveUpdateAction(route)
             };
         }
+        #endregion
+#else
+        #region IExtendRouteViewActions Members
+        public IList<IAction> GetActions(IRouteView view,
+                                                 ExtendViewActions.Location location)
+        {
+            if (location == ExtendViewActions.Location.EditMenu)
+            {
+                return new IAction[] { new LiveUpdateAction(view) };
+            }
+            else return new IAction[0];
+        }
+        #endregion
+#endif
 
     }
 }

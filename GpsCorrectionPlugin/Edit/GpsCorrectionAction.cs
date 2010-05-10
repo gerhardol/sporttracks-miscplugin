@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -26,32 +26,37 @@ using ZoneFiveSoftware.Common.Data;
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
+#if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Fitness;
+using ZoneFiveSoftware.Common.Visuals.Util;
+#endif
 
 namespace GpsCorrectionPlugin.Edit
 {
     class GpsCorrectionAction : IAction
     {
+#if !ST_2_1
+        public GpsCorrectionAction(IDailyActivityView view)
+        {
+            this.dailyView = view;
+        }
+        public GpsCorrectionAction(IActivityReportsView view)
+        {
+            this.reportView = view;
+        }
+#endif
         public GpsCorrectionAction(IList<IActivity> activities)
         {
-            if (this.activities == null)
+            if (this._activities == null)
             {
-                this.activities = activities;
+                this._activities = activities;
             } else {
                 foreach (IActivity activity in activities)
                 {
-                    this.activities.Add(activity);
+                    this._activities.Add(activity);
                 }
             }
         }
-        public GpsCorrectionAction(IActivity activity)
-        {
-            if (this.activities == null)
-            {
-                this.activities = new List<IActivity>();
-            }
-             this.activities.Add(activity);
-        }
-
         #region IAction Members
 
         public bool Enabled
@@ -81,6 +86,13 @@ namespace GpsCorrectionPlugin.Edit
             get { return null; }
         }
 
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
         public void Refresh()
         {
         }
@@ -90,19 +102,26 @@ namespace GpsCorrectionPlugin.Edit
             foreach (IActivity activity in activities)
             {
                 GpsCorrection tmp = new GpsCorrection(activity);
-                activity.GPSRoute= tmp.GetGpsRoute();
-
+                tmp.Run();
             }
-
         }
 
         public string Title
         {
-            get {
+            get
+            {
                 return Properties.Resources.Edit_CorrectGPSFromDistance_Text;
             }
         }
-
+        public bool Visible
+        {
+            get
+            {
+                if (!GpsCorrectionPlugin.Plugin.CorrectGpsFromDistanceEditMenu) return false;
+                if (activities.Count > 0) return true;
+                return false;
+            }
+        }
         #endregion
 
         #region INotifyPropertyChanged Members
@@ -120,6 +139,36 @@ namespace GpsCorrectionPlugin.Edit
             }
         }
 
-        private IList<IActivity> activities = null;
+#if !ST_2_1
+        private IDailyActivityView dailyView = null;
+        private IActivityReportsView reportView = null;
+#endif
+        private IList<IActivity> activities
+        {
+            get
+            {
+#if !ST_2_1
+                //activities are set either directly or by selection,
+                //not by more than one
+                if (_activities == null)
+                {
+                    if (dailyView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
+                    }
+                    else if (reportView != null)
+                    {
+                        return CollectionUtils.GetItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                    }
+                    else
+                    {
+                        return new List<IActivity>();
+                    }
+                }
+#endif
+                return _activities;
+            }
+        }
+        private IList<IActivity> _activities = null;
     }
 }

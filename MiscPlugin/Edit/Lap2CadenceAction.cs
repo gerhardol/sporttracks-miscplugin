@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2007, 2009 Gerhard Olsson 
+Copyright (C) 2007, 2009, 2010 Gerhard Olsson 
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -70,14 +70,6 @@ namespace MiscPlugin.Edit
 
         #region IAction Members
 
-        public bool Visible
-        {
-            get
-            {
-                if (!MiscPlugin.Plugin.Laps2CadenceEditMenu) return false;
-                return true;
-            }
-        }
         public bool Enabled
         {
             get
@@ -100,6 +92,13 @@ namespace MiscPlugin.Edit
             get { return false; }
         }
 
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
         public Image Image
         {
             get { return null; }
@@ -179,16 +178,18 @@ namespace MiscPlugin.Edit
             }
         }
 
-        public IList<string> MenuPath
-        {
-            get
-            {
-                return new List<string>();
-            }
-        }
         public string Title
         {
             get { return Properties.Resources.Edit_Lap2Cadence_Text; }
+        }
+        public bool Visible
+        {
+            get
+            {
+                if (!MiscPlugin.Plugin.Laps2CadenceEditMenu) return false;
+                if (activities.Count > 0) return true;
+                return false;
+            }
         }
 
         #endregion
