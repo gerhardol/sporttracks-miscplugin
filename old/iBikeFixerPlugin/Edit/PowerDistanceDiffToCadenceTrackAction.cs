@@ -28,6 +28,7 @@ using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Data.GPS;
 using ZoneFiveSoftware.Common.Visuals;
 #if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Fitness;
 using ZoneFiveSoftware.Common.Visuals.Util;
 #endif
 
@@ -143,7 +144,6 @@ namespace IBikeFixerPlugin.Edit
         {
             get
             {
-                //if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
                 if (activities.Count > 0) return true;
                 return false;
             }

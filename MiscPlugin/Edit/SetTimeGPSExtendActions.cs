@@ -25,10 +25,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
+    class SetTimeGPSExtendActions :
 #if ST_2_1
-    class SetTimeGPSExtendActions : IExtendActivityEditActions, IExtendRouteEditActions
+    IExtendActivityEditActions, IExtendRouteEditActions
 #else
-    class SetTimeGPSExtendActions : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions, IExtendRouteViewActions
+    IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
 #endif
     {
 
@@ -90,6 +91,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IDailyActivityView view,
                                                  ExtendViewActions.Location location)
         {
+            if (!MiscPlugin.Plugin.SetTimeGPSEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new SetTimeGPSAction(view) };
@@ -99,6 +101,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IActivityReportsView view,
                                          ExtendViewActions.Location location)
         {
+            if (!MiscPlugin.Plugin.SetTimeGPSEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new SetTimeGPSAction(view) };
@@ -108,6 +111,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IRouteView view,
                                          ExtendViewActions.Location location)
         {
+            if (!MiscPlugin.Plugin.SetTimeGPSEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new SetTimeGPSAction(view) };

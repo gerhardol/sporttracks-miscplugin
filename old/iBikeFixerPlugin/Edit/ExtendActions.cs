@@ -26,10 +26,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace IBikeFixerPlugin.Edit
 {
+    class ExtendAction :
 #if ST_2_1
-    class ExtendAction : IExtendActivityEditActions
+    IExtendActivityEditActions
 #else
-    class ExtendAction : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+     IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
 #endif
    {
 

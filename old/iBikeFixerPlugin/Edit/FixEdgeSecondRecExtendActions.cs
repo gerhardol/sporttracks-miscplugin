@@ -26,10 +26,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace IBikeFixerPlugin.Edit
 {
+    class FixEdgeSecondRecExtendActions :
 #if ST_2_1
-    class FixEdgeSecondRecExtendActions : IExtendActivityEditActions
+    IExtendActivityEditActions
 #else
-    class FixEdgeSecondRecExtendActions : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+     IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
 #endif
    {
 
@@ -81,8 +82,8 @@ namespace IBikeFixerPlugin.Edit
             }
             else return new IAction[0];
         }
-        #endregion
+       #endregion
 #endif
 
-    }
+   }
 }

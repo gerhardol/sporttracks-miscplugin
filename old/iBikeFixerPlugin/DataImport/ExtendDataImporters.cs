@@ -41,6 +41,7 @@ namespace IBikeFixerPlugin.DataImport
 
         public void BeforeImport(IList items)
         {
+            IList<IActivity> activities2 = new List<IActivity>();
             foreach (object item in items)
             {
                 if (item is IActivity)
@@ -51,12 +52,13 @@ namespace IBikeFixerPlugin.DataImport
 
                         if (Action.isEnabled(activity))
                         {
-                            Action tmp = new Action(activity);
-                            tmp.Run();
+                            activities2.Add(activity);
                         }
                     }
                 }
             }
+            Action tmp = new Action(activities2);
+            tmp.Run();
         }
 
         public void AfterImport(IList added, IList updated)

@@ -25,10 +25,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace GpsCorrectionPlugin.Edit
 {
+    class ExtendAction :
 #if ST_2_1
-    class ExtendAction : IExtendActivityEditActions
+    IExtendActivityEditActions
 #else
-    class ExtendAction : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+     IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
 #endif
     {
 
@@ -65,6 +66,7 @@ namespace GpsCorrectionPlugin.Edit
         public IList<IAction> GetActions(IDailyActivityView view,
                                                  ExtendViewActions.Location location)
         {
+            if (!GpsCorrectionPlugin.Plugin.CorrectGpsFromDistanceEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new GpsCorrectionAction(view) };
@@ -74,6 +76,7 @@ namespace GpsCorrectionPlugin.Edit
         public IList<IAction> GetActions(IActivityReportsView view,
                                          ExtendViewActions.Location location)
         {
+            if (!GpsCorrectionPlugin.Plugin.CorrectGpsFromDistanceEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new GpsCorrectionAction(view) };

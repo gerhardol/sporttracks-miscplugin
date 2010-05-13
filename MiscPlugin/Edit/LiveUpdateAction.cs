@@ -104,7 +104,6 @@ namespace MiscPlugin.Edit
         {
             get
             {
-                //if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
                 if (routes.Count == 1) return true;
                 return false;
             }

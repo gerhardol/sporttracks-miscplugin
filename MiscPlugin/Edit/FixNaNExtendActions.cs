@@ -25,10 +25,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
+    class FixNaNExtendActions :
 #if ST_2_1
-    class FixNaNExtendActions : IExtendActivityEditActions
+    IExtendActivityEditActions
 #else
-    class FixNaNExtendActions : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+    IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
 #endif
     {
 
@@ -63,6 +64,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IDailyActivityView view,
                                                  ExtendViewActions.Location location)
         {
+            if (!MiscPlugin.Plugin.FixNaNEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new FixNaNAction(view) };
@@ -72,6 +74,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IActivityReportsView view,
                                          ExtendViewActions.Location location)
         {
+            if (!MiscPlugin.Plugin.FixNaNEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new FixNaNAction(view) };

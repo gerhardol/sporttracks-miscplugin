@@ -26,10 +26,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace IBikeFixerPlugin.Edit
 {
+    class PowerDistanceDiffToCadenceTrackExtendActions :
 #if ST_2_1
-    class PowerDistanceDiffToCadenceTrackExtendActions : IExtendActivityEditActions
+    IExtendActivityEditActions
 #else
-    class PowerDistanceDiffToCadenceTrackExtendActions : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+    IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
 #endif
    {
 
@@ -60,7 +61,6 @@ namespace IBikeFixerPlugin.Edit
             activities2.Add(activity);
             return new IAction[] { new PowerDistanceDiffToCadenceTrackAction(activities2) };
         }
-       }
        #endregion
 #else
        #region IExtendDailyActivityViewActions Members

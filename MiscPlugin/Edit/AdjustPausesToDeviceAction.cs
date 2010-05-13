@@ -115,7 +115,6 @@ namespace MiscPlugin.Edit
         {
             get
             {
-                if (!MiscPlugin.Plugin.AdjustPausesToDeviceEditMenu) return false;
                 if (activities.Count > 0) return true;
                 return false;
             }

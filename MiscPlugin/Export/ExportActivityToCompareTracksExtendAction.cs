@@ -25,10 +25,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
+    class ExportActivityToCompareTracksExtendAction :
 #if ST_2_1
-    class ExportActivityToCompareTracksExtendAction : IExtendActivityExportActions
+     IExtendActivityExportActions
 #else
-    class ExportActivityToCompareTracksExtendAction : IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+     IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
 #endif
     {
 

@@ -25,10 +25,11 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
+    class LiveUpdateExtendActions :
 #if ST_2_1
-    class LiveUpdateExtendActions : IExtendRouteEditActions
+    IExtendRouteEditActions
 #else
-    class LiveUpdateExtendActions : IExtendRouteViewActions
+    IExtendRouteViewActions
 #endif
     {
 
@@ -53,6 +54,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IRouteView view,
                                                  ExtendViewActions.Location location)
         {
+            //if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new LiveUpdateAction(view) };

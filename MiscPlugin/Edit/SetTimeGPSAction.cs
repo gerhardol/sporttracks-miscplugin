@@ -155,7 +155,6 @@ namespace MiscPlugin.Edit
         {
             get
             {
-                if (!MiscPlugin.Plugin.SetTimeGPSEditMenu) return false;
                 if (activities.Count > 0) return true;
                 if (routes.Count > 0) return true;
                 return false;

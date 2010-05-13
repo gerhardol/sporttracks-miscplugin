@@ -114,7 +114,6 @@ namespace GpsCorrectionPlugin.Edit
         {
             get
             {
-                if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
                 if (activities.Count > 0) return true;
                 return false;
             }
