@@ -49,13 +49,13 @@ namespace MiscPlugin.Edit
         {
             if (this.activities == null)
             {
-                this._activities = activities;
+                this.activities = activities;
             } 
             else 
             {
                 foreach (IActivity activity in activities)
                 {
-                    this._activities.Add(activity);
+                    this.activities.Add(activity);
                 }
             }
         }
@@ -142,9 +142,35 @@ namespace MiscPlugin.Edit
         }
 
 #if !ST_2_1
+        IList<ItemType> GetAllContainedItems<ItemType>(ISelectionProvider selectionProvider)
+        {
+            List<ItemType> items = new List<ItemType>();
+            foreach (ItemType item in CollectionUtils.GetItemsOfType<ItemType>(selectionProvider.SelectedItems))
+            {
+                if (!items.Contains(item)) items.Add(item);
+            }
+            AddGroupItems<ItemType>(CollectionUtils.GetItemsOfType<IGroupedItem<ItemType>>(
+                                    selectionProvider.SelectedItems), items);
+            return items;
+        }
+
+        void AddGroupItems<ItemType>(IList<IGroupedItem<ItemType>> groups, IList<ItemType> allItems)
+        {
+            foreach (IGroupedItem<ItemType> group in groups)
+            {
+                foreach (ItemType item in group.Items)
+                {
+                    if (!allItems.Contains(item)) allItems.Add(item);
+                }
+                AddGroupItems(group.SubGroups, allItems);
+            }
+        }
+#endif
+#if !ST_2_1
         private IDailyActivityView dailyView = null;
         private IActivityReportsView reportView = null;
 #endif
+        private IList<IActivity> _activities = null;
         private IList<IActivity> activities
         {
             get
@@ -156,11 +182,11 @@ namespace MiscPlugin.Edit
                 {
                     if (dailyView != null)
                     {
-                        return CollectionUtils.GetItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
+                        return GetAllContainedItems<IActivity>(dailyView.SelectionProvider);
                     }
                     else if (reportView != null)
                     {
-                        return CollectionUtils.GetItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                        return GetAllContainedItems<IActivity>(reportView.SelectionProvider);
                     }
                     else
                     {
@@ -170,7 +196,10 @@ namespace MiscPlugin.Edit
 #endif
                 return _activities;
             }
+            set
+            {
+                _activities = value;
+            }
         }
-        private IList<IActivity> _activities = null;
     }
 }
