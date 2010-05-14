@@ -261,6 +261,10 @@ namespace MiscPlugin.Edit
 #endif
                 return _routes;
             }
+           set
+            {
+                _routes = value;
+            }
         }
     }
 }
