@@ -59,14 +59,14 @@ namespace MiscPlugin.Edit
             get
             {
                 Boolean enabled = false;
-                foreach (IActivity route in routes)
-                {
-                    if (RemoveIdenticalGPS.isEnabled(route))
-                    {
-                        enabled = true;
-                        break;
-                    }
-                }
+                //foreach (IActivity route in routes)
+                //{
+                //    if (RemoveIdenticalGPS.isEnabled(route))
+                //    {
+                //        enabled = true;
+                //        break;
+                //    }
+                //}
                 return enabled; 
             }
         }
@@ -104,7 +104,7 @@ namespace MiscPlugin.Edit
         {
             get
             {
-                if (routes.Count == 1) return true;
+                //if (routes.Count == 1) return true;
                 return false;
             }
         }
