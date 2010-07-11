@@ -84,11 +84,11 @@ namespace MiscPlugin.Edit
             {
                 if (0 == activity.TotalAscendMetersEntered)
                 {
-                    activity.TotalAscendMetersEntered = (float)(info.TotalAscendingMeters(Plugin.GetApplication().Logbook.ClimbZones[0]));
+                    activity.TotalAscendMetersEntered = (float)(info.TotalAscendingMeters(Plugin.GetApplication().DisplayOptions.SelectedClimbZone));
                 }
                 if (0 == activity.TotalDescendMetersEntered)
                 {
-                    activity.TotalDescendMetersEntered = (float)(info.TotalDescendingMeters(Plugin.GetApplication().Logbook.ClimbZones[0]));
+                    activity.TotalDescendMetersEntered = (float)(info.TotalDescendingMeters(Plugin.GetApplication().DisplayOptions.SelectedClimbZone));
                 }
             }
             if (0 == activity.TotalDistanceMetersEntered)
