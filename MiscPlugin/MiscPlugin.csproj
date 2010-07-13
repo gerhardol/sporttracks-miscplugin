@@ -100,10 +100,5 @@
       <DependentUpon>MiscPluginPageControl.cs</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="plugin.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <Import Project="..\Common\Common-Files.csproj" />
 </Project>
