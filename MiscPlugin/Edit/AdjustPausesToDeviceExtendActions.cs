@@ -64,7 +64,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IDailyActivityView view,
                                                  ExtendViewActions.Location location)
         {
-            if (!MiscPlugin.Plugin.AdjustPausesToDeviceEditMenu) return new IAction[0]; ;
+            if (!MiscPlugin.Plugin.AdjustPausesToDeviceEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new AdjustPausesToDeviceAction(view) };
