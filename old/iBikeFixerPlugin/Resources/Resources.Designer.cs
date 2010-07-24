@@ -106,7 +106,7 @@ namespace IBikeFixerPlugin.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://hem.bredband.net/gerhardnospam/index_ibikefixer.htm.
+        ///   Looks up a localized string similar to http://code.google.com/p/sporttracks-miscplugin/wiki/iBikeFixer.
         /// </summary>
         internal static string UI_Settings_PageControl_linkInformativeUrl_Url {
             get {
