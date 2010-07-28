@@ -29,7 +29,7 @@ namespace MiscPlugin.Edit
 #if ST_2_1
     IExtendActivityEditActions, IExtendRouteEditActions
 #else
-    IExtendDailyActivityViewActions, IExtendActivityReportsViewActions
+    IExtendDailyActivityViewActions, IExtendActivityReportsViewActions, IExtendRouteViewActions
 #endif
     {
 
