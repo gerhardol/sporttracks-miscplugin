@@ -33,7 +33,7 @@ namespace MiscPlugin.UI.Activities
         {
             get
             {
-                if (!MiscPlugin.Plugin.FixNaNEditMenu) return null;
+                if (MiscPlugin.Plugin.Verbose >= 99) return null;
 
                 return new IActivityDetailPage[] {
                     new EditTrackInfoPage()
@@ -43,6 +43,7 @@ namespace MiscPlugin.UI.Activities
 #else
     public  IList<IDetailPage> GetDetailPages(IDailyActivityView view, ExtendViewDetailPages.Location location)
     {
+        if (MiscPlugin.Plugin.Verbose >= 99) return null;
         return new IDetailPage[] { new EditTrackInfoPage(view) };
     }
 #endif
