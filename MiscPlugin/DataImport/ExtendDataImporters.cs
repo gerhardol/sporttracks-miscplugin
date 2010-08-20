@@ -127,8 +127,11 @@ namespace MiscPlugin.DataImport
                     {
                         if (FixNaN.isEnabled(activity))
                         {
-                            FixNaN tmp = new FixNaN(activity);
+                            FixHR tmp = new FixHR(activity);
                             tmp.Run();
+                            //Likely not needed...
+                            FixNaN tmp2 = new FixNaN(activity);
+                            tmp2.Run();
                         }
                     }
                     if (MiscPlugin.Plugin.SetUseEnteredDataAtImport){
