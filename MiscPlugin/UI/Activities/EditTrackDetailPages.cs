@@ -43,7 +43,7 @@ namespace MiscPlugin.UI.Activities
 #else
     public  IList<IDetailPage> GetDetailPages(IDailyActivityView view, ExtendViewDetailPages.Location location)
     {
-        if (MiscPlugin.Plugin.Verbose >= 99) return null;
+        if (MiscPlugin.Plugin.Verbose <= 99) return null;
         return new IDetailPage[] { new EditTrackInfoPage(view) };
     }
 #endif

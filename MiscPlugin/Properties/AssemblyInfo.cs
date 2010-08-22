@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MiscPlugin")]
-[assembly: AssemblyCopyright("Copyright Gerhard Olsson©  2010")]
+[assembly: AssemblyCopyright("Copyright Gerhard Olsson©  2008-2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("0.2.64.*")]
+[assembly: AssemblyVersion("0.2.69.*")]
 [assembly: AssemblyFileVersion("0.2")]
