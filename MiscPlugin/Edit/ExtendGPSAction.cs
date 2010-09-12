@@ -139,31 +139,6 @@ namespace MiscPlugin.Edit
         }
 
 #if !ST_2_1
-        IList<ItemType> GetAllContainedItems<ItemType>(ISelectionProvider selectionProvider)
-        {
-            List<ItemType> items = new List<ItemType>();
-            foreach (ItemType item in CollectionUtils.GetItemsOfType<ItemType>(selectionProvider.SelectedItems))
-            {
-                if (!items.Contains(item)) items.Add(item);
-            }
-            AddGroupItems<ItemType>(CollectionUtils.GetItemsOfType<IGroupedItem<ItemType>>(
-                                    selectionProvider.SelectedItems), items);
-            return items;
-        }
-
-        void AddGroupItems<ItemType>(IList<IGroupedItem<ItemType>> groups, IList<ItemType> allItems)
-        {
-            foreach (IGroupedItem<ItemType> group in groups)
-            {
-                foreach (ItemType item in group.Items)
-                {
-                    if (!allItems.Contains(item)) allItems.Add(item);
-                }
-                AddGroupItems(group.SubGroups, allItems);
-            }
-        }
-#endif
-#if !ST_2_1
         private IDailyActivityView dailyView = null;
         private IActivityReportsView reportView = null;
 #endif
@@ -179,11 +154,11 @@ namespace MiscPlugin.Edit
                 {
                     if (dailyView != null)
                     {
-                        return GetAllContainedItems<IActivity>(dailyView.SelectionProvider);
+                        return CollectionUtils.GetAllContainedItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
                     }
                     else if (reportView != null)
                     {
-                        return GetAllContainedItems<IActivity>(reportView.SelectionProvider);
+                        return CollectionUtils.GetAllContainedItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
                     }
                     else
                     {
