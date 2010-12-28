@@ -274,7 +274,7 @@ class SetTimeGPS
                             activity.Notes += sPrev + " " + s + " " + g + " " + gpsPrev + " " + gLast + " " + SpeedDistTrack.EntryDateTime(SpeedDistTrack[s]).ToString() + "  " + SpeedDistTrack[s].Value + "  " +
                                 GpsDistanceTrack[g].Value + "  " + GpsDistanceTrack[gpsPrev].Value + " " + speed +
                                 " " + ((GpsDistanceTrack[g].Value - GpsDistanceTrack[gpsPrev].Value)
-                                  / speed) + " " + " xxxyyy; ";
+                                  / speed) + " " + " yyy; ";
                         }
   
 #endif
