@@ -175,7 +175,7 @@ namespace MiscPlugin.UI.Settings
 
         private void linkInformativeUrl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("IExplore", Properties.Resources.UI_Settings_PageControl_linkInformativeUrl_Url);
+            System.Diagnostics.Process.Start(Properties.Resources.UI_Settings_PageControl_linkInformativeUrl_Url);
             linkInformativeUrl.LinkVisited = true;
         }
 

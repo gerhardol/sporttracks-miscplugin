@@ -79,7 +79,7 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Elevation Track to GPS points.
+        ///   Looks up a localized string similar to Elevation Track to GPS Points.
         /// </summary>
         internal static string Edit_ElevationToGPS_Text {
             get {

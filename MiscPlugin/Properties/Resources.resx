@@ -169,7 +169,7 @@
     <value>Detect Rest Laps</value>
   </data>
   <data name="Edit_ElevationToGPS_Text" xml:space="preserve">
-    <value>Elevation Track to GPS points</value>
+    <value>Elevation Track to GPS Points</value>
   </data>
   <data name="UI_Settings_PageControl_labelElevationToGPSInformative_Text" xml:space="preserve">
     <value>Apply the separate elevation track to the GPS track</value>
