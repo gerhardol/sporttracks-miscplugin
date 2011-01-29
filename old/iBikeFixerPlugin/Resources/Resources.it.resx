@@ -58,4 +58,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Edit_Action_Text" xml:space="preserve">
+    <value>Correggi la traccia di potenza di iBike</value>
+  </data>
+  <data name="UI_Settings_Page_Title" xml:space="preserve">
+    <value>Correggi iBike</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelActivateAtImportBool1_Text" xml:space="preserve">
+    <value>Correggi la traccia di potenza di iBike durante l'importazione dell'attività</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelInformative_Text" xml:space="preserve">
+    <value>Inserisci pause di tempo ed estendi la durata</value>
+  </data>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
+    <value>Pagina web del plugin</value>
+  </data>
 </root>
