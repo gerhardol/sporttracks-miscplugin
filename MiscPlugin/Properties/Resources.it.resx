@@ -62,78 +62,84 @@
     <value>MiscPlugin</value>
   </data>
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
-    <value>Activeren bij Importeren</value>
+    <value>Attivo all'importazione dell'attività</value>
   </data>
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
-    <value>Bewerk menu</value>
+    <value>Menù modifiche</value>
   </data>
   <data name="Edit_ExtendGPS_Text" xml:space="preserve">
-    <value>GPS track uitbreiden naar activiteit</value>
+    <value>Associare la traccia GPS all'attività</value>
   </data>
   <data name="UI_Settings_PageControl_labelExtendGPS_Text" xml:space="preserve">
-    <value>GPS track uitbreiden naar activiteit</value>
+    <value>Associare la traccia GPS all'attività</value>
   </data>
   <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
-    <value>GPS track uitbreiden naar activiteit Start/Stop indien GPS track kleiner is dan horloge of hartslag track</value>
+    <value>Associare la traccia GPS all'attività se Inizio/Fine della traccia GPS è più breve della durata della traccia o dei dati di frequenza cardiaca</value>
   </data>
   <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
-    <value>Tijd/tempo op GPS track zetten</value>
+    <value>Imposta Tempo/Passo sui punti GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelSetTimeGPS_Text" xml:space="preserve">
-    <value>Zet tijd/tempo op GPS punten</value>
+    <value>Imposta Tempo/Passo sui punti GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelSetTimeGPSInformative_Text" xml:space="preserve">
-    <value>Tijd zetten op GPS punten via de Afstandstrack indien deze bestaat, anders tijd van activiteit gebruiken</value>
+    <value>Impostare il tempo della traccia GPS sulla base della traccia della distanza</value>
   </data>
   <data name="Edit_InsertPauses_Text" xml:space="preserve">
-    <value>Pauzes invoegen bij GPS leegtes</value>
+    <value>Inserire pause dove mancano tratti della traccia GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelInsertPauses_Text" xml:space="preserve">
-    <value>Pauzes invoegen bij GPS leegtes</value>
+    <value>Inserire pause dove mancano tratti della traccia GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelInsertPausesInformative_Text" xml:space="preserve">
-    <value>Pauzes invoegen indien er tijd leegtes zijn bij GPS punten</value>
+    <value>Inserire pause dove ci sono pause nella traccia GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text" xml:space="preserve">
-    <value>Min GPS leegte </value>
+    <value>Minima pausa della traccia GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelDetectRestLapsInformative_Text" xml:space="preserve">
-    <value>Rustrondes detecteren. Momenteel enkel opwarmen en cooling down.</value>
+    <value>Identifica i Lap di pausa. Attualmente solo i lap di ricaldamento e di raffreddamento</value>
   </data>
   <data name="UI_Settings_PageControl_labelDetectRestLaps_Text" xml:space="preserve">
-    <value>Rustrondes detecteren</value>
+    <value>Identifica i Lap di pausa</value>
   </data>
   <data name="Edit_ElevationToGPS_Text" xml:space="preserve">
-    <value>Hoogtetrack naar GPS punten</value>
+    <value>Traccia di altitudine nei punti GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelElevationToGPSInformative_Text" xml:space="preserve">
-    <value>De aparte hoogtetrack toepassen op de GPS track</value>
+    <value>Modifica l'altitudine calcolata separatamente alla traccia GPS</value>
   </data>
   <data name="UI_Settings_PageControl_labelElevationToGPS_Text" xml:space="preserve">
-    <value>Hoogtetrack naar GPS punten</value>
+    <value>Traccia di altitudine nei punti GPS</value>
   </data>
   <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
-    <value>Rustrondes detecteren</value>
+    <value>Identifica i Lap di pausa</value>
   </data>
   <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
-    <value>Tijdens verplaatsen identieke GPS punten verwijderen</value>
+    <value>Elimina punti GPS identici durante lo spostamento</value>
   </data>
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPS_Text" xml:space="preserve">
-    <value>Identieke GPS punten verwijderen</value>
+    <value>Elimina punti GPS identici</value>
   </data>
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
-    <value>Identieke GPS punten verwijderen als afstandstrack beweging aangeeft (Fix voor Edge 705 one second recording.)</value>
+    <value>Elimina punti GPS identici quando la traccia della distanza indica movimento. (Correggi gli errori dovuti alla registrazione per ogni secondo dell'Edge 705.)</value>
+  </data>
+  <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
+    <value>Insersci i Lap e gli Stop nelCadenceTrack</value>
   </data>
   <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
-    <value>Pauzes bijstellen zodat tijd overeenkomt met toestel tijd (of manueel ingevoerde tijd)</value>
+    <value>Regolare le pause in modo che la durata dell'attività coincida con la durata riscontrata sul dispositivo (oppure impostata manualmente)</value>
   </data>
   <data name="Edit_AdjustPausesToDevice_Text" xml:space="preserve">
-    <value>Pauzes bijstellen naar toestel tijd</value>
+    <value>Regolare le pause sulla base del tempo del dispositivo</value>
   </data>
   <data name="UI_Settings_PageControl_labelAdjustPausesToDevice_Text" xml:space="preserve">
-    <value>Pauzes bijstellen naar toestel tijd</value>
+    <value>Regolare le pause sulla base del tempo del dispositivo</value>
   </data>
   <data name="Edit_FixHR_Text" xml:space="preserve">
-    <value>Bijstellen oorspronkelijke HF pieken</value>
+    <value>Correggi i picchi iniziali di frequenza cardiaca</value>
+  </data>
+  <data name="Edit_FixNaN_Text" xml:space="preserve">
+    <value>Correggi NaN nella traccia</value>
   </data>
 </root>

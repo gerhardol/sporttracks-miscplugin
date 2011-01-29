@@ -43,7 +43,7 @@ else
     #Store a copy locally
     if($sav ne "")
     {
-        #`wget  --no-check-certificate -O $localcopy "$sav"`;
+        `wget  --no-check-certificate -O $localcopy "$sav"`;
         #my $browser = LWP::UserAgent->new;
         #my$response=$browser->get("$data$savArg");
         #die "Error at $data$savArg\n ", $response->status_line, "\n Aborting"

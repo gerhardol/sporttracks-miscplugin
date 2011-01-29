@@ -61,9 +61,6 @@
   <data name="UI_Settings_MiscPluginPage_Title" xml:space="preserve">
     <value>MiscPlugin</value>
   </data>
-  <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
-    <value>Plugin websida</value>
-  </data>
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Aktivera vid import</value>
   </data>
