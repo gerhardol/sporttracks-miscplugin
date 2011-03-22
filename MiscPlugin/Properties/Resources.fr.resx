@@ -74,7 +74,7 @@
     <value>Etendre la trace GPS vers Activité</value>
   </data>
   <data name="UI_Settings_PageControl_labelExtendGPSInformative_Text" xml:space="preserve">
-    <value>Etend la trace GPS vers Activité Debut/Fin si la trace GPS est plus courte que l'horloge ou que la trace de la fréquence cardiaque</value>
+    <value>Etendre la trace GPS vers Activité Debut/Fin si la trace GPS est plus courte que la durée ou que la trace de la fréquence cardiaque</value>
   </data>
   <data name="Edit_SetTimeGPS_Text" xml:space="preserve">
     <value>Etablir le temps/allure sur la trace GPS</value>
@@ -124,6 +124,9 @@
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Retirer les points GPS identiques où la trace de distance indique du déplacement. (Correctif pour le Edge 705 enregistrement d'une seconde.)</value>
   </data>
+  <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
+    <value>Mettre des tours et des arrêts dans CadenceTrack</value>
+  </data>
   <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
     <value>Ajuster les pauses pour que les temps de l’activité correspondent aux temps du périphérique (ou du temps mis manuellement) </value>
   </data>
@@ -135,5 +138,8 @@
   </data>
   <data name="Edit_FixHR_Text" xml:space="preserve">
     <value>Définir les piques de FC initiales </value>
+  </data>
+  <data name="Edit_FixNaN_Text" xml:space="preserve">
+    <value>Définir les NaN dans les tracés</value>
   </data>
 </root>

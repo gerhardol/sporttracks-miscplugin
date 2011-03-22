@@ -58,6 +58,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Url" xml:space="preserve">
+    <value>http://code.google.com/p/sporttracks-miscplugin/wiki/GpsCorrection</value>
+  </data>
+  <data name="UI_Settings_Page_Title" xml:space="preserve">
+    <value>GpsCorrection</value>
+  </data>
   <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
     <value>Page Web du plugin</value>
   </data>
@@ -66,5 +72,17 @@
   </data>
   <data name="UI_Settings_PageControl_labelEditMenuItem_Text" xml:space="preserve">
     <value>Modifier le Menu</value>
+  </data>
+  <data name="Edit_CorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Ajuster le GPS par la distance de l'appareil</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Ajuster le GPS par la distance de l'appareil</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text" xml:space="preserve">
+    <value>Supprimer les points GPS qui semblent incorrectes en vérifiant les distances négatives dans la distance du tracé</value>
+  </data>
+  <data name="Edit_DistanceDiffToPower_Text" xml:space="preserve">
+    <value>Mettre la différence de distance du GPS de l'appareil dans PowerTrack</value>
   </data>
 </root>

@@ -58,7 +58,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Edit_Action_Text" xml:space="preserve">
+    <value>Définir PowerTrack iBike</value>
+  </data>
+  <data name="UI_Settings_Page_Title" xml:space="preserve">
+    <value>Définir iBik</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelActivateAtImportBool1_Text" xml:space="preserve">
+    <value>Définir PowerTrack iBike à l'importation</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelInformative_Text" xml:space="preserve">
+    <value>Insérer des durées de pause et étendre la durée</value>
+  </data>
   <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
     <value>Page Web du plugin</value>
+  </data>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Url" xml:space="preserve">
+    <value>http://code.google.com/p/sporttracks-miscplugin/wiki/iBikeFixer</value>
   </data>
 </root>
