@@ -1,0 +1,245 @@
+/*
+Copyright (C) 2008, 2009, 2010 Gerhard Olsson 
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using System.Collections.Generic;
+
+using ZoneFiveSoftware.Common.Data;
+using ZoneFiveSoftware.Common.Data.Fitness;
+using ZoneFiveSoftware.Common.Data.GPS;
+using ZoneFiveSoftware.Common.Visuals;
+#if !ST_2_1
+using ZoneFiveSoftware.Common.Visuals.Fitness;
+using ZoneFiveSoftware.Common.Visuals.Util;
+#endif
+
+namespace MiscPlugin.Edit
+{
+    class SetUseEnteredDataAction : IAction
+    {
+#if !ST_2_1
+        public SetUseEnteredDataAction(IDailyActivityView view)
+        {
+            this.dailyView = view;
+        }
+        public SetUseEnteredDataAction(IActivityReportsView view)
+        {
+            this.reportView = view;
+        }
+        public SetUseEnteredDataAction(IRouteView view)
+        {
+            this.routeView = view;
+        }
+#endif
+        public SetUseEnteredDataAction(IList<IActivity> activities)
+        {
+            if (this.activities == null)
+            {
+                this.activities = activities;
+            } else {
+                foreach (IActivity activity in activities)
+                {
+                    this.activities.Add(activity);
+                }
+            }
+        }
+
+        //public SetUseEnteredDataAction(IList<IRoute> routes)
+        //{
+        //    if (this.routes == null)
+        //    {
+        //        this.routes = routes;
+        //    }
+        //    else
+        //    {
+        //        foreach (IRoute route in routes)
+        //        {
+        //            this.routes.Add(route);
+        //        }
+        //    }
+        //}
+
+        #region IAction Members
+
+        public bool Enabled
+        {
+            get
+            {
+                Boolean enabled = false;
+                    if (activities != null)
+                    {
+                        foreach (IActivity activity in activities)
+                        {
+                            if (SetUseEnteredData.isEnabled(activity))
+                            {
+                                enabled = true;
+                                break;
+                            }
+                        }
+                    }
+                    //if (routes != null)
+                    //{
+                    //    foreach (IRoute route in routes)
+                    //    {
+                    //        if (SetUseEnteredData.isEnabled(route))
+                    //        {
+                    //            enabled = true;
+                    //            break;
+                    //        }
+                    //    }
+                    //}
+                return enabled; 
+            }
+        }
+
+        public bool HasMenuArrow
+        {
+            get { return true; }
+        }
+
+        public Image Image
+        {
+            get { return null; }
+        }
+
+        public IList<string> MenuPath
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
+
+        public void Refresh()
+        {
+        }
+
+        public void Run(Rectangle rectButton)
+        {
+            if (activities != null)
+            foreach (IActivity activity in activities)
+            {
+                SetUseEnteredData tmp = new SetUseEnteredData(activity);
+                tmp.Run();
+            }
+            //if (routes != null)
+            //foreach (IRoute route in routes)
+            //{
+            //    SetUseEnteredData tmp = new SetUseEnteredData(route);
+            //    route.GPSRoute = tmp.getGPSRoute();
+            //}
+        }
+        public string Title
+        {
+            get { return Properties.Resources.Edit_SetUseEnteredData_Text; }
+        }
+        public bool Visible
+        {
+            get
+            {
+                if (activities.Count > 0) return true;
+                //if (routes.Count > 0) return true;
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region INotifyPropertyChanged Members
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
+
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+#if !ST_2_1
+        private IDailyActivityView dailyView = null;
+        private IActivityReportsView reportView = null;
+        private IRouteView routeView = null;
+#endif
+        private IList<IActivity> _activities = null;
+        private IList<IActivity> activities
+        {
+            get
+            {
+#if !ST_2_1
+                //activities are set either directly or by selection,
+                //not by more than one
+                if (_activities == null)
+                {
+                    if (dailyView != null)
+                    {
+                        return CollectionUtils.GetAllContainedItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
+                    }
+                    else if (reportView != null)
+                    {
+                        return CollectionUtils.GetAllContainedItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                    }
+                    else
+                    {
+                        return new List<IActivity>();
+                    }
+                }
+#endif
+                return _activities;
+            }
+            set
+            {
+                _activities = value;
+            }
+        }
+//        private IList<IRoute> _routes = null;
+//        private IList<IRoute> routes
+//        {
+//            get
+//            {
+//#if !ST_2_1
+//                //activities are set either directly or by selection,
+//                //not by more than one
+//                if (_routes == null)
+//                {
+//                    if (routeView != null)
+//                    {
+//                        return CollectionUtils.GetAllContainedItemsOfType<IRoute>(routeView.SelectionProvider.SelectedItems);
+//                    }
+//                    else
+//                    {
+//                        return new List<IRoute>();
+//                    }
+//                }
+//#endif
+//                return _routes;
+//            }
+//           set
+//            {
+//                _routes = value;
+//            }
+//        }
+    }
+}

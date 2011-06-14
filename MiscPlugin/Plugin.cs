@@ -126,6 +126,8 @@ namespace MiscPlugin
 
             attr = pluginNode.GetAttribute(xmlTags.SetUseEnteredDataAtImport);
             if (attr.Length > 0) { SetUseEnteredDataAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.SetUseEnteredDataEditMenu);
+            if (attr.Length > 0) { SetUseEnteredDataEditMenu = XmlConvert.ToBoolean(attr); }
 
             attr = pluginNode.GetAttribute(xmlTags.Verbose);
             if (attr.Length > 0) { Verbose = XmlConvert.ToInt16(attr); }
@@ -162,6 +164,7 @@ namespace MiscPlugin
             pluginNode.SetAttribute(xmlTags.SetTimeGPSAtImport, XmlConvert.ToString(SetTimeGPSAtImport));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSEditMenu, XmlConvert.ToString(SetTimeGPSEditMenu));
             pluginNode.SetAttribute(xmlTags.SetUseEnteredDataAtImport, XmlConvert.ToString(SetUseEnteredDataAtImport));
+            pluginNode.SetAttribute(xmlTags.SetUseEnteredDataEditMenu, XmlConvert.ToString(SetUseEnteredDataEditMenu));
 
             pluginNode.SetAttribute(xmlTags.Verbose, XmlConvert.ToString(Verbose));
         }
@@ -199,6 +202,7 @@ namespace MiscPlugin
         public static bool SetTimeGPSAtImport = false;
         public static bool SetTimeGPSEditMenu = false;
         public static bool SetUseEnteredDataAtImport = false;
+        public static bool SetUseEnteredDataEditMenu = false;
 
         public static int Verbose = 0;  //Only changed in xml file
         #endregion
@@ -234,6 +238,7 @@ namespace MiscPlugin
             public const string SetTimeGPSAtImport = "SetTimeGPSAtImport";
             public const string SetTimeGPSEditMenu = "SetTimeGPSEditMenu";
             public const string SetUseEnteredDataAtImport = "SetUseEnteredDataAtImport";
+            public const string SetUseEnteredDataEditMenu = "SetUseEnteredDataEditMenu";
 
             public const string Verbose = "Verbose";
         }
