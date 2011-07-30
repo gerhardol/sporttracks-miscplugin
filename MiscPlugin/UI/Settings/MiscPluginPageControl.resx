@@ -205,8 +205,8 @@
     <value>NoControl</value>
   </data>
   <data name="labelExtendGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 17</value>
- </data>
+    <value>277, 17</value>
+  </data>
   <data name="labelExtendGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 40</value>
   </data>
@@ -232,7 +232,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtInsertPausesAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 60</value>
+    <value>153, 62</value>
   </data>
   <data name="txtInsertPausesAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 14</value>
@@ -289,10 +289,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelInsertPausesInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 57</value>
+    <value>277, 59</value>
   </data>
   <data name="labelInsertPausesInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 38</value>
+    <value>282, 40</value>
   </data>
   <data name="labelInsertPausesInformative.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -319,7 +319,7 @@
     <value>True</value>
   </data>
   <data name="numericInsertPauses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 100</value>
+    <value>153, 104</value>
   </data>
   <data name="numericInsertPauses.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
@@ -388,7 +388,7 @@
     <value>True</value>
   </data>
   <data name="labelEditMenuItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 2</value>
+    <value>214, 2</value>
   </data>
   <data name="labelEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -415,7 +415,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtExtendGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 20</value>
+    <value>214, 20</value>
   </data>
   <data name="txtExtendGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -439,7 +439,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtInsertPausesEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 60</value>
+    <value>214, 62</value>
   </data>
   <data name="txtInsertPausesEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -493,7 +493,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtSetTimeGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 128</value>
+    <value>214, 132</value>
   </data>
   <data name="txtSetTimeGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -520,10 +520,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelSetTimeGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 125</value>
+    <value>277, 129</value>
   </data>
   <data name="labelSetTimeGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 38</value>
+    <value>282, 40</value>
   </data>
   <data name="labelSetTimeGPSInformative.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -550,7 +550,7 @@
     <value>True</value>
   </data>
   <data name="labelInsertPausesWhenGPSdifferMinSeconds.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 103</value>
+    <value>75, 107</value>
   </data>
   <data name="labelInsertPausesWhenGPSdifferMinSeconds.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -577,7 +577,7 @@
     <value>True</value>
   </data>
   <data name="txtSetTimeGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 128</value>
+    <value>153, 132</value>
   </data>
   <data name="txtSetTimeGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -604,7 +604,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelRemoveIdenticalGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 285</value>
+    <value>5, 297</value>
   </data>
   <data name="labelRemoveIdenticalGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 13</value>
@@ -631,7 +631,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtRemoveIdenticalGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 288</value>
+    <value>153, 300</value>
   </data>
   <data name="txtRemoveIdenticalGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 14</value>
@@ -655,7 +655,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtRemoveIdenticalGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 288</value>
+    <value>214, 300</value>
   </data>
   <data name="txtRemoveIdenticalGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -682,7 +682,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelDetectRestLaps.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 205</value>
+    <value>5, 213</value>
   </data>
   <data name="labelDetectRestLaps.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -709,7 +709,7 @@
     <value>True</value>
   </data>
   <data name="labelAdjustPausesToDevice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 165</value>
+    <value>5, 171</value>
   </data>
   <data name="labelAdjustPausesToDevice.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 13</value>
@@ -736,7 +736,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtDetectRestLapsAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 208</value>
+    <value>153, 216</value>
   </data>
   <data name="txtDetectRestLapsAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -760,7 +760,7 @@
     <value>True</value>
   </data>
   <data name="txtDetectRestLapsEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 208</value>
+    <value>214, 216</value>
   </data>
   <data name="txtDetectRestLapsEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -787,10 +787,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelDetectRestLapsInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 205</value>
+    <value>277, 213</value>
   </data>
   <data name="labelDetectRestLapsInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 38</value>
+    <value>282, 40</value>
   </data>
   <data name="labelDetectRestLapsInformative.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -814,10 +814,10 @@
     <value>Fill</value>
   </data>
   <data name="labelAdjustPausesToDeviceInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 165</value>
+    <value>277, 171</value>
   </data>
   <data name="labelAdjustPausesToDeviceInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 38</value>
+    <value>282, 40</value>
   </data>
   <data name="labelAdjustPausesToDeviceInformative.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -838,7 +838,7 @@
     <value>24</value>
   </data>
   <data name="txtAdjustPausesToDeviceAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 168</value>
+    <value>153, 174</value>
   </data>
   <data name="txtAdjustPausesToDeviceAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 14</value>
@@ -859,7 +859,7 @@
     <value>25</value>
   </data>
   <data name="txtAdjustPausesToDeviceEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 168</value>
+    <value>214, 174</value>
   </data>
   <data name="txtAdjustPausesToDeviceEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 14</value>
@@ -886,10 +886,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelRemoveIdenticalGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 285</value>
+    <value>277, 297</value>
   </data>
   <data name="labelRemoveIdenticalGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 38</value>
+    <value>282, 40</value>
   </data>
   <data name="labelRemoveIdenticalGPSInformative.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -913,7 +913,7 @@
     <value>True</value>
   </data>
   <data name="labelElevationToGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 245</value>
+    <value>5, 255</value>
   </data>
   <data name="labelElevationToGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -940,7 +940,7 @@
     <value>True</value>
   </data>
   <data name="txtElevationToGPSAtImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 248</value>
+    <value>153, 258</value>
   </data>
   <data name="txtElevationToGPSAtImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -964,7 +964,7 @@
     <value>True</value>
   </data>
   <data name="txtElevationToGPSEditMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 248</value>
+    <value>214, 258</value>
   </data>
   <data name="txtElevationToGPSEditMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -988,10 +988,10 @@
     <value>Fill</value>
   </data>
   <data name="labelElevationToGPSInformative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 245</value>
+    <value>277, 255</value>
   </data>
   <data name="labelElevationToGPSInformative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 38</value>
+    <value>282, 40</value>
   </data>
   <data name="labelElevationToGPSInformative.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -1018,7 +1018,7 @@
     <value>7</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 325</value>
+    <value>564, 339</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1054,7 +1054,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>580, 342</value>
+    <value>570, 368</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MiscPluginPageControl</value>
