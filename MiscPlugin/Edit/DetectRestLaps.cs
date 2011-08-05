@@ -54,8 +54,8 @@ namespace MiscPlugin.Edit
         public int Run() 
         {
             if (!isEnabled(activity)
-                || checkType == 1 && (activity.Laps[0].Rest == true
-                || activity.Laps[activity.Laps.Count - 1].Rest == true))
+                )//|| checkType == 1 && (activity.Laps[0].Rest == true
+                //|| activity.Laps[activity.Laps.Count - 1].Rest == true))
             {
                 //Purge update in certain situations, do not slow down Edit
                 //(should be all laps)
@@ -66,6 +66,29 @@ namespace MiscPlugin.Edit
             bool update = false;
             String tmpNotes = "";
 
+            //All rest laps
+            bool allRest = true;
+            for (int i = 0; i < activity.Laps.Count; i++)
+            {
+                if (!activity.Laps[i].Rest)
+                {
+                    allRest = false;
+                    break;
+                }
+            }
+            if (allRest)
+            {
+                if (MiscPlugin.Plugin.Verbose > 9)
+                {
+                    activity.Notes += "All rest laps, set to active" + Environment.NewLine;
+                }
+
+                for (int i = 0; i < activity.Laps.Count; i++)
+                {
+
+                    activity.Laps[i].Rest = false;
+                }
+            }
             //Two warmup laps
             if ((info.RecordedLapDetailInfo[0].LapDistanceMeters + info.RecordedLapDetailInfo[1].LapDistanceMeters)
             < 2 * MiscPlugin.Plugin.DetectRestLapsLapDistance
@@ -124,6 +147,7 @@ namespace MiscPlugin.Edit
                     update = true;
                 }
             }
+
             if (update)
             {
                 //Need to manually set activity as updated to get ST noticing it
