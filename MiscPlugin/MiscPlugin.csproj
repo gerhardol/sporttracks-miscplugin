@@ -10,6 +10,7 @@
   </PropertyGroup>
   <Import Project="..\Common\Common-References.csproj" />
   <ItemGroup>
+    <Compile Include="Data\TrailsItemTrackSelectionInfo.cs" />
     <Compile Include="Edit\SetUseEnteredDataAction.cs" />
     <Compile Include="Edit\SetUseEnteredDataExtendActions.cs" />
     <Compile Include="Edit\LiveUpdateAction.cs" />

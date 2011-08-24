@@ -135,16 +135,66 @@ namespace MiscPlugin.Edit
         public void Run(Rectangle rectButton)
         {
             if (activities != null)
-            foreach (IActivity activity in activities)
             {
-                SetTimeGPS tmp = new SetTimeGPS(activity);
-                activity.GPSRoute = tmp.getGPSRoute();
+                bool handled = false;
+                if (dailyView != null)
+                {
+                    IList<IItemTrackSelectionInfo> selectedGPS = TrailsPlugin.Data.TrailsItemTrackSelectionInfo.SetAndAdjustFromSelection(dailyView.RouteSelectionProvider.SelectedItems, activities, true);
+                    if (TrailsPlugin.Data.TrailsItemTrackSelectionInfo.ContainsData(selectedGPS))
+                    {
+                        string message = Properties.Resources.Edit_SetTimeGPS_UseSelection_Text;
+                        if (MessageBox.Show(string.Format(message, CommonResources.Text.ActionYes, CommonResources.Text.ActionNo),
+                            "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            handled = true;
+                            foreach (IItemTrackSelectionInfo sel in selectedGPS)
+                            {
+                                if (sel is TrailsPlugin.Data.TrailsItemTrackSelectionInfo)
+                                {
+                                    IGPSRoute route = new GPSRoute();
+                                    IActivity activity = (sel as TrailsPlugin.Data.TrailsItemTrackSelectionInfo).Activity;
+                                    ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
+                                    foreach (IValueRange<DateTime> times in sel.MarkedTimes)
+                                    {
+                                        IDistanceDataTrack dtrack = info.MovingDistanceMetersTrack;
+                                        float startDist = dtrack.GetInterpolatedValue(times.Lower).Value;
+                                        float endDist = dtrack.GetInterpolatedValue(times.Upper).Value;
+                                        double speed = (endDist - startDist) / (times.Upper - times.Lower).TotalSeconds;
+                                        for (int i = 0; i < activity.GPSRoute.Count; i++)
+                                        {
+                                            ITimeValueEntry<IGPSPoint> g = activity.GPSRoute[i];
+                                            DateTime time = activity.GPSRoute.EntryDateTime(g);
+                                            if (time > times.Lower && time < times.Upper)
+                                            {
+                                                float dist = dtrack.GetInterpolatedValue(time).Value - startDist;
+                                                time = ZoneFiveSoftware.Common.Data.Algorithm.DateTimeRangeSeries.AddTimeAndPauses(times.Lower, TimeSpan.FromSeconds(dist / speed), info.NonMovingTimes);
+                                            }
+                                            route.Add(time, g.Value);
+                                        }
+                                    }
+                                    activity.GPSRoute = route;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (!handled)
+                {
+                    foreach (IActivity activity in activities)
+                    {
+                        //TODO: Possibly implement selection above
+                        SetTimeGPS tmp = new SetTimeGPS(activity);
+                        activity.GPSRoute = tmp.getGPSRoute();
+                    }
+                }
             }
             if (routes != null)
-            foreach (IRoute route in routes)
             {
-                SetTimeGPS tmp = new SetTimeGPS(route);
-                route.GPSRoute = tmp.getGPSRoute();
+                foreach (IRoute route in routes)
+                {
+                    SetTimeGPS tmp = new SetTimeGPS(route);
+                    route.GPSRoute = tmp.getGPSRoute();
+                }
             }
         }
         public string Title

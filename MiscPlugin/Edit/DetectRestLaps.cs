@@ -85,7 +85,6 @@ namespace MiscPlugin.Edit
 
                 for (int i = 0; i < activity.Laps.Count; i++)
                 {
-
                     activity.Laps[i].Rest = false;
                 }
             }
