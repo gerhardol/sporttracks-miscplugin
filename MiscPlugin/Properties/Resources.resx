@@ -219,4 +219,7 @@
   <data name="Edit_SetUseEnteredData_Text" xml:space="preserve">
     <value>Set Manual Calculation on Activities</value>
   </data>
+  <data name="Edit_SetTimeGPS_UseSelection_Text" xml:space="preserve">
+    <value>Smooth speed for GPS points selected on map?</value>
+  </data>
 </root>

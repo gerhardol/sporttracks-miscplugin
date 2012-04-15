@@ -11,6 +11,9 @@
   <Import Project="..\Common\Common-References.csproj" />
   <ItemGroup>
     <Compile Include="Data\TrailsItemTrackSelectionInfo.cs" />
+    <Compile Include="Edit\PrepareForActivitiesViewer.cs" />
+    <Compile Include="Edit\PrepareForActivitiesViewerAction.cs" />
+    <Compile Include="Edit\PrepareForActivitiesViewerExtendActions.cs" />
     <Compile Include="Edit\SetUseEnteredDataAction.cs" />
     <Compile Include="Edit\SetUseEnteredDataExtendActions.cs" />
     <Compile Include="Edit\LiveUpdateAction.cs" />
@@ -24,6 +27,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.es.resx">
       <DependentUpon>Resources.resx</DependentUpon>

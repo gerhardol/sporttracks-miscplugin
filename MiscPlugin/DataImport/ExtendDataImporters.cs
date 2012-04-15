@@ -57,6 +57,14 @@ namespace MiscPlugin.DataImport
                     tmp.Run();
                 }
             }
+            if (MiscPlugin.Plugin.PrepareForActivitiesViewerAtImport)
+            {
+                if (PrepareForActivitiesViewer.isEnabled(activity))
+                {
+                    PrepareForActivitiesViewer tmp = new PrepareForActivitiesViewer(activity);
+                    tmp.Run();
+                }
+            }
             if (MiscPlugin.Plugin.SetTimeGPSAtImport)
             {
                 if (SetTimeGPS.isEnabled(activity)

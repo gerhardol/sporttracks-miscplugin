@@ -114,6 +114,11 @@ namespace MiscPlugin
             attr = pluginNode.GetAttribute(xmlTags.Laps2CadenceEditMenu);
             if (attr.Length > 0) { Laps2CadenceEditMenu = XmlConvert.ToBoolean(attr); }
 
+            attr = pluginNode.GetAttribute(xmlTags.PrepareForActivitiesViewerAtImport);
+            if (attr.Length > 0) { PrepareForActivitiesViewerAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.PrepareForActivitiesViewerEditMenu);
+            if (attr.Length > 0) { PrepareForActivitiesViewerEditMenu = XmlConvert.ToBoolean(attr); }
+
             attr = pluginNode.GetAttribute(xmlTags.RemoveIdenticalGPSAtImport);
             if (attr.Length > 0) { RemoveIdenticalGPSAtImport = XmlConvert.ToBoolean(attr); }
             attr = pluginNode.GetAttribute(xmlTags.RemoveIdenticalGPSEditMenu);
@@ -159,6 +164,8 @@ namespace MiscPlugin
             pluginNode.SetAttribute(xmlTags.InsertPausesAdjacentCheckSeconds, XmlConvert.ToString(InsertPausesAdjacentCheckSeconds));
             pluginNode.SetAttribute(xmlTags.InsertPausesGPSOffsetSeconds, XmlConvert.ToString(InsertPausesGPSOffsetSeconds));
             pluginNode.SetAttribute(xmlTags.Laps2CadenceEditMenu, XmlConvert.ToString(Laps2CadenceEditMenu));
+            pluginNode.SetAttribute(xmlTags.PrepareForActivitiesViewerAtImport, XmlConvert.ToString(RemoveIdenticalGPSAtImport));
+            pluginNode.SetAttribute(xmlTags.PrepareForActivitiesViewerEditMenu, XmlConvert.ToString(RemoveIdenticalGPSEditMenu));
             pluginNode.SetAttribute(xmlTags.RemoveIdenticalGPSAtImport, XmlConvert.ToString(RemoveIdenticalGPSAtImport));
             pluginNode.SetAttribute(xmlTags.RemoveIdenticalGPSEditMenu, XmlConvert.ToString(RemoveIdenticalGPSEditMenu));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSAtImport, XmlConvert.ToString(SetTimeGPSAtImport));
@@ -197,6 +204,8 @@ namespace MiscPlugin
         public static int InsertPausesAdjacentCheckSeconds = 3; //Only changed in xml file
         public static int InsertPausesGPSOffsetSeconds = 1; //Only changed in xml file
         public static bool Laps2CadenceEditMenu = false; //Only changed in xml file
+        public static bool PrepareForActivitiesViewerAtImport = false;
+        public static bool PrepareForActivitiesViewerEditMenu = true;
         public static bool RemoveIdenticalGPSAtImport = false;
         public static bool RemoveIdenticalGPSEditMenu = false;
         public static bool SetTimeGPSAtImport = false;
@@ -233,6 +242,8 @@ namespace MiscPlugin
             public const string InsertPausesAdjacentCheckSeconds = "InsertPausesAdjacentCheckSeconds";
             public const string InsertPausesGPSOffsetSeconds = "InsertPausesGPSOffsetSeconds";
             public const string Laps2CadenceEditMenu = "Laps2CadenceEditMenu";
+            public const string PrepareForActivitiesViewerAtImport = "PrepareForActivitiesViewerAtImport";
+            public const string PrepareForActivitiesViewerEditMenu = "PrepareForActivitiesViewerEditMenu";
             public const string RemoveIdenticalGPSAtImport = "RemoveIdenticalGPSAtImport";
             public const string RemoveIdenticalGPSEditMenu = "RemoveIdenticalGPSEditMenu";
             public const string SetTimeGPSAtImport = "SetTimeGPSAtImport";
