@@ -50,7 +50,7 @@ namespace MiscPlugin.Edit
             return false;
         }
 
-                
+
         public int Run()
         {
             if (!isEnabled(activity))
@@ -58,59 +58,20 @@ namespace MiscPlugin.Edit
                 return 1;
             }
             ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
-            foreach (ILapInfo l in activity.Laps)
+            try
             {
-                //foreach (ILapInfo l in al)
+                foreach (ILapInfo l in activity.Laps)
                 {
                     DateTime EndTime = ZoneFiveSoftware.Common.Data.Algorithm.DateTimeRangeSeries.AddTimeAndPauses(l.StartTime, l.TotalTime, activity.TimerPauses);
-                    l.TotalDistanceMeters = info.MovingDistanceMetersTrack.GetInterpolatedValue( EndTime).Value -
+                    l.TotalDistanceMeters = info.MovingDistanceMetersTrack.GetInterpolatedValue(EndTime).Value -
                         info.MovingDistanceMetersTrack.GetInterpolatedValue(l.StartTime).Value;
                 }
             }
-            ////Do not use stopped time while adjusting
-            //bool OriginalStoppedUse = activity.Category.UseParentSettings;
-            //float OriginalStoppedSpeed = activity.Category.StoppedMetersPerSecond;
-            //activity.Category.UseParentSettings = false;
-            //activity.Category.StoppedMetersPerSecond = 0;
-
-            //ActivityInfo info = ActivityInfoCache.Instance.GetInfo(activity);
-            
-
-            //TimeSpan TrackTime = info.TimeNonPaused;
-            //TimeSpan DeviceTime = activity.TotalTimeEntered;
-            //if (MiscPlugin.Plugin.Verbose > 0)
-            //{
-            //     activity.Notes += "Adjusting pause: " + TrackTime+ " " +DeviceTime + Environment.NewLine;
-            //}
-
-            //if (TimeSpan.Compare(TrackTime, DeviceTime) > 0)
-            //{
-            //    //Only increase pauses for now (trickier to insert GPS points)
-            //    int pauseNo =0;
-            //    //Distribute time over pauses, adding odd time to first pauses (this could be improved if someone cares)
-            //    int TotNoPauses = activity.TimerPauses.Count;
-            //    int PauseChange = (int)TrackTime.Subtract(DeviceTime).TotalSeconds;
-            //if (MiscPlugin.Plugin.Verbose > 0)
-            //{
-            //    activity.Notes += "Adjusting pauses. NoOfPauses: " + TotNoPauses + " TotalTime: " + PauseChange + Environment.NewLine;
-            //}
-            //    for (pauseNo=0; pauseNo < TotNoPauses; pauseNo++){
-            //        DateTime lower = activity.TimerPauses[pauseNo].Lower.
-            //            Subtract(TimeSpan.FromSeconds(PauseChange / TotNoPauses)).
-            //            Subtract(TimeSpan.FromSeconds((PauseChange % TotNoPauses) >= pauseNo ? 1 : 0));
-            //        if (MiscPlugin.Plugin.Verbose > 0)
-            //        {
-            //            activity.Notes += "Adjusting pause: " + activity.TimerPauses[pauseNo].Lower + " to " + lower + Environment.NewLine;
-            //        }
-            //        activity.TimerPauses.Add(new ValueRange<DateTime>(lower,
-            //            activity.TimerPauses[pauseNo].Upper));
-
-            //    } 
-
-            //}
-            //activity.Category.StoppedMetersPerSecond = OriginalStoppedSpeed;
-            //activity.Category.UseParentSettings = OriginalStoppedUse;
-            //ActivityInfoCache.Instance.ClearInfo(activity);
+            catch
+            {
+                //More checks should be added. Just ignore for now
+            }
+            ActivityInfoCache.Instance.ClearInfo(activity);
             return 0;
         }
     }
