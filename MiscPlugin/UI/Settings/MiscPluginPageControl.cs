@@ -53,21 +53,29 @@ namespace MiscPlugin.UI.Settings
         /// </summary>
         public void RefreshPage()
         {
-            txtExtendGPSAtImport.Checked = MiscPlugin.Plugin.ExtendGPSAtImport;
-            txtExtendGPSEditMenu.Checked = MiscPlugin.Plugin.ExtendGPSEditMenu;
-            txtInsertPausesAtImport.Checked = MiscPlugin.Plugin.InsertPausesAtImport;
-            txtInsertPausesEditMenu.Checked = MiscPlugin.Plugin.InsertPausesEditMenu;
-            numericInsertPauses.Value = MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds;
             txtAdjustPausesToDeviceAtImport.Checked = MiscPlugin.Plugin.AdjustPausesToDeviceAtImport;
             txtAdjustPausesToDeviceEditMenu.Checked = MiscPlugin.Plugin.AdjustPausesToDeviceEditMenu;
-            txtSetTimeGPSAtImport.Checked = MiscPlugin.Plugin.SetTimeGPSAtImport;
-            txtSetTimeGPSEditMenu.Checked = MiscPlugin.Plugin.SetTimeGPSEditMenu;
+            txtCorrectGpsFromDistanceAtImport.Checked = MiscPlugin.Plugin.CorrectGpsFromDistanceAtImport;
+            txtCorrectGpsFromDistanceEditMenu.Checked = MiscPlugin.Plugin.CorrectGpsFromDistanceEditMenu;
             txtDetectRestLapsAtImport.Checked = MiscPlugin.Plugin.DetectRestLapsAtImport;
             txtDetectRestLapsEditMenu.Checked = MiscPlugin.Plugin.DetectRestLapsEditMenu;
             txtElevationToGPSAtImport.Checked = MiscPlugin.Plugin.ElevationToGPSAtImport;
             txtElevationToGPSEditMenu.Checked = MiscPlugin.Plugin.ElevationToGPSEditMenu;
+            txtExtendGPSAtImport.Checked = MiscPlugin.Plugin.ExtendGPSAtImport;
+            txtExtendGPSEditMenu.Checked = MiscPlugin.Plugin.ExtendGPSEditMenu;
+            txtFixHRAtImport.Checked = MiscPlugin.Plugin.FixHRAtImport;
+            txtFixHREditMenu.Checked = MiscPlugin.Plugin.FixHREditMenu;
+            txtInsertPausesAtImport.Checked = MiscPlugin.Plugin.InsertPausesAtImport;
+            txtInsertPausesEditMenu.Checked = MiscPlugin.Plugin.InsertPausesEditMenu;
+            numericInsertPausesMinSeconds.Value = MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds;
+            txtPrepareForActivitiesViewerAtImport.Checked = MiscPlugin.Plugin.PrepareForActivitiesViewerAtImport;
+            txtPrepareForActivitiesViewerEditMenu.Checked = MiscPlugin.Plugin.PrepareForActivitiesViewerEditMenu;
             txtRemoveIdenticalGPSAtImport.Checked = MiscPlugin.Plugin.RemoveIdenticalGPSAtImport;
             txtRemoveIdenticalGPSEditMenu.Checked = MiscPlugin.Plugin.RemoveIdenticalGPSEditMenu;
+            txtSetTimeGPSAtImport.Checked = MiscPlugin.Plugin.SetTimeGPSAtImport;
+            txtSetTimeGPSEditMenu.Checked = MiscPlugin.Plugin.SetTimeGPSEditMenu;
+            txtUseEnteredDataAtImport.Checked = MiscPlugin.Plugin.UseEnteredDataAtImport;
+            txtUseEnteredDataEditMenu.Checked = MiscPlugin.Plugin.UseEnteredDataEditMenu;
         }
 
         ///
@@ -87,22 +95,32 @@ namespace MiscPlugin.UI.Settings
             labelActivateAtImport.Text = Properties.Resources.UI_Settings_PageControl_labelActivateAtImport_Text;
             labelEditMenuItem.Text = Properties.Resources.UI_Settings_PageControl_labelEditMenuItem_Text;
 
-            labelExtendGPS.Text = Properties.Resources.UI_Settings_PageControl_labelExtendGPS_Text;
-            labelExtendGPSInformative.Text = Properties.Resources.UI_Settings_PageControl_labelExtendGPSInformative_Text;
-            labelInsertPauses.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPauses_Text;
-            labelInsertPausesWhenGPSdifferMinSeconds.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text;
-            labelInsertPausesInformative.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPausesInformative_Text;
             labelAdjustPausesToDevice.Text = Properties.Resources.UI_Settings_PageControl_labelAdjustPausesToDevice_Text;
             labelAdjustPausesToDeviceInformative.Text = Properties.Resources.UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text;
-            labelSetTimeGPS.Text = Properties.Resources.UI_Settings_PageControl_labelSetTimeGPS_Text;
-            labelSetTimeGPSInformative.Text = Properties.Resources.UI_Settings_PageControl_labelSetTimeGPSInformative_Text;
+            labelCorrectGpsFromDistance.Text = Properties.Resources.Edit_CorrectGPSFromDistance_Text;
+            labelCorrectGpsFromDistanceInformative.Text = Properties.Resources.UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text;
+            labelDetectRestLaps.Text = Properties.Resources.UI_Settings_PageControl_labelDetectRestLaps_Text;
+            labelDetectRestLapsInformative.Text = Properties.Resources.UI_Settings_PageControl_labelDetectRestLapsInformative_Text;
             labelDetectRestLaps.Text = Properties.Resources.UI_Settings_PageControl_labelDetectRestLaps_Text;
             labelDetectRestLapsInformative.Text = Properties.Resources.UI_Settings_PageControl_labelDetectRestLapsInformative_Text;
             labelElevationToGPS.Text = Properties.Resources.UI_Settings_PageControl_labelElevationToGPS_Text;
             labelElevationToGPSInformative.Text = Properties.Resources.UI_Settings_PageControl_labelElevationToGPSInformative_Text;
+            labelExtendGPS.Text = Properties.Resources.UI_Settings_PageControl_labelExtendGPS_Text;
+            labelExtendGPSInformative.Text = Properties.Resources.UI_Settings_PageControl_labelExtendGPSInformative_Text;
+            labelFixHR.Text = Properties.Resources.UI_Settings_PageControl_labelFixHR_Text;
+            labelFixHRInformative.Text = Properties.Resources.UI_Settings_PageControl_labelFixHRInformative_Text;
+            labelInsertPauses.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPauses_Text;
+            labelInsertPausesWhenGPSdifferMinSeconds.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text;
+            labelInsertPausesInformative.Text = Properties.Resources.UI_Settings_PageControl_labelInsertPausesInformative_Text;
+            labelPrepareForActivitiesViewer.Text = Properties.Resources.UI_Settings_PageControl_labelPrepareForActivitiesViewer_Text;
+            labelPrepareForActivitiesViewerInformative.Text = Properties.Resources.UI_Settings_PageControl_labelPrepareForActivitiesViewerInformative_Text;
             labelRemoveIdenticalGPS.Text = Properties.Resources.UI_Settings_PageControl_labelRemoveIdenticalGPS_Text;
             labelRemoveIdenticalGPSInformative.Text = Properties.Resources.UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text;
-       
+            labelSetTimeGPS.Text = Properties.Resources.UI_Settings_PageControl_labelSetTimeGPS_Text;
+            labelSetTimeGPSInformative.Text = Properties.Resources.UI_Settings_PageControl_labelSetTimeGPSInformative_Text;
+            labelUseEnteredData.Text = Properties.Resources.UI_Settings_PageControl_labelUseEnteredData_Text;
+            labelUseEnteredDataInformative.Text = Properties.Resources.UI_Settings_PageControl_labelUseEnteredDataInformative_Text;
+
             linkInformativeUrl.Text = Properties.Resources.UI_Settings_PageControl_linkInformativeUrl_Text;
             // Data contains localized text also, refresh.
             RefreshPage();
@@ -128,7 +146,7 @@ namespace MiscPlugin.UI.Settings
         }
         private void numericInsertPauses_ValueChanged(object sender, EventArgs e)
         {
-            MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds = (int)numericInsertPauses.Value;
+            MiscPlugin.Plugin.InsertPausesWhenGPSdifferMinSeconds = (int)numericInsertPausesMinSeconds.Value;
         }
 
         private void txtAdjustPausesToDeviceAtImport_CheckedChanged(object sender, EventArgs e)
@@ -179,5 +197,44 @@ namespace MiscPlugin.UI.Settings
             linkInformativeUrl.LinkVisited = true;
         }
 
+        private void txtFixHRAtImport_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.FixHRAtImport = this.txtFixHRAtImport.Checked;
+        }
+
+        private void txtxFixHREditMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.FixHREditMenu = this.txtFixHREditMenu.Checked;
+        }
+
+        private void txtPrepareForActivitiesViewerAtImport_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.PrepareForActivitiesViewerAtImport = this.txtPrepareForActivitiesViewerAtImport.Checked;
+        }
+
+        private void txtPrepareForActivitiesViewerEditMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.PrepareForActivitiesViewerEditMenu = this.txtPrepareForActivitiesViewerEditMenu.Checked;
+        }
+
+        private void txtUseEnteredDataAtImport_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.UseEnteredDataAtImport = this.txtUseEnteredDataAtImport.Checked;
+        }
+
+        private void txtUseEnteredDataEditMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.UseEnteredDataEditMenu = this.txtUseEnteredDataEditMenu.Checked;
+        }
+
+        private void txtCorrectGpsFromDistanceAtImport_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.CorrectGpsFromDistanceAtImport = this.txtCorrectGpsFromDistanceAtImport.Checked;
+        }
+
+        private void txtCorrectGpsFromDistanceEditMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            MiscPlugin.Plugin.CorrectGpsFromDistanceEditMenu = this.txtCorrectGpsFromDistanceEditMenu.Checked;
+        }
      }
 }

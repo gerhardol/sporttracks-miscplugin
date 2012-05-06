@@ -55,8 +55,15 @@ namespace MiscPlugin.UI.Settings
             this.txtInsertPausesAtImport = new System.Windows.Forms.CheckBox();
             this.labelInsertPauses = new System.Windows.Forms.Label();
             this.labelInsertPausesInformative = new System.Windows.Forms.Label();
-            this.numericInsertPauses = new System.Windows.Forms.NumericUpDown();
+            this.numericInsertPausesMinSeconds = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelCorrectGpsFromDistanceInformative = new System.Windows.Forms.Label();
+            this.labelUseEnteredDataInformative = new System.Windows.Forms.Label();
+            this.labelPrepareForActivitiesViewerInformative = new System.Windows.Forms.Label();
+            this.txtPrepareForActivitiesViewerEditMenu = new System.Windows.Forms.CheckBox();
+            this.txtPrepareForActivitiesViewerAtImport = new System.Windows.Forms.CheckBox();
+            this.labelPrepareForActivitiesViewer = new System.Windows.Forms.Label();
+            this.labelFixHRInformative = new System.Windows.Forms.Label();
             this.labelActivateAtImport = new System.Windows.Forms.Label();
             this.labelEditMenuItem = new System.Windows.Forms.Label();
             this.txtExtendGPSEditMenu = new System.Windows.Forms.CheckBox();
@@ -82,7 +89,16 @@ namespace MiscPlugin.UI.Settings
             this.txtElevationToGPSAtImport = new System.Windows.Forms.CheckBox();
             this.txtElevationToGPSEditMenu = new System.Windows.Forms.CheckBox();
             this.labelElevationToGPSInformative = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericInsertPauses)).BeginInit();
+            this.labelFixHR = new System.Windows.Forms.Label();
+            this.txtFixHRAtImport = new System.Windows.Forms.CheckBox();
+            this.txtFixHREditMenu = new System.Windows.Forms.CheckBox();
+            this.txtUseEnteredDataEditMenu = new System.Windows.Forms.CheckBox();
+            this.txtUseEnteredDataAtImport = new System.Windows.Forms.CheckBox();
+            this.labelUseEnteredData = new System.Windows.Forms.Label();
+            this.txtCorrectGpsFromDistanceEditMenu = new System.Windows.Forms.CheckBox();
+            this.txtCorrectGpsFromDistanceAtImport = new System.Windows.Forms.CheckBox();
+            this.labelCorrectGpsFromDistance = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericInsertPausesMinSeconds)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +117,7 @@ namespace MiscPlugin.UI.Settings
             // linkInformativeUrl
             // 
             resources.ApplyResources(this.linkInformativeUrl, "linkInformativeUrl");
+            this.tableLayoutPanel1.SetColumnSpan(this.linkInformativeUrl, 3);
             this.linkInformativeUrl.Name = "linkInformativeUrl";
             this.linkInformativeUrl.TabStop = true;
             this.linkInformativeUrl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkInformativeUrl_LinkClicked);
@@ -127,22 +144,30 @@ namespace MiscPlugin.UI.Settings
             resources.ApplyResources(this.labelInsertPausesInformative, "labelInsertPausesInformative");
             this.labelInsertPausesInformative.Name = "labelInsertPausesInformative";
             // 
-            // numericInsertPauses
+            // numericInsertPausesMinSeconds
             // 
-            resources.ApplyResources(this.numericInsertPauses, "numericInsertPauses");
-            this.numericInsertPauses.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.numericInsertPausesMinSeconds, "numericInsertPausesMinSeconds");
+            this.numericInsertPausesMinSeconds.Maximum = new decimal(new int[] {
             72000,
             0,
             0,
             0});
-            this.numericInsertPauses.Name = "numericInsertPauses";
-            this.numericInsertPauses.Tag = "Min GPS gap";
-            this.numericInsertPauses.ValueChanged += new System.EventHandler(this.numericInsertPauses_ValueChanged);
+            this.numericInsertPausesMinSeconds.Name = "numericInsertPausesMinSeconds";
+            this.numericInsertPausesMinSeconds.Tag = "Min GPS gap";
+            this.numericInsertPausesMinSeconds.ValueChanged += new System.EventHandler(this.numericInsertPauses_ValueChanged);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AllowDrop = true;
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.labelCorrectGpsFromDistanceInformative, 3, 12);
+            this.tableLayoutPanel1.Controls.Add(this.linkInformativeUrl, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.labelUseEnteredDataInformative, 3, 11);
+            this.tableLayoutPanel1.Controls.Add(this.labelPrepareForActivitiesViewerInformative, 3, 10);
+            this.tableLayoutPanel1.Controls.Add(this.txtPrepareForActivitiesViewerEditMenu, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.txtPrepareForActivitiesViewerAtImport, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.labelPrepareForActivitiesViewer, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.labelFixHRInformative, 3, 9);
             this.tableLayoutPanel1.Controls.Add(this.labelExtendGPSInformative, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtExtendGPSAtImport, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtInsertPausesAtImport, 1, 2);
@@ -156,7 +181,7 @@ namespace MiscPlugin.UI.Settings
             this.tableLayoutPanel1.Controls.Add(this.txtSetTimeGPSEditMenu, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelSetTimeGPSInformative, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelInsertPausesWhenGPSdifferMinSeconds, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.numericInsertPauses, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.numericInsertPausesMinSeconds, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtSetTimeGPSAtImport, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelInsertPausesInformative, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelRemoveIdenticalGPS, 0, 8);
@@ -175,8 +200,56 @@ namespace MiscPlugin.UI.Settings
             this.tableLayoutPanel1.Controls.Add(this.txtElevationToGPSAtImport, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.txtElevationToGPSEditMenu, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.labelElevationToGPSInformative, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelFixHR, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.txtFixHRAtImport, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.txtFixHREditMenu, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.txtUseEnteredDataEditMenu, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.txtUseEnteredDataAtImport, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.labelUseEnteredData, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.txtCorrectGpsFromDistanceEditMenu, 2, 12);
+            this.tableLayoutPanel1.Controls.Add(this.txtCorrectGpsFromDistanceAtImport, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.labelCorrectGpsFromDistance, 0, 12);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(560, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // labelCorrectGpsFromDistanceInformative
+            // 
+            resources.ApplyResources(this.labelCorrectGpsFromDistanceInformative, "labelCorrectGpsFromDistanceInformative");
+            this.labelCorrectGpsFromDistanceInformative.Name = "labelCorrectGpsFromDistanceInformative";
+            // 
+            // labelUseEnteredDataInformative
+            // 
+            resources.ApplyResources(this.labelUseEnteredDataInformative, "labelUseEnteredDataInformative");
+            this.labelUseEnteredDataInformative.Name = "labelUseEnteredDataInformative";
+            // 
+            // labelPrepareForActivitiesViewerInformative
+            // 
+            resources.ApplyResources(this.labelPrepareForActivitiesViewerInformative, "labelPrepareForActivitiesViewerInformative");
+            this.labelPrepareForActivitiesViewerInformative.Name = "labelPrepareForActivitiesViewerInformative";
+            // 
+            // txtPrepareForActivitiesViewerEditMenu
+            // 
+            resources.ApplyResources(this.txtPrepareForActivitiesViewerEditMenu, "txtPrepareForActivitiesViewerEditMenu");
+            this.txtPrepareForActivitiesViewerEditMenu.Name = "txtPrepareForActivitiesViewerEditMenu";
+            this.txtPrepareForActivitiesViewerEditMenu.UseVisualStyleBackColor = false;
+            this.txtPrepareForActivitiesViewerEditMenu.CheckedChanged += new System.EventHandler(this.txtPrepareForActivitiesViewerEditMenu_CheckedChanged);
+            // 
+            // txtPrepareForActivitiesViewerAtImport
+            // 
+            resources.ApplyResources(this.txtPrepareForActivitiesViewerAtImport, "txtPrepareForActivitiesViewerAtImport");
+            this.txtPrepareForActivitiesViewerAtImport.Name = "txtPrepareForActivitiesViewerAtImport";
+            this.txtPrepareForActivitiesViewerAtImport.UseVisualStyleBackColor = false;
+            this.txtPrepareForActivitiesViewerAtImport.CheckedChanged += new System.EventHandler(this.txtPrepareForActivitiesViewerAtImport_CheckedChanged);
+            // 
+            // labelPrepareForActivitiesViewer
+            // 
+            resources.ApplyResources(this.labelPrepareForActivitiesViewer, "labelPrepareForActivitiesViewer");
+            this.labelPrepareForActivitiesViewer.Name = "labelPrepareForActivitiesViewer";
+            // 
+            // labelFixHRInformative
+            // 
+            resources.ApplyResources(this.labelFixHRInformative, "labelFixHRInformative");
+            this.labelFixHRInformative.Name = "labelFixHRInformative";
             // 
             // labelActivateAtImport
             // 
@@ -327,15 +400,70 @@ namespace MiscPlugin.UI.Settings
             resources.ApplyResources(this.labelElevationToGPSInformative, "labelElevationToGPSInformative");
             this.labelElevationToGPSInformative.Name = "labelElevationToGPSInformative";
             // 
+            // labelFixHR
+            // 
+            resources.ApplyResources(this.labelFixHR, "labelFixHR");
+            this.labelFixHR.Name = "labelFixHR";
+            // 
+            // txtFixHRAtImport
+            // 
+            resources.ApplyResources(this.txtFixHRAtImport, "txtFixHRAtImport");
+            this.txtFixHRAtImport.Name = "txtFixHRAtImport";
+            this.txtFixHRAtImport.UseVisualStyleBackColor = false;
+            this.txtFixHRAtImport.CheckedChanged += new System.EventHandler(this.txtFixHRAtImport_CheckedChanged);
+            // 
+            // txtFixHREditMenu
+            // 
+            resources.ApplyResources(this.txtFixHREditMenu, "txtFixHREditMenu");
+            this.txtFixHREditMenu.Name = "txtFixHREditMenu";
+            this.txtFixHREditMenu.UseVisualStyleBackColor = false;
+            this.txtFixHREditMenu.CheckedChanged += new System.EventHandler(this.txtxFixHREditMenu_CheckedChanged);
+            // 
+            // txtUseEnteredDataEditMenu
+            // 
+            resources.ApplyResources(this.txtUseEnteredDataEditMenu, "txtUseEnteredDataEditMenu");
+            this.txtUseEnteredDataEditMenu.Name = "txtUseEnteredDataEditMenu";
+            this.txtUseEnteredDataEditMenu.UseVisualStyleBackColor = false;
+            this.txtUseEnteredDataEditMenu.CheckedChanged += new System.EventHandler(this.txtUseEnteredDataEditMenu_CheckedChanged);
+            // 
+            // txtUseEnteredDataAtImport
+            // 
+            resources.ApplyResources(this.txtUseEnteredDataAtImport, "txtUseEnteredDataAtImport");
+            this.txtUseEnteredDataAtImport.Name = "txtUseEnteredDataAtImport";
+            this.txtUseEnteredDataAtImport.UseVisualStyleBackColor = false;
+            this.txtUseEnteredDataAtImport.CheckedChanged += new System.EventHandler(this.txtUseEnteredDataAtImport_CheckedChanged);
+            // 
+            // labelUseEnteredData
+            // 
+            resources.ApplyResources(this.labelUseEnteredData, "labelUseEnteredData");
+            this.labelUseEnteredData.Name = "labelUseEnteredData";
+            // 
+            // txtCorrectGpsFromDistanceEditMenu
+            // 
+            resources.ApplyResources(this.txtCorrectGpsFromDistanceEditMenu, "txtCorrectGpsFromDistanceEditMenu");
+            this.txtCorrectGpsFromDistanceEditMenu.Name = "txtCorrectGpsFromDistanceEditMenu";
+            this.txtCorrectGpsFromDistanceEditMenu.UseVisualStyleBackColor = false;
+            // 
+            // txtCorrectGpsFromDistanceAtImport
+            // 
+            resources.ApplyResources(this.txtCorrectGpsFromDistanceAtImport, "txtCorrectGpsFromDistanceAtImport");
+            this.txtCorrectGpsFromDistanceAtImport.Name = "txtCorrectGpsFromDistanceAtImport";
+            this.txtCorrectGpsFromDistanceAtImport.UseVisualStyleBackColor = false;
+            this.txtCorrectGpsFromDistanceAtImport.CheckedChanged += new System.EventHandler(this.txtCorrectGpsFromDistanceAtImport_CheckedChanged);
+            // 
+            // labelCorrectGpsFromDistance
+            // 
+            resources.ApplyResources(this.labelCorrectGpsFromDistance, "labelCorrectGpsFromDistance");
+            this.labelCorrectGpsFromDistance.Name = "labelCorrectGpsFromDistance";
+            // 
             // MiscPluginPageControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.linkInformativeUrl);
             this.MinimumSize = new System.Drawing.Size(0, 230);
             this.Name = "MiscPluginPageControl";
-            ((System.ComponentModel.ISupportInitialize)(this.numericInsertPauses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericInsertPausesMinSeconds)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -352,7 +480,7 @@ namespace MiscPlugin.UI.Settings
         private CheckBox txtInsertPausesAtImport;
         private Label labelInsertPauses;
         private Label labelInsertPausesInformative;
-        private NumericUpDown numericInsertPauses;
+        private NumericUpDown numericInsertPausesMinSeconds;
         private TableLayoutPanel tableLayoutPanel1;
         private Label labelActivateAtImport;
         private Label labelEditMenuItem;
@@ -379,5 +507,21 @@ namespace MiscPlugin.UI.Settings
         private Label labelAdjustPausesToDeviceInformative;
         private CheckBox txtAdjustPausesToDeviceAtImport;
         private CheckBox txtAdjustPausesToDeviceEditMenu;
+        private Label labelCorrectGpsFromDistanceInformative;
+        private Label labelUseEnteredDataInformative;
+        private Label labelPrepareForActivitiesViewerInformative;
+        private CheckBox txtPrepareForActivitiesViewerEditMenu;
+        private CheckBox txtPrepareForActivitiesViewerAtImport;
+        private Label labelPrepareForActivitiesViewer;
+        private Label labelFixHRInformative;
+        private Label labelFixHR;
+        private CheckBox txtFixHRAtImport;
+        private CheckBox txtFixHREditMenu;
+        private CheckBox txtUseEnteredDataEditMenu;
+        private CheckBox txtUseEnteredDataAtImport;
+        private Label labelUseEnteredData;
+        private CheckBox txtCorrectGpsFromDistanceEditMenu;
+        private CheckBox txtCorrectGpsFromDistanceAtImport;
+        private Label labelCorrectGpsFromDistance;
     }
 }

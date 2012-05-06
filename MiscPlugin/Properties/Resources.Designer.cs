@@ -313,6 +313,24 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fix HR.
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelFixHR_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelFixHR_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove HR entries higher than Max HR and initial spikes. Adds data at start if missing to simplify editing..
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelFixHRInformative_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelFixHRInformative_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Insert Pauses at GPS Gaps.
         /// </summary>
         internal static string UI_Settings_PageControl_labelInsertPauses_Text {
@@ -336,6 +354,24 @@ namespace MiscPlugin.Properties {
         internal static string UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text {
             get {
                 return ResourceManager.GetString("UI_Settings_PageControl_labelInsertPausesWhenGPSdifferMinSeconds_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prepare For Activities Viewer.
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelPrepareForActivitiesViewer_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelPrepareForActivitiesViewer_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prepare for Android app &quot;Activities Viewer&quot; by adding information to the laps (as the app will not parse complete activities)..
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelPrepareForActivitiesViewerInformative_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelPrepareForActivitiesViewerInformative_Text", resourceCulture);
             }
         }
         
@@ -372,6 +408,24 @@ namespace MiscPlugin.Properties {
         internal static string UI_Settings_PageControl_labelSetTimeGPSInformative_Text {
             get {
                 return ResourceManager.GetString("UI_Settings_PageControl_labelSetTimeGPSInformative_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Device Values.
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelUseEnteredData_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelUseEnteredData_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Device (Manual) activity summaries instead of calculated values..
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelUseEnteredDataInformative_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelUseEnteredDataInformative_Text", resourceCulture);
             }
         }
         

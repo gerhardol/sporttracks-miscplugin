@@ -228,4 +228,22 @@
   <data name="UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text" xml:space="preserve">
     <value>Removes GPS points that likely is incorrect by checking negative distances in the distance track</value>
   </data>
+  <data name="UI_Settings_PageControl_labelUseEnteredDataInformative_Text" xml:space="preserve">
+    <value>Use Device (Manual) activity summaries instead of calculated values.</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelUseEnteredData_Text" xml:space="preserve">
+    <value>Use Device Values</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Remove HR entries higher than Max HR and initial spikes. Adds data at start if missing to simplify editing.</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Fix HR</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelPrepareForActivitiesViewerInformative_Text" xml:space="preserve">
+    <value>Prepare for Android app "Activities Viewer" by adding information to the laps (as the app will not parse complete activities).</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelPrepareForActivitiesViewer_Text" xml:space="preserve">
+    <value>Prepare For Activities Viewer</value>
+  </data>
 </root>
