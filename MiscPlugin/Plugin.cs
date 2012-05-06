@@ -28,7 +28,7 @@ namespace MiscPlugin
     class Plugin : IPlugin
     {
         #region IPlugin Members
-        //http://www.guidgen.com/ {d8bd1522-d1b0-11db-9705-005056c00008}
+
         public Guid Id
         {
             get { return new Guid("{d8bd1522-d1b0-11db-9705-005056c00008}"); }
@@ -62,6 +62,11 @@ namespace MiscPlugin
             if (attr.Length > 0) { AdjustPausesToDeviceAtImport = XmlConvert.ToBoolean(attr); }
             attr = pluginNode.GetAttribute(xmlTags.AdjustPausesToDeviceEditMenu);
             if (attr.Length > 0) { AdjustPausesToDeviceEditMenu = XmlConvert.ToBoolean(attr); }
+
+            attr = pluginNode.GetAttribute(xmlTags.CorrectGpsFromDistanceAtImport);
+            if (attr.Length > 0) CorrectGpsFromDistanceAtImport = XmlConvert.ToBoolean(attr);
+            attr = pluginNode.GetAttribute(xmlTags.CorrectGpsFromDistanceEditMenu);
+            if (attr.Length > 0) CorrectGpsFromDistanceEditMenu = XmlConvert.ToBoolean(attr);
 
             attr = pluginNode.GetAttribute(xmlTags.DetectRestLapsAtImport);
             if (attr.Length > 0) { DetectRestLapsAtImport = XmlConvert.ToBoolean(attr); }
@@ -129,10 +134,10 @@ namespace MiscPlugin
             attr = pluginNode.GetAttribute(xmlTags.SetTimeGPSEditMenu);
             if (attr.Length > 0) { SetTimeGPSEditMenu = XmlConvert.ToBoolean(attr); }
 
-            attr = pluginNode.GetAttribute(xmlTags.SetUseEnteredDataAtImport);
-            if (attr.Length > 0) { SetUseEnteredDataAtImport = XmlConvert.ToBoolean(attr); }
-            attr = pluginNode.GetAttribute(xmlTags.SetUseEnteredDataEditMenu);
-            if (attr.Length > 0) { SetUseEnteredDataEditMenu = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.UseEnteredDataAtImport);
+            if (attr.Length > 0) { UseEnteredDataAtImport = XmlConvert.ToBoolean(attr); }
+            attr = pluginNode.GetAttribute(xmlTags.UseEnteredDataEditMenu);
+            if (attr.Length > 0) { UseEnteredDataEditMenu = XmlConvert.ToBoolean(attr); }
 
             attr = pluginNode.GetAttribute(xmlTags.Verbose);
             if (attr.Length > 0) { Verbose = XmlConvert.ToInt16(attr); }
@@ -142,6 +147,8 @@ namespace MiscPlugin
         {
             pluginNode.SetAttribute(xmlTags.AdjustPausesToDeviceAtImport, XmlConvert.ToString(AdjustPausesToDeviceAtImport));
             pluginNode.SetAttribute(xmlTags.AdjustPausesToDeviceEditMenu, XmlConvert.ToString(AdjustPausesToDeviceEditMenu));
+            pluginNode.SetAttribute(xmlTags.CorrectGpsFromDistanceAtImport, XmlConvert.ToString(CorrectGpsFromDistanceAtImport));
+            pluginNode.SetAttribute(xmlTags.CorrectGpsFromDistanceEditMenu, XmlConvert.ToString(CorrectGpsFromDistanceEditMenu));
             pluginNode.SetAttribute(xmlTags.DetectRestLapsAtImport, XmlConvert.ToString(DetectRestLapsAtImport));
             pluginNode.SetAttribute(xmlTags.DetectRestLapsEditMenu, XmlConvert.ToString(DetectRestLapsEditMenu));
             pluginNode.SetAttribute(xmlTags.DetectRestLapsAlternativeAlgorithm, XmlConvert.ToString(DetectRestLapsAlternativeAlgorithm));
@@ -170,8 +177,8 @@ namespace MiscPlugin
             pluginNode.SetAttribute(xmlTags.RemoveIdenticalGPSEditMenu, XmlConvert.ToString(RemoveIdenticalGPSEditMenu));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSAtImport, XmlConvert.ToString(SetTimeGPSAtImport));
             pluginNode.SetAttribute(xmlTags.SetTimeGPSEditMenu, XmlConvert.ToString(SetTimeGPSEditMenu));
-            pluginNode.SetAttribute(xmlTags.SetUseEnteredDataAtImport, XmlConvert.ToString(SetUseEnteredDataAtImport));
-            pluginNode.SetAttribute(xmlTags.SetUseEnteredDataEditMenu, XmlConvert.ToString(SetUseEnteredDataEditMenu));
+            pluginNode.SetAttribute(xmlTags.UseEnteredDataAtImport, XmlConvert.ToString(UseEnteredDataAtImport));
+            pluginNode.SetAttribute(xmlTags.UseEnteredDataEditMenu, XmlConvert.ToString(UseEnteredDataEditMenu));
 
             pluginNode.SetAttribute(xmlTags.Verbose, XmlConvert.ToString(Verbose));
         }
@@ -182,6 +189,8 @@ namespace MiscPlugin
 
         public static bool AdjustPausesToDeviceAtImport = false;
         public static bool AdjustPausesToDeviceEditMenu = false;
+        public static bool CorrectGpsFromDistanceAtImport = false;
+        public static bool CorrectGpsFromDistanceEditMenu = false;
         public static bool DetectRestLapsAtImport = false;
         public static bool DetectRestLapsEditMenu = false;
         public static int DetectRestLapsAlternativeAlgorithm = 0; //Only changed in xml file
@@ -196,7 +205,7 @@ namespace MiscPlugin
         public static bool FixHREditMenu = false;
         public static int FixHRStartHR = 100; //Only changed in xml file
         public static int FixHRCheckSeconds = 500; //Only changed in xml file
-        public static int FixHRTruncateHR = 150; //Only changed in xml file
+        public static int FixHRTruncateHR = 255; //Only changed in xml file
         public static bool FixNaNEditMenu = false;
         public static bool InsertPausesAtImport = false;
         public static bool InsertPausesEditMenu = false;
@@ -210,8 +219,8 @@ namespace MiscPlugin
         public static bool RemoveIdenticalGPSEditMenu = false;
         public static bool SetTimeGPSAtImport = false;
         public static bool SetTimeGPSEditMenu = false;
-        public static bool SetUseEnteredDataAtImport = false;
-        public static bool SetUseEnteredDataEditMenu = false;
+        public static bool UseEnteredDataAtImport = false;
+        public static bool UseEnteredDataEditMenu = false;
 
         public static int Verbose = 0;  //Only changed in xml file
         #endregion
@@ -220,6 +229,8 @@ namespace MiscPlugin
         {
             public const string AdjustPausesToDeviceAtImport = "AdjustPausesToDeviceAtImport";
             public const string AdjustPausesToDeviceEditMenu = "AdjustPausesToDeviceEditMenu";
+            public const string CorrectGpsFromDistanceAtImport = "CorrectGpsFromDistanceAtImport";
+            public const string CorrectGpsFromDistanceEditMenu = "CorrectGpsFromDistanceEditMenu";
             public const string DetectRestLapsAtImport = "DetectRestLapsAtImport";
             public const string DetectRestLapsEditMenu = "DetectRestLapsEditMenu";
             public const string DetectRestLapsAlternativeAlgorithm = "DetectRestLapsAlternativeAlgorithm";
@@ -248,8 +259,8 @@ namespace MiscPlugin
             public const string RemoveIdenticalGPSEditMenu = "RemoveIdenticalGPSEditMenu";
             public const string SetTimeGPSAtImport = "SetTimeGPSAtImport";
             public const string SetTimeGPSEditMenu = "SetTimeGPSEditMenu";
-            public const string SetUseEnteredDataAtImport = "SetUseEnteredDataAtImport";
-            public const string SetUseEnteredDataEditMenu = "SetUseEnteredDataEditMenu";
+            public const string UseEnteredDataAtImport = "SetUseEnteredDataAtImport";
+            public const string UseEnteredDataEditMenu = "SetUseEnteredDataEditMenu";
 
             public const string Verbose = "Verbose";
         }

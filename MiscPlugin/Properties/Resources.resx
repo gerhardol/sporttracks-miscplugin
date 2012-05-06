@@ -222,4 +222,10 @@
   <data name="Edit_SetTimeGPS_UseSelection_Text" xml:space="preserve">
     <value>Smooth speed for GPS points selected on map?</value>
   </data>
+  <data name="Edit_CorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Adjust GPS from Device Distance</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text" xml:space="preserve">
+    <value>Removes GPS points that likely is incorrect by checking negative distances in the distance track</value>
+  </data>
 </root>

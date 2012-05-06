@@ -54,7 +54,7 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IRouteView view,
                                                  ExtendViewActions.Location location)
         {
-            //if (!GpsCorrectionPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
+            //if (!MiscPlugin.Plugin.DistanceDiffToPowerEditMenu) return false;
             if (location == ExtendViewActions.Location.EditMenu)
             {
                 return new IAction[] { new LiveUpdateAction(view) };

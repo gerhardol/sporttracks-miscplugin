@@ -33,23 +33,23 @@ using ZoneFiveSoftware.Common.Visuals.Util;
 
 namespace MiscPlugin.Edit
 {
-    class SetUseEnteredDataAction : IAction
+    class UseEnteredDataAction : IAction
     {
 #if !ST_2_1
-        public SetUseEnteredDataAction(IDailyActivityView view)
+        public UseEnteredDataAction(IDailyActivityView view)
         {
             this.dailyView = view;
         }
-        public SetUseEnteredDataAction(IActivityReportsView view)
+        public UseEnteredDataAction(IActivityReportsView view)
         {
             this.reportView = view;
         }
-        public SetUseEnteredDataAction(IRouteView view)
+        public UseEnteredDataAction(IRouteView view)
         {
             this.routeView = view;
         }
 #endif
-        public SetUseEnteredDataAction(IList<IActivity> activities)
+        public UseEnteredDataAction(IList<IActivity> activities)
         {
             if (this.activities == null)
             {
@@ -88,7 +88,7 @@ namespace MiscPlugin.Edit
                     {
                         foreach (IActivity activity in activities)
                         {
-                            if (SetUseEnteredData.isEnabled(activity))
+                            if (UseEnteredData.isEnabled(activity))
                             {
                                 enabled = true;
                                 break;
@@ -137,7 +137,7 @@ namespace MiscPlugin.Edit
             if (activities != null)
             foreach (IActivity activity in activities)
             {
-                SetUseEnteredData tmp = new SetUseEnteredData(activity);
+                UseEnteredData tmp = new UseEnteredData(activity);
                 tmp.Run();
             }
             //if (routes != null)

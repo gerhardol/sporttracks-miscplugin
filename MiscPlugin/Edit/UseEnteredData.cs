@@ -31,10 +31,10 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
-    class SetUseEnteredData
+    class UseEnteredData
     {
         private IActivity activity = null;
-        public SetUseEnteredData(IActivity activity)
+        public UseEnteredData(IActivity activity)
         {
             this.activity = activity;
         }

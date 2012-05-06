@@ -25,7 +25,7 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.Edit
 {
-    class SetUseEnteredDataExtendActions :
+    class UseEnteredDataExtendActions :
 #if ST_2_1
     IExtendActivityEditActions, IExtendRouteEditActions
 #else
@@ -91,20 +91,20 @@ namespace MiscPlugin.Edit
         public IList<IAction> GetActions(IDailyActivityView view,
                                                  ExtendViewActions.Location location)
         {
-            if (!MiscPlugin.Plugin.SetUseEnteredDataEditMenu) return new IAction[0];
+            if (!MiscPlugin.Plugin.UseEnteredDataEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
-                return new IAction[] { new SetUseEnteredDataAction(view) };
+                return new IAction[] { new UseEnteredDataAction(view) };
             }
             else return new IAction[0];
         }
         public IList<IAction> GetActions(IActivityReportsView view,
                                          ExtendViewActions.Location location)
         {
-            if (!MiscPlugin.Plugin.SetUseEnteredDataEditMenu) return new IAction[0];
+            if (!MiscPlugin.Plugin.UseEnteredDataEditMenu) return new IAction[0];
             if (location == ExtendViewActions.Location.EditMenu)
             {
-                return new IAction[] { new SetUseEnteredDataAction(view) };
+                return new IAction[] { new UseEnteredDataAction(view) };
             }
             else return new IAction[0];
         }

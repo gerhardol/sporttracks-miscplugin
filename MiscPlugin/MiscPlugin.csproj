@@ -11,11 +11,14 @@
   <Import Project="..\Common\Common-References.csproj" />
   <ItemGroup>
     <Compile Include="Data\TrailsItemTrackSelectionInfo.cs" />
+    <Compile Include="Edit\GpsCorrection.cs" />
+    <Compile Include="Edit\GpsCorrectionAction.cs" />
+    <Compile Include="Edit\GpsCorrectionExtendActions.cs" />
     <Compile Include="Edit\PrepareForActivitiesViewer.cs" />
     <Compile Include="Edit\PrepareForActivitiesViewerAction.cs" />
     <Compile Include="Edit\PrepareForActivitiesViewerExtendActions.cs" />
-    <Compile Include="Edit\SetUseEnteredDataAction.cs" />
-    <Compile Include="Edit\SetUseEnteredDataExtendActions.cs" />
+    <Compile Include="Edit\UseEnteredDataAction.cs" />
+    <Compile Include="Edit\UseEnteredDataExtendActions.cs" />
     <Compile Include="Edit\LiveUpdateAction.cs" />
     <Compile Include="Edit\LiveUpdateExtendActions.cs" />
     <Compile Include="Export\ExportActivityToCompareTracksAction.cs" />
@@ -68,7 +71,7 @@
     <Compile Include="Edit\FixHR.cs" />
     <Compile Include="Edit\FixHRAction.cs" />
     <Compile Include="Edit\FixHRExtendActions.cs" />
-    <Compile Include="Edit\SetUseEnteredData.cs" />
+    <Compile Include="Edit\UseEnteredData.cs" />
     <Compile Include="Edit\FixNaN.cs" />
     <Compile Include="Edit\FixNaNAction.cs" />
     <Compile Include="Edit\FixNaNExtendActions.cs" />

@@ -118,7 +118,15 @@ namespace MiscPlugin.DataImport
                             tmp.Run();
                         }
                     }
-               }
+                    if (MiscPlugin.Plugin.CorrectGpsFromDistanceAtImport)
+                    {
+                        if (GpsCorrection.isEnabled(activity))
+                        {
+                            GpsCorrection tmp = new GpsCorrection(activity);
+                            tmp.Run();
+                        }
+                    }
+                }
             }
         }
 
@@ -142,10 +150,10 @@ namespace MiscPlugin.DataImport
                             tmp2.Run();
                         }
                     }
-                    if (MiscPlugin.Plugin.SetUseEnteredDataAtImport){
-                        if (SetUseEnteredData.isEnabled(activity))
+                    if (MiscPlugin.Plugin.UseEnteredDataAtImport){
+                        if (UseEnteredData.isEnabled(activity))
                         {
-                            SetUseEnteredData tmp = new SetUseEnteredData(activity);
+                            UseEnteredData tmp = new UseEnteredData(activity);
                             tmp.Run();
                         }
                     }
