@@ -216,7 +216,7 @@
   <data name="UI_Activities_PageControl_tmp_Text" xml:space="preserve">
     <value>tmp</value>
   </data>
-  <data name="Edit_SetUseEnteredData_Text" xml:space="preserve">
+  <data name="Edit_UseEnteredData_Text" xml:space="preserve">
     <value>Set Manual Calculation on Activities</value>
   </data>
   <data name="Edit_SetTimeGPS_UseSelection_Text" xml:space="preserve">
@@ -245,5 +245,8 @@
   </data>
   <data name="UI_Settings_PageControl_labelPrepareForActivitiesViewer_Text" xml:space="preserve">
     <value>Prepare For Activities Viewer</value>
+  </data>
+  <data name="Edit_PrepareForActivitiesViewer_Text" xml:space="preserve">
+    <value>Prepare for ActivitiesViewer</value>
   </data>
 </root>

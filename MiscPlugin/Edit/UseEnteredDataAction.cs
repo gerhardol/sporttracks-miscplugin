@@ -149,7 +149,7 @@ namespace MiscPlugin.Edit
         }
         public string Title
         {
-            get { return Properties.Resources.Edit_SetUseEnteredData_Text; }
+            get { return Properties.Resources.Edit_UseEnteredData_Text; }
         }
         public bool Visible
         {

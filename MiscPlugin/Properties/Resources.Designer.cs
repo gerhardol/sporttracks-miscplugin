@@ -160,6 +160,15 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prepare for ActivitiesViewer.
+        /// </summary>
+        internal static string Edit_PrepareForActivitiesViewer_Text {
+            get {
+                return ResourceManager.GetString("Edit_PrepareForActivitiesViewer_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove Identical GPS Points While Moving.
         /// </summary>
         internal static string Edit_RemoveIdenticalGPS_Text {
@@ -189,9 +198,9 @@ namespace MiscPlugin.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Set Manual Calculation on Activities.
         /// </summary>
-        internal static string Edit_SetUseEnteredData_Text {
+        internal static string Edit_UseEnteredData_Text {
             get {
-                return ResourceManager.GetString("Edit_SetUseEnteredData_Text", resourceCulture);
+                return ResourceManager.GetString("Edit_UseEnteredData_Text", resourceCulture);
             }
         }
         

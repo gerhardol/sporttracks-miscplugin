@@ -41,9 +41,7 @@ namespace MiscPlugin.Edit
         public static bool isEnabled(IActivity activity)
         {
             //Need at least 2 points in GPS route and a pause
-            if (activity != null
-                //xxx && activity.TimerPauses.Count > 0
-                && activity.GPSRoute != null && activity.GPSRoute.Count > 1)
+            if (activity != null)
             {
                 return true;
             }

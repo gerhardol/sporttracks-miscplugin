@@ -109,7 +109,7 @@ namespace MiscPlugin.Edit
         }
         public string Title
         {
-            get { return "Prepare for ActivitiesViewer"; } //TBD "xxx"+Properties.Resources.Edit_PrepareForActivitiesViewer_Text; }
+            get { return Properties.Resources.Edit_PrepareForActivitiesViewer_Text; }
         }
         public bool Visible
         {
