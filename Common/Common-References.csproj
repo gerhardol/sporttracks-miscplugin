@@ -160,7 +160,7 @@ IF exist "$(TargetPath)" MOVE "$(TargetPath)" "$(TargetPath)."%25date:~5,2%25%25
   <PropertyGroup>
     <PostBuildEvent>:: This part is in the Common part of the properties
 :: Avoid editing from VSE
-$(ProjectDir)\Common\build.bat $(PluginId) $(StPluginVersion) $(ProjectName) $(ProjectDir) $(StPluginPath) $(TargetDir) $(ConfigurationType)
+$(ProjectDir)\..\Common\build.bat $(PluginId) $(StPluginVersion) $(ProjectName) $(ProjectDir) $(StPluginPath) $(TargetDir) $(ConfigurationType)
 </PostBuildEvent>
   </PropertyGroup>
 
