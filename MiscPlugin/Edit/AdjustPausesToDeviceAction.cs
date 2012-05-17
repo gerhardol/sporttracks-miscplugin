@@ -91,7 +91,7 @@ namespace MiscPlugin.Edit
         {
             get
             {
-                return new List<string>();
+                return new List<string> { Properties.Resources.Edit_MiscPluginPath_Title };
             }
         }
         public void Refresh()
