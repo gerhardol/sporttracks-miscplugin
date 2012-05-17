@@ -19,8 +19,6 @@
     <Compile Include="Edit\PrepareForActivitiesViewerExtendActions.cs" />
     <Compile Include="Edit\UseEnteredDataAction.cs" />
     <Compile Include="Edit\UseEnteredDataExtendActions.cs" />
-    <Compile Include="Edit\LiveUpdateAction.cs" />
-    <Compile Include="Edit\LiveUpdateExtendActions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Plugin.cs" />
   </ItemGroup>
@@ -82,8 +80,6 @@
     <Compile Include="Edit\InsertPauses.cs" />
     <Compile Include="Edit\InsertPausesAction.cs" />
     <Compile Include="Edit\InsertPausesExtendActions.cs" />
-    <Compile Include="Edit\Lap2CadenceAction.cs" />
-    <Compile Include="Edit\Lap2CadenceExtendActions.cs" />
     <Compile Include="Edit\SetTimeGPS.cs" />
     <Compile Include="Edit\SetTimeGPSAction.cs" />
     <Compile Include="Edit\SetTimeGPSExtendActions.cs" />
