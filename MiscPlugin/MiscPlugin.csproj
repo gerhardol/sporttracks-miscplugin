@@ -21,8 +21,6 @@
     <Compile Include="Edit\UseEnteredDataExtendActions.cs" />
     <Compile Include="Edit\LiveUpdateAction.cs" />
     <Compile Include="Edit\LiveUpdateExtendActions.cs" />
-    <Compile Include="Export\ExportActivityToCompareTracksAction.cs" />
-    <Compile Include="Export\ExportActivityToCompareTracksExtendAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Plugin.cs" />
   </ItemGroup>
