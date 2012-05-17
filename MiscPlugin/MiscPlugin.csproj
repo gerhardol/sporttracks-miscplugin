@@ -48,9 +48,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Activities\EditTrackInfoPageControl.resx">
-      <DependentUpon>EditTrackInfoPageControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Settings\MiscPluginPageControl.resx">
       <DependentUpon>MiscPluginPageControl.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -90,14 +87,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Activities\EditTrackDetailPages.cs" />
-    <Compile Include="UI\Activities\EditTrackInfoPage.cs" />
-    <Compile Include="UI\Activities\EditTrackInfoPageControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Activities\EditTrackInfoPageControl.designer.cs">
-      <DependentUpon>EditTrackInfoPageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Settings\MiscPluginPage.cs" />
     <Compile Include="UI\Settings\MiscPluginExtendSettingsPages.cs" />
