@@ -178,7 +178,7 @@
     <value>Elevation Track to GPS Points</value>
   </data>
   <data name="Edit_DetectRestLaps_Text" xml:space="preserve">
-    <value>Detect Rest Laps </value>
+    <value>Detect Rest Laps</value>
   </data>
   <data name="Edit_RemoveIdenticalGPS_Text" xml:space="preserve">
     <value>Remove Identical GPS Points While Moving</value>
@@ -188,15 +188,6 @@
   </data>
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Remove identical GPS points where the distance track indicates moving. (Fix for Edge 705 one second recording.)</value>
-  </data>
-  <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
-    <value>Put Laps and Stops in CadenceTrack</value>
-  </data>
-  <data name="Edit_ExportActivityToCompareTracks_Text" xml:space="preserve">
-    <value>Export To CompareTracks</value>
-  </data>
-  <data name="Edit_LiveUpdate_Text" xml:space="preserve">
-    <value>LiveUpdate</value>
   </data>
   <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
     <value>Adjust Pauses so the activity time matches the device time (or manually entered time)</value>
@@ -212,9 +203,6 @@
   </data>
   <data name="Edit_FixNaN_Text" xml:space="preserve">
     <value>Fix NaN in Tracks</value>
-  </data>
-  <data name="UI_Activities_PageControl_tmp_Text" xml:space="preserve">
-    <value>tmp</value>
   </data>
   <data name="Edit_UseEnteredData_Text" xml:space="preserve">
     <value>Set Manual Calculation on Activities</value>
@@ -238,7 +226,7 @@
     <value>Remove HR entries higher than Max HR and initial spikes. Adds data at start if missing to simplify editing.</value>
   </data>
   <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
-    <value>Fix HR</value>
+    <value>Fix initial HR spikes</value>
   </data>
   <data name="UI_Settings_PageControl_labelPrepareForActivitiesViewerInformative_Text" xml:space="preserve">
     <value>Prepare for Android app "Activities Viewer" by adding information to the laps (as the app will not parse complete activities).</value>
@@ -251,5 +239,8 @@
   </data>
   <data name="Edit_MiscPluginPath_Title" xml:space="preserve">
     <value>Misc</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Adjust GPS from Device Distance</value>
   </data>
 </root>

@@ -61,6 +61,9 @@
   <data name="UI_Settings_MiscPluginPage_Title" xml:space="preserve">
     <value>MiscPlugin</value>
   </data>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
+    <value>link a la WEB del plugin</value>
+  </data>
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Realizar al Importar</value>
   </data>
@@ -135,5 +138,17 @@
   </data>
   <data name="Edit_FixHR_Text" xml:space="preserve">
     <value>Arreglar picos iniciales del RC </value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text" xml:space="preserve">
+    <value>Eliminar Trackpoints del GPS, que puedan estar incorrectos, checando distancias negativas en la ruta</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Ajustar  RC al inicio de la actividad, Filtrar Picos </value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Arreglar picos iniciales del RC </value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Ajustar GPS de la distancia del reloj</value>
   </data>
 </root>

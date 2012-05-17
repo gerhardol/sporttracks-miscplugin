@@ -61,6 +61,9 @@
   <data name="UI_Settings_MiscPluginPage_Title" xml:space="preserve">
     <value>MiscPlugin</value>
   </data>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
+    <value>Plugin websida</value>
+  </data>
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Aktivera vid import</value>
   </data>
@@ -138,5 +141,38 @@
   </data>
   <data name="Edit_FixNaN_Text" xml:space="preserve">
     <value>Fixa NaN i spår</value>
+  </data>
+  <data name="Edit_UseEnteredData_Text" xml:space="preserve">
+    <value>Sätt manuell mod för aktiviteter</value>
+  </data>
+  <data name="Edit_CorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Justera GPS från distansspår</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text" xml:space="preserve">
+    <value>Rensar GPS punkter som troligtvis är felaktiga genom att kontrollera negativ distans i distansspåret</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelUseEnteredDataInformative_Text" xml:space="preserve">
+    <value>Använd enhet(manuell) aktivitetssammanfattning istället för beräknade värden.</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelUseEnteredData_Text" xml:space="preserve">
+    <value>Använd enhetens värden</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Fixa HR vid aktivitetens början, ta bort spikar</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Fixa HR vid aktivitetens början</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelPrepareForActivitiesViewerInformative_Text" xml:space="preserve">
+    <value>Förbered för Android app ActivitiesViewer genom att lägga till etappinformation (eftersom appen parsar data delvis).</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelPrepareForActivitiesViewer_Text" xml:space="preserve">
+    <value>Förbered för ActivitiesViewer</value>
+  </data>
+  <data name="Edit_PrepareForActivitiesViewer_Text" xml:space="preserve">
+    <value>Förbered för ActivitiesViewer</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Justera GPS från distansspår</value>
   </data>
 </root>

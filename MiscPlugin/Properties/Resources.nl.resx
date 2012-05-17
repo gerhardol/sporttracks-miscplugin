@@ -61,6 +61,9 @@
   <data name="UI_Settings_MiscPluginPage_Title" xml:space="preserve">
     <value>MiscPlugin</value>
   </data>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
+    <value>Plugin Webpagina</value>
+  </data>
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Activeren bij Importeren</value>
   </data>
@@ -135,5 +138,17 @@
   </data>
   <data name="Edit_FixHR_Text" xml:space="preserve">
     <value>Bijstellen oorspronkelijke HF pieken</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text" xml:space="preserve">
+    <value>GPS punten verwijderen die waarschijnlijk fout zijn dmv opsporen negatieve awaarden in afstand-track</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Bijstellen HF bij start activiteit, filter pieken</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Bijstellen oorspronkelijke HF pieken</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Bijstellen GPS via toestel-afstand</value>
   </data>
 </root>

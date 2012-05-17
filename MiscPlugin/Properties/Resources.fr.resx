@@ -61,6 +61,9 @@
   <data name="UI_Settings_MiscPluginPage_Title" xml:space="preserve">
     <value>MiscPlugin</value>
   </data>
+  <data name="UI_Settings_PageControl_linkInformativeUrl_Text" xml:space="preserve">
+    <value>Page Web du plugin</value>
+  </data>
   <data name="UI_Settings_PageControl_labelActivateAtImport_Text" xml:space="preserve">
     <value>Activer à l'importation</value>
   </data>
@@ -124,9 +127,6 @@
   <data name="UI_Settings_PageControl_labelRemoveIdenticalGPSInformative_Text" xml:space="preserve">
     <value>Retirer les points GPS identiques où la trace de distance indique du déplacement. (Correctif pour le Edge 705 enregistrement d'une seconde.)</value>
   </data>
-  <data name="Edit_Lap2Cadence_Text" xml:space="preserve">
-    <value>Mettre des tours et des arrêts dans CadenceTrack</value>
-  </data>
   <data name="UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text" xml:space="preserve">
     <value>Ajuster les pauses pour que les temps de l’activité correspondent aux temps du périphérique (ou du temps mis manuellement) </value>
   </data>
@@ -141,5 +141,17 @@
   </data>
   <data name="Edit_FixNaN_Text" xml:space="preserve">
     <value>Définir les NaN dans les tracés</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistanceInformative_Text" xml:space="preserve">
+    <value>Supprimer les points GPS qui semblent incorrectes en vérifiant les distances négatives dans la distance du tracé</value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHRInformative_Text" xml:space="preserve">
+    <value>Définir la FC au départ de l’activité, filtrant les piques </value>
+  </data>
+  <data name="UI_Settings_PageControl_labelFixHR_Text" xml:space="preserve">
+    <value>Définir les piques de FC initiales </value>
+  </data>
+  <data name="UI_Settings_PageControl_labelCorrectGPSFromDistance_Text" xml:space="preserve">
+    <value>Ajuster le GPS par la distance de l'appareil</value>
   </data>
 </root>

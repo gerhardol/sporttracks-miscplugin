@@ -79,7 +79,7 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detect Rest Laps .
+        ///   Looks up a localized string similar to Detect Rest Laps.
         /// </summary>
         internal static string Edit_DetectRestLaps_Text {
             get {
@@ -93,15 +93,6 @@ namespace MiscPlugin.Properties {
         internal static string Edit_ElevationToGPS_Text {
             get {
                 return ResourceManager.GetString("Edit_ElevationToGPS_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Export To CompareTracks.
-        /// </summary>
-        internal static string Edit_ExportActivityToCompareTracks_Text {
-            get {
-                return ResourceManager.GetString("Edit_ExportActivityToCompareTracks_Text", resourceCulture);
             }
         }
         
@@ -138,24 +129,6 @@ namespace MiscPlugin.Properties {
         internal static string Edit_InsertPauses_Text {
             get {
                 return ResourceManager.GetString("Edit_InsertPauses_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Put Laps and Stops in CadenceTrack.
-        /// </summary>
-        internal static string Edit_Lap2Cadence_Text {
-            get {
-                return ResourceManager.GetString("Edit_Lap2Cadence_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LiveUpdate.
-        /// </summary>
-        internal static string Edit_LiveUpdate_Text {
-            get {
-                return ResourceManager.GetString("Edit_LiveUpdate_Text", resourceCulture);
             }
         }
         
@@ -214,15 +187,6 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tmp.
-        /// </summary>
-        internal static string UI_Activities_PageControl_tmp_Text {
-            get {
-                return ResourceManager.GetString("UI_Activities_PageControl_tmp_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to MiscPlugin.
         /// </summary>
         internal static string UI_Settings_MiscPluginPage_Title {
@@ -255,6 +219,15 @@ namespace MiscPlugin.Properties {
         internal static string UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text {
             get {
                 return ResourceManager.GetString("UI_Settings_PageControl_labelAdjustPausesToDeviceInformative_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adjust GPS from Device Distance.
+        /// </summary>
+        internal static string UI_Settings_PageControl_labelCorrectGPSFromDistance_Text {
+            get {
+                return ResourceManager.GetString("UI_Settings_PageControl_labelCorrectGPSFromDistance_Text", resourceCulture);
             }
         }
         
@@ -331,7 +304,7 @@ namespace MiscPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fix HR.
+        ///   Looks up a localized string similar to Fix initial HR spikes.
         /// </summary>
         internal static string UI_Settings_PageControl_labelFixHR_Text {
             get {
