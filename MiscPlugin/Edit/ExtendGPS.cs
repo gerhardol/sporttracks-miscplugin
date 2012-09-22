@@ -138,7 +138,8 @@ namespace MiscPlugin.Edit
 
             IGPSRoute newRoute = new GPSRoute();
             TimeSpan gpsTspan = activity.GPSRoute.EntryDateTime(activity.GPSRoute[i1]).Subtract(endTime);
-            if (gpsTspan.TotalSeconds <= 0) {
+            if (gpsTspan.TotalSeconds <= 0 && info.DistanceMeters > 0)
+            {
                 //No time set on GPS - use average speed
                 gpsTspan = TimeSpan.FromSeconds(info.Time.TotalSeconds / info.DistanceMeters
                     * activity.GPSRoute[i0].Value.DistanceMetersToPoint(activity.GPSRoute[i1].Value));
@@ -147,7 +148,7 @@ namespace MiscPlugin.Edit
             {
                 activity.Notes += "ExtendGPS Start: " + currTime + " " + endTime + " " + gpsTspan + Environment.NewLine;
             }
-            if (currTime < endTime)
+            if (gpsTspan.TotalSeconds > 1 && currTime < endTime)
             {
                IGPSPoint gpsPt = new GPSPoint(
                    extrapollate(endTime.Subtract(currTime), gpsTspan, activity.GPSRoute[i0].Value.LatitudeDegrees, activity.GPSRoute[i1].Value.LatitudeDegrees),
@@ -189,7 +190,7 @@ namespace MiscPlugin.Edit
             i1 = activity.GPSRoute.Count - 1;
             i0 = i1 - ExtPoints;
             gpsTspan = currTime.Subtract(activity.GPSRoute.EntryDateTime(activity.GPSRoute[i0]));
-            if (gpsTspan.TotalSeconds <= 0)
+            if (gpsTspan.TotalSeconds <= 0 && info.DistanceMeters > 0)
             {
                 //No time set on GPS - use average speed
                 gpsTspan = TimeSpan.FromSeconds(info.Time.TotalSeconds / info.DistanceMeters 
@@ -200,7 +201,7 @@ namespace MiscPlugin.Edit
             {
                 activity.Notes += "ExtendGPS End: " + currTime + " " + endTime + " " + gpsTspan + Environment.NewLine;
             }
-            if (currTime < endTime)
+            if (gpsTspan.TotalSeconds > 1 && currTime < endTime)
             {
                IGPSPoint gpsPt = new GPSPoint(
                         extrapollate(endTime.Subtract(currTime), gpsTspan, activity.GPSRoute[i1].Value.LatitudeDegrees, activity.GPSRoute[i0].Value.LatitudeDegrees),
