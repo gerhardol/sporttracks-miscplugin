@@ -27,7 +27,7 @@ using ZoneFiveSoftware.Common.Visuals.Fitness;
 
 namespace MiscPlugin.UI.Settings
 {
-    class MiscPluginPage : ISettingsPage
+    class MiscPluginPage : ISettingsPage, IDisposable
     {
         #region ISettingsPage Members
 
@@ -119,5 +119,10 @@ namespace MiscPlugin.UI.Settings
         #region Private members
         private MiscPluginPageControl control = null;
         #endregion
+
+        public void Dispose()
+        {
+            this.control.Dispose();
+        }
     }
 }
