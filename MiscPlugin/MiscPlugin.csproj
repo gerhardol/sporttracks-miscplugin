@@ -10,6 +10,12 @@
   </PropertyGroup>
   <Import Project="..\Common\Common-References.csproj" />
   <ItemGroup>
+    <Compile Include="Edit\SetCategory.cs" />
+    <Compile Include="Edit\SetCategoryActions.cs" />
+    <Compile Include="Edit\SetCategoryExtendAction.cs" />
+    <Compile Include="Edit\SetMetadata.cs" />
+    <Compile Include="Edit\SetMetadataExtendAction.cs" />
+    <Compile Include="Edit\SetMetadataActions.cs" />
     <Compile Include="Data\TrailsItemTrackSelectionInfo.cs" />
     <Compile Include="Edit\GpsCorrection.cs" />
     <Compile Include="Edit\GpsCorrectionAction.cs" />

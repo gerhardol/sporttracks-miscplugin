@@ -18,7 +18,6 @@ License along with this library. If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 using ZoneFiveSoftware.Common.Data.Fitness;
 using ZoneFiveSoftware.Common.Visuals.Fitness;
@@ -126,6 +125,22 @@ namespace MiscPlugin.DataImport
                             tmp.Run();
                         }
                     }
+                    if (MiscPlugin.Plugin.SetMetadataAtImport)
+                    {
+                        if (SetMetadata.isEnabled(activity))
+                        {
+                            SetMetadata tmp = new SetMetadata(activity);
+                            tmp.Run();
+                        }
+                    }
+                    if (MiscPlugin.Plugin.SetCategoryAtImport)
+                    {
+                        if (SetCategory.isEnabled(activity))
+                        {
+                            SetCategory tmp = new SetCategory(activity);
+                            tmp.Run();
+                        }
+                    }
                 }
             }
         }
@@ -141,7 +156,7 @@ namespace MiscPlugin.DataImport
                     PostImport(activity);
                     if (MiscPlugin.Plugin.FixHRAtImport)
                     {
-                        if (FixNaN.isEnabled(activity))
+                        if (SetMetadata.isEnabled(activity))
                         {
                             FixHR tmp = new FixHR(activity);
                             tmp.Run();

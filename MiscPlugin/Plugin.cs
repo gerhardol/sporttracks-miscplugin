@@ -213,6 +213,10 @@ namespace MiscPlugin
         public static int InsertPausesAdjacentCheckSeconds = 3; //Only changed in xml file
         public static int InsertPausesGPSOffsetSeconds = 1; //Only changed in xml file
         public static bool Laps2CadenceEditMenu = false; //Only changed in xml file
+        public static bool SetCategoryAtImport = true;//TBD
+        public static bool SetCategoryEditMenu = false;
+        public static bool SetMetadataAtImport = true;//TBD
+        public static bool SetMetadataEditMenu = false;//TBD
         public static bool PrepareForActivitiesViewerAtImport = false;
         public static bool PrepareForActivitiesViewerEditMenu = true;
         public static bool RemoveIdenticalGPSAtImport = false;
