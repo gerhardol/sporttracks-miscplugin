@@ -35,7 +35,11 @@ namespace MiscPlugin
         }
         public string Name
         {
+#if !OLD_GUID
+            get { return "Miscellaneous Utilities Plugin2"; }
+#else
             get { return "Miscellaneous Utilities Plugin"; }
+#endif
         }
 
         public string Version
@@ -216,7 +220,7 @@ namespace MiscPlugin
         public static bool SetCategoryAtImport = true;//TBD
         public static bool SetCategoryEditMenu = false;
         public static bool SetMetadataAtImport = true;//TBD
-        public static bool SetMetadataEditMenu = false;//TBD
+        public static bool SetMetadataEditMenu = true;//TBD
         public static bool PrepareForActivitiesViewerAtImport = false;
         public static bool PrepareForActivitiesViewerEditMenu = true;
         public static bool RemoveIdenticalGPSAtImport = false;

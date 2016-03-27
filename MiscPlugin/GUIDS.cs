@@ -20,7 +20,11 @@ using System;
 namespace MiscPlugin
 {
     class GUIDs {
-		//Also used for Settings page
+        //Also used for Settings page
+#if !OLD_GUID
+        public static readonly Guid PluginMain = new Guid("01f7ff28-532a-4053-a7dc-0ab3adcacf82");
+#else
         public static readonly Guid PluginMain = new Guid("d75393a2-4a95-4fe7-ace2-375ff7338b2c");
+#endif
     }
 }
