@@ -81,12 +81,16 @@ namespace MiscPlugin.Edit
             {
                 return 1;
             }
-
-            string[][] data = { };
-            //    new string[] { "", ""},
-            //    new string[] { "GB580|625XT", "My Friends Activities|Globalsat"},
-            //    new string[] { "D6603", "My Friends Activities|Z3" }
-            //};
+#if !OLD_GUID
+            string[][] data = {
+                new string[] { "", ""},
+                new string[] { "GB580|625XT", "My Friends Activities|Globalsat|Running"},
+                new string[] { "GB580|625XT", "Mina vänners aktiviteter|Globalsat|Running"},
+                new string[] { "D6603", "My Friends Activities|Z3|Running" },
+                new string[] { "D6603", "Mina vänners aktiviteter|Z3|Running" },
+                //new string[] { "305", "My Friends Activities" },
+                //new string[] { "305", "Mina vänners aktiviteter|Z3" }
+            };
             for (int i = 0; i < data.Length; i++)
             {
                 if (!string.IsNullOrEmpty(activity.Metadata.Source) && !string.IsNullOrEmpty(data[i][0]) && Regex.IsMatch(activity.Metadata.Source, data[i][0]) ||
@@ -105,6 +109,7 @@ namespace MiscPlugin.Edit
                     break;
                 }
             }
+#endif
             return 0;
         }
     }

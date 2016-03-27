@@ -82,6 +82,9 @@ namespace MiscPlugin.Edit
                 return 1;
             }
 
+            //Specific fixes, use separate GUID to run before ElevationCorrection
+#if !OLD_GUID
+
             //Temp fix for Globalsat
             //int c = 0;
             //if (activity.HeartRatePerMinuteTrack != null && activity.HeartRatePerMinuteTrack.Count == 2)
@@ -93,19 +96,89 @@ namespace MiscPlugin.Edit
             //    }
             //}
 
+            //Notes, name matching, possibly Cadence
             if (string.IsNullOrEmpty(activity.Metadata.Source))
             {
-                string[][] data = { };//TBD { new string[] { "[\\d.,]*km med [\\d.,]*m stigning på [\\d.,:]*", "IpBike D6603" } };
+                //enum cCheck  {Ignore, Yes, No };
+                string[][] data = {
+                    new string[] { "IpBike D6603", "", "[\\d.,]*km (med|with) [\\d.,]*m (stigning på|climb in) [\\d.,:]*", null },
+                    //Assume Strava is recorded with the App, giving Cadence
+                    new string[] { "Strava D6603", "Yes", "^(Morning|Lunch|Afternoon|Night) (Run|Ride)", null },
+                    //GPX likely, empty Note
+                    //Assume GPX Strava name matching is runnerup
+                    new string[] { "Runnerup(Strava) D6603", "", "^$", "(Morning|Lunch|Afternoon|Night) (Run|Ride)" },
+                    new string[] { "ViewRanger D6603", "", "^$", "Track \\w\\w\\w \\d{1,2}, \\d{4}" },
+                    new string[] { "Runkeeper D6603", "", "^$", "Running \\d{1,2}/\\d{1,2}/\\d{1,2} \\d{1,2}:\\d{1,2} \\w\\w" },
+                    new string[] { "Jogg D6603", "", "^$", "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{1,2}:\\d{1,2}Z$" },
+                    new string[] { "Oruxmaps D6603", "", "^$", "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{1,2}$" },
+                    //Note that Trails run before, if it sets a name it is no longer empty
+                    new string[] { "Endomondo D6603", "", "^$", "^$" },
+                    //??Funbeat, OSMand
+
+                };
 
                 for (int i = 0; i < data.Length; i++)
                 {
-                    if (!string.IsNullOrEmpty(data[i][0]) && Regex.IsMatch(activity.Notes, data[i][0]))
+                    if ((data[i][2] == null || Regex.IsMatch(activity.Notes, data[i][2])) &&
+                        (data[i][3] == null || Regex.IsMatch(activity.Name, data[i][3])))
                     {
-                        activity.Metadata.Source = data[i][1];
+                        if (data[i][1] == "Yes")
+                        {
+                            if (activity.CadencePerMinuteTrack != null && activity.CadencePerMinuteTrack.Count > 0)
+                            {
+                                activity.Metadata.Source = data[i][0];
+                            }
+                        }
+                        else if (data[i][1] == "No")
+                        {
+                            if (activity.CadencePerMinuteTrack == null || activity.CadencePerMinuteTrack.Count == 0)
+                            {
+                                activity.Metadata.Source = data[i][0];
+                            }
+                        }
+                        else
+                        {
+                            activity.Metadata.Source = data[i][0];
+                        }
+                        if (!string.IsNullOrEmpty(activity.Metadata.Source))
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            //
+            if (string.IsNullOrEmpty(activity.Metadata.Source))
+            {
+                string data = "Ghostracer D6603";// "Garmin 920XT";
+                
+                if (activity.CadencePerMinuteTrack != null && activity.CadencePerMinuteTrack.Count > 0)
+                {
+                    activity.Metadata.Source = data;
+                }
+            }
+            if (string.IsNullOrEmpty(activity.Metadata.Source))
+            {
+                activity.Metadata.Source = "Unknown D6603";
+            }
+
+            if (string.IsNullOrEmpty(activity.Metadata.Source))
+            {
+                string[][] data = {
+                new string[] { "Garmin 920XT", "My Friends Activities|Garmin" },
+                new string[] { "Garmin 920XT", "Mina vänners aktiviteter|Garmin"
+                }
+            };
+                for (int i = 0; i < data.Length; i++)
+                {
+                    if (!string.IsNullOrEmpty(data[i][1]) && parseCategory(data[i][1]) != null)
+                    {
+                        activity.Metadata.Source = data[i][0];
                         break;
                     }
                 }
             }
+#endif
             return 0;
         }
     }
