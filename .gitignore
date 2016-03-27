@@ -1,3 +1,8 @@
+*.stplugin
 *.st3plugin
-obj
-bin
+obj/
+*.suo
+bin/
+_UpgradeReport_Files/
+*.csproj.user
+*.tmp
