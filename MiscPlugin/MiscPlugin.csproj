@@ -25,6 +25,7 @@
     <Compile Include="Edit\PrepareForActivitiesViewerExtendActions.cs" />
     <Compile Include="Edit\UseEnteredDataAction.cs" />
     <Compile Include="Edit\UseEnteredDataExtendActions.cs" />
+    <Compile Include="GUIDS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Plugin.cs" />
   </ItemGroup>

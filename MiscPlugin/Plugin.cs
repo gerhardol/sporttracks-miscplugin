@@ -31,7 +31,7 @@ namespace MiscPlugin
 
         public Guid Id
         {
-            get { return new Guid("{d8bd1522-d1b0-11db-9705-005056c00008}"); }
+            get { return GUIDs.PluginMain; }
         }
         public string Name
         {
@@ -182,9 +182,9 @@ namespace MiscPlugin
 
             pluginNode.SetAttribute(xmlTags.Verbose, XmlConvert.ToString(Verbose));
         }
-        #endregion
+#endregion
         
-        #region Private members
+#region Private members
         private static IApplication application;
 
         public static bool AdjustPausesToDeviceAtImport = false;
@@ -227,7 +227,7 @@ namespace MiscPlugin
         public static bool UseEnteredDataEditMenu = false;
 
         public static int Verbose = 0;  //Only changed in xml file
-        #endregion
+#endregion
 
         private class xmlTags
         {
@@ -268,7 +268,7 @@ namespace MiscPlugin
 
             public const string Verbose = "Verbose";
         }
-        #region Utility
+#region Utility
         public static DateTime Min(DateTime t1, DateTime t2)
         {
             if (DateTime.Compare(t1, t2) > 0)
@@ -287,6 +287,6 @@ namespace MiscPlugin
             return t1;
         }
 
-        #endregion
+#endregion
     }
 }
