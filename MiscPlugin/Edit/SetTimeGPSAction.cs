@@ -143,7 +143,7 @@ namespace MiscPlugin.Edit
                     if (TrailsPlugin.Data.TrailsItemTrackSelectionInfo.ContainsData(selectedGPS))
                     {
                         string message = Properties.Resources.Edit_SetTimeGPS_UseSelection_Text;
-                        if (MessageBox.Show(string.Format(message, CommonResources.Text.ActionYes, CommonResources.Text.ActionNo),
+                        if (MessageDialog.Show(string.Format(message, CommonResources.Text.ActionYes, CommonResources.Text.ActionNo),
                             "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             handled = true;
@@ -247,10 +247,11 @@ namespace MiscPlugin.Edit
                     {
                         return CollectionUtils.GetAllContainedItemsOfType<IActivity>(dailyView.SelectionProvider.SelectedItems);
                     }
-                    else if (reportView != null)
-                    {
-                        return CollectionUtils.GetAllContainedItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
-                    }
+                    //Not relevant for Reports - no RouteSelection
+                    //else if (reportView != null)
+                    //{
+                    //    return CollectionUtils.GetAllContainedItemsOfType<IActivity>(reportView.SelectionProvider.SelectedItems);
+                    //}
                     else
                     {
                         return new List<IActivity>();
