@@ -6,7 +6,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MiscPlugin</RootNamespace>
     <AssemblyName>MiscPlugin</AssemblyName>
-    <PluginId>d8bd1522-d1b0-11db-9705-005056c00008</PluginId>
+    <PluginId>01f7ff28-532a-4053-a7dc-0ab3adcacf82</PluginId>
   </PropertyGroup>
   <Import Project="..\Common\Common-References.csproj" />
   <ItemGroup>
