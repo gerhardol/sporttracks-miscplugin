@@ -88,8 +88,8 @@ namespace MiscPlugin.Edit
                 new string[] { "GB580|625XT", "Mina vänners aktiviteter|Globalsat|Running"},
                 new string[] { "D6603", "My Friends Activities|Z3|Running" },
                 new string[] { "D6603", "Mina vänners aktiviteter|Z3|Running" },
-                //new string[] { "305", "My Friends Activities" },
-                //new string[] { "305", "Mina vänners aktiviteter|Z3" }
+                new string[] { "305", "My Friends Activities|305|Running" },
+                new string[] { "305", "Mina vänners aktiviteter|305|Running" }
             };
             for (int i = 0; i < data.Length; i++)
             {
