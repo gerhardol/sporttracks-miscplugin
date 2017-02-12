@@ -127,7 +127,7 @@ namespace MiscPlugin.DataImport
                     }
                     if (MiscPlugin.Plugin.SetMetadataAtImport)
                     {
-                        if (SetMetadata.isEnabled(activity))
+                        if (SetMetadata.IsEnabled(activity))
                         {
                             SetMetadata tmp = new SetMetadata(activity);
                             tmp.Run();
@@ -156,7 +156,7 @@ namespace MiscPlugin.DataImport
                     PostImport(activity);
                     if (MiscPlugin.Plugin.FixHRAtImport)
                     {
-                        if (SetMetadata.isEnabled(activity))
+                        if (SetMetadata.IsEnabled(activity))
                         {
                             FixHR tmp = new FixHR(activity);
                             tmp.Run();

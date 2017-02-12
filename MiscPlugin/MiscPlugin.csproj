@@ -8,6 +8,11 @@
     <AssemblyName>MiscPlugin</AssemblyName>
     <PluginId>01f7ff28-532a-4053-a7dc-0ab3adcacf82</PluginId>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ST3.0Debug|x86'">
+    <DefineConstants>DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
   <Import Project="..\Common\Common-References.csproj" />
   <ItemGroup>
     <Compile Include="Edit\SetCategory.cs" />

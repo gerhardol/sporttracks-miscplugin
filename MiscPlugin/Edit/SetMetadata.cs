@@ -40,7 +40,7 @@ namespace MiscPlugin.Edit
             this.activity = activity;
         }
 
-        public static bool isEnabled(IActivity activity)
+        public static bool IsEnabled(IActivity activity)
         {
             if (activity != null)
             {
@@ -51,14 +51,14 @@ namespace MiscPlugin.Edit
         }
 
         //From UniqueRoutes
-        private static IActivityCategory parseCategory(string p)
+        private static IActivityCategory ParseCategory(string p)
         {
             if (p == null || p.Equals("")) return null;
             string[] ps = p.Split('|');
-            IActivityCategory cat = getCategory(ps, 0, Plugin.GetApplication().Logbook.ActivityCategories);
+            IActivityCategory cat = GetCategory(ps, 0, Plugin.GetApplication().Logbook.ActivityCategories);
             return cat;
         }
-        public static IActivityCategory getCategory(string[] ps, int p, IEnumerable<IActivityCategory> iList)
+        public static IActivityCategory GetCategory(string[] ps, int p, IEnumerable<IActivityCategory> iList)
         {
             if (iList == null) return null;
             foreach (IActivityCategory category in iList)
@@ -69,13 +69,13 @@ namespace MiscPlugin.Edit
                     {
                         return category;
                     }
-                    return getCategory(ps, p + 1, category.SubCategories);
+                    return GetCategory(ps, p + 1, category.SubCategories);
                 }
             }
             return null;
         }
 
-        private bool match1(string yes, INumericTimeDataSeries track)
+        private bool Match1(string yes, INumericTimeDataSeries track)
         {
             bool r = true;
             if (!string.IsNullOrEmpty(yes))
@@ -108,7 +108,7 @@ namespace MiscPlugin.Edit
 
         public int Run()
         {
-            if (!isEnabled(activity))
+            if (!IsEnabled(activity))
             {
                 return 1;
             }
@@ -157,7 +157,7 @@ namespace MiscPlugin.Edit
                     if ((data[i][3] == null || Regex.IsMatch(activity.Notes, data[i][3])) &&
                         (data[i][4] == null || Regex.IsMatch(activity.Name, data[i][4])))
                     {
-                        if (match1(data[i][1], activity.CadencePerMinuteTrack) && match1(data[i][2], activity.HeartRatePerMinuteTrack))
+                        if (Match1(data[i][1], activity.CadencePerMinuteTrack) && Match1(data[i][2], activity.HeartRatePerMinuteTrack))
                         {
                             activity.Metadata.Source = data[i][0];
                             break;
@@ -178,7 +178,7 @@ namespace MiscPlugin.Edit
                 };
                 for (int i = 0; i < data.Length; i++)
                 {
-                    if (!string.IsNullOrEmpty(data[i][1]) && parseCategory(data[i][1]) != null)
+                    if (!string.IsNullOrEmpty(data[i][1]) && ParseCategory(data[i][1]) != null)
                     {
                         activity.Metadata.Source = data[i][0];
                         break;

@@ -66,7 +66,7 @@ namespace MiscPlugin.Edit
                 Boolean enabled = false;
                 foreach (IActivity activity in activities)
                 {
-                    if (SetMetadata.isEnabled(activity))
+                    if (SetMetadata.IsEnabled(activity))
                     {
                         enabled = true;
                         break;
